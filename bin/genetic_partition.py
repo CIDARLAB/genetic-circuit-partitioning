@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+#	Copyright (C) 2020 by
+#	Jing Zhang <jgzhang@bu.edu>, Densmore Lab, Boston University
+# 	All rights reserved.
+#	OSI Non-Profit Open Software License ("Non-Profit OSL") 3.0 license.
+
 # Required modules
 import random
 import matplotlib.pyplot as plt
@@ -22,32 +27,46 @@ from itertools import starmap
 from functools import partial
 import os
 
-#########################
-### create file names ###
-#########################
+
+##########################################
+### create file names                  ###
+##########################################
 
 def edgelist_filename (settings, sample):
-	return settings[sample]['path']+'/n'+settings[sample]['n']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'.edgelist'
+	return settings[sample]['graph_path']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'.edgelist'
+
+def DAG_edgelist_filename (settings, sample):
+	return settings[sample]['graph_path']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'.edgelist'
+
+def gate_lib_filename (settings, sample):
+	return settings[sample]['lib_path']+'gatelib.txt'
+
+def sensor_lib_filename (settings, sample):
+	return settings[sample]['lib_path']+'sensor.txt'
+
+def logic_filename (settings, sample):
+	return settings[sample]['lib_path']+'statelogic.txt'
 
 def part_sol_filename (settings, sample):
-	return settings[sample]['path']+'/n'+settings[sample]['n']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'.solutions.txt'
+	return settings[sample]['output_path']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'/part_solutions.txt'
 
 def part_outfig (settings, sample):
-	return settings[sample]['path']+'/n'+settings[sample]['n']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'.part.pdf'
+	return settings[sample]['output_path']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'/part_fig.pdf'
 
 def S_trajectory_filename (settings, sample):
-	return settings[sample]['path']+'/n'+settings[sample]['n']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'/S_trajectory.txt'
+	return settings[sample]['output_path']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'/S_trajectory.txt'
 
 def S_trajectory_plotname (settings, sample):
-	return settings[sample]['path']+'/n'+settings[sample]['n']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'/S_trajectory.pdf'
+	return settings[sample]['output_path']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'/S_trajectory.pdf'
 
 def opt_gate_assignment_filename (settings, sample, run):
-	return settings[sample]['path']+'/n'+settings[sample]['n']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'/optimal gate assignments_trajectory_'+str(run)+'.txt'
+	return settings[sample]['output_path'+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']+'/optimal gate assignments_trajectory_'+str(run)+'.txt'
 
 
-##################
-### load files ###
-##################
+
+##########################################
+### load files                         ###
+##########################################
 
 def load_settings (filename):
 	"""Load the settings file"""
@@ -66,7 +85,7 @@ def load_settings (filename):
 	return settings
 
 def load_gate_info (settings, sample):
-	lines = [open(settings[sample]['gate_lib_file'], 'r').read().strip("\n")][0].split('\n')
+	lines = [open(gate_lib_filename (settings, sample), 'r').read().strip("\n")][0].split('\n')
 	gateLib = {}
 	header = lines[0].split('\t')
 	for line in lines[1:]: 
@@ -78,7 +97,7 @@ def load_gate_info (settings, sample):
 	return gateLib
 
 def load_sensor_info (settings, sample):
-	lines = [open(settings[sample]['sensor_file'], 'r').read().strip("\n")][0].split('\n')
+	lines = [open(sensor_lib_filename (settings, sample), 'r').read().strip("\n")][0].split('\n')
 	sensorLib = {}
 	for line in lines[1:]:
 		tokens = line.split('\t')
@@ -89,7 +108,7 @@ def load_sensor_info (settings, sample):
 	return sensorLib
 
 def load_logic (settings, sample):
-	lines = [open(settings[sample]['logic_file'], 'r').read().strip("\n")][0].split('\n')
+	lines = [open(logic_filename (settings, sample), 'r').read().strip("\n")][0].split('\n')
 	logic = {'PTac':[], 'PTet':[], 'PBAD':[]}
 	for line in lines[1:]:0
 		tokens = line.split('\t')[1].split(',')
@@ -100,17 +119,39 @@ def load_logic (settings, sample):
 
 def read_edge_direction (settings, sample):
 	""" this function reads the .edgelist file and returns the direction of G edges """
-	lines = [open(inputfile, 'r').read().strip("\n")][0].split('\n')
+	lines = [open(DAG_edgelist_filename (settings, sample), 'r').read().strip("\n")][0].split('\n')
 	edge_direct = []
 	for line in lines: 
 		words = line.split(' ')
 		edge_direct.append([words[0], words[1]])
 	return edge_direct
 
+def load_gate_assignment (settings, sample, G):
+	""" load partitioned circuit with biological gates assigned """
+	lines = [open(S_trajectory_filename (settings, sample), 'r').read().strip("\n")][0].split('\n')
+	# get the best run with the highest circuit score
+	bestrun, bestS = 'NA', 0
+	for line in lines:
+		run, SList = line.split('\t')[0], [float(s) for s in line.split('\t')[1].split(',')]
+		if SList[-1] > bestS:
+			bestrun = run
+	# load the gate assignment data from the best run
+	lines = [open(opt_gate_assignment_filename (settings, sample, bestrun), 'r').read().strip("\n")][0].split('\n')
 
-########################
-### define functions ###
-########################
+	# update G with gate assignment information 
+	for line in lines[1:]:
+		tokens = line.split('\t')
+		node = tokens[0]
+		G.nodes[node]['type'] = tokens[1]
+		G.nodes[node]['gate'] = tokens[2]
+		G.nodes[node]['params'] = tokens[3]
+		G.nodes[node]['part'] = tokens[4]
+	return G
+ 
+
+##########################################
+### define functions                   ###
+##########################################
 
 def sigmoid( ymin, ymax, Kd, n, x): 
 	return ymin + (ymax - ymin)/(1 + math.pow( (x/Kd), n) )
@@ -120,9 +161,99 @@ def sigmoid_curve(xlist, ymin, ymax, Kd, n):
 	return ylist
 
 
-#####################
-### run partition ### 
-#####################
+
+###########################################
+# Generate random graphs                ###
+###########################################
+
+def generate_degree_seq(n):
+	""" generate a degree sequence """
+	# for a given number n, randomly generate n1 number of NOT (degree: 2), 
+	# and n2 number of NOR (degree: 3) gates
+	seq = [1]
+	while sum(seq) %2 != 0:
+		seq = [random.randint(2,3) for x in range(n)]
+	return seq
+
+def generate_degree_seq2(n):
+	""" generate a degree sequence following prior knowledge of degree distribution """
+	# as we know that the ratio of degree 3 nodes and degree 2 nodes is 2.16:1 in order to get a connected graph 
+	# we can generate random degree seq satisfying this ratio to get successful graphs, also lowers the search space when n is large
+	seq = [1]
+	choice_list = [2]*32 + [3]*68
+	while sum(seq) %2 != 0:
+		seq = random.sample(choice_list, n)
+	return seq
+
+def generate_random_graph(n):
+	""" for a given vertice number n, generate a connected graph """
+	n0 = 4                                                 # define the number of primitives with degree 1 
+	if n <= 50: 
+		z = [1]*n0 + sorted(generate_degree_seq (n-n0))
+	else: 
+		z = [1]*n0 + sorted(generate_degree_seq2 (n-n0))    
+	G = nx.configuration_model(z, create_using=nx.Graph)   # configuration model
+	while nx.is_connected(G) == False:                     # make sure the graph is connected
+		if n <= 50: 
+			z = [1]*n0 + sorted(generate_degree_seq (n-n0))
+		else: 
+			z = [1]*n0 + sorted(generate_degree_seq2 (n-n0))
+		G = nx.configuration_model(z, create_using=nx.Graph)
+	return G, Counter(z)
+
+
+def generate_random_graph (settings, sample): 
+	""" 
+	generate a connected graph, which follows these constraints -
+	1. does not contain self loop or parallel edges 
+	2. two degree 2 nodes are not connected to each other
+	3. the graph is connected
+	"""
+    n_nonprimitives = len( settings[sample]['in_nodes'] ) + len( settings[sample]['out_nodes'] )
+    n_primitives = int( settings[sample]['n'] ) - n_nonprimitives
+
+	# generate a random graph in which two d2 nodes are not connected to each other 
+	intersect = [1]
+
+	created = False
+
+	while created != True:
+
+		while sum(intersect) != 0: 
+
+			intersect = []                                                
+			if n <= 50: 
+				z = [1]*n_nonprimitives + sorted(generate_degree_seq (n_primitives))
+			else: 
+				z = [1]*n_nonprimitives + sorted(generate_degree_seq2 (n_primitives)) 
+
+			G = nx.configuration_model(z, create_using=nx.Graph)   # configuration model
+
+			while nx.is_connected(G) == False:                     # make sure the graph is connected
+				if n <= 50: 
+					z = [1]*n_nonprimitives + sorted(generate_degree_seq (n_primitives))
+				else: 
+					z = [1]*n_nonprimitives + sorted(generate_degree_seq2 (n_primitives))
+				
+				G = nx.configuration_model(z, create_using=nx.Graph)
+			
+			nd2 = [n for n, d in G.degree() if d==2]    # number of nodes with degree 2
+			# print('d2 nodes', nd2)
+			for n in nd2: intersect.append(len(set(list(G.neighbors(n))).intersection(set(nd2)))) 
+
+		# detect self-loops 
+		selfloop = list(nx.selfloop_edges(G))
+		nd1 = [n for n, d in G.degree() if d==1]        # number of nodes with degree 1
+
+		if selfloop == [] and nd1 == [0,1,2,3]:
+			nx.write_edgelist(G, edgelist_filename (settings, sample))
+			created = True
+
+
+
+##########################################
+### run partition                      ### 
+##########################################
 
 def run_metis (G, nparts):
 	# this function partitions a network into k subgraphs 
@@ -154,13 +285,13 @@ def partition(settings, sample):
 	""" 
 	partition a graph 
 	"""
-	inputfile = edgelist_filename (settings, sample)
+	inputfile = DAG_edgelist_filename (settings, sample)
 	G = nx.Graph()
 	G = nx.read_edgelist(inputfile, nodetype=str)
 
 	edge_direct = read_edge_direction (settings, sample)
 
-	nonprimitives = settings[sample]['nonprimitives'].split(',')
+	nonprimitives = settings[sample]['in_nodes'].split(',') + settings[sample]['out_nodes'].split(',')
 	part_opt = find_best_n(G, nonprimitives)
 
 	# write partition solution
@@ -178,15 +309,15 @@ def partition(settings, sample):
 		f_out.write(','.join([str(n) for n in nodes])+'\n')
 
 	# visualize partition results
-	outfig = part_outfig (settings, sample)
-	visualize_assignment2(G, part_opt, nonprimitives, outfig)
+	visualize_assignment (G, part_opt, nonprimitives, part_outfig (settings, sample))
 
 	return G, edge_direct, part_opt
 
 
-###############################
-### assign biological gates ### 
-###############################
+
+##########################################
+### assign biological gates            ### 
+##########################################
 
 def calc_circuit_score (assignedLib, gateLib, sensorLib):
 	logic = load_logic (settings, sample)
@@ -302,8 +433,8 @@ def record_library (assignedLib, outfile):
 
 def assign_gates (G, edge_direct, partition):
 	# assign biological gates to partitioned graphs
-	gateLib = load_gate_info( settings[sample] )
-	sensorLib = load_sensor_info( settings[sample] )
+	gateLib = load_gate_info( settings, sample )
+	sensorLib = load_sensor_info( settings, sample )
 
 	assignedLib = {}
 	# add 'input node' and 'output node' of each gate
@@ -318,8 +449,8 @@ def assign_gates (G, edge_direct, partition):
 
 	# assign input and output nodes
 	nonprimitives = settings[sample]['nonprimitives'].split('\t')
-	inodes = nonprimitives[:-1]
-	onodes = nonprimitives[-1]
+	inodes = settings[sample]['in_nodes'].split(',')
+	onodes = settings[sample]['out_nodes'].split(',')
 	sensors = ['PTac', 'PTet', 'PBAD']
 	for idx, v in enumerate(inodes):
 		assignedLib[v]['REU ON']  = sensorLib[sensors[idx]]['on']
@@ -331,7 +462,7 @@ def assign_gates (G, edge_direct, partition):
 
 	# copy another G, remove input and output nodes 
 	G_primitive = copy.deepcopy(G)
-	for node in nonprimitives:
+	for node in inodes+onodes:
 		G_primitive.remove_node(node)
 
 	## initialize the gate assignment
@@ -449,7 +580,7 @@ def assign_gates (G, edge_direct, partition):
 			# print('assigned library after round', t, assignedLib)
 
 		# record the max S
-		path = settings[sample]['path']+'/n'+settings[sample]['n']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']
+		path = settings[sample]['graph_path']+'/n'+settings[sample]['n']+'/DAG'+settings[sample]['n']+'.'+settings[sample]['k']
 		if not os.path.exists(path):
 			os.mkdir(path)
 
@@ -463,26 +594,25 @@ def assign_gates (G, edge_direct, partition):
 		# record the best library
 		record_library (bestLib, opt_gate_assignment_filename (settings, sample, str(i)))
 
-	return G
 
 
 ###########################################
-# Refine gate assignment results
+# Refine gate assignment results  ## TO BE UPDATED
 ###########################################
 
 def generate_combinations (n, rlist):
 	""" from n choose r elements """
 	combs = [list(itertools.combinations(n, r)) for r in rlist]
-	combs = [item for sublist in combs for item in sublist]
-	return combs
+	return [item for sublist in combs for item in sublist]
 
-def obt_block_feat (G, part):
+def obt_block_feat (G_primitive):
 	""" from a partition result, calculate the load in each block """
 	block_load, block_gates = {}, {}
+	part = [G_primitive.nodes[n]['part'] for n in G_primitive.nodes()]
 	for i in range(0, max(part)+1):
 		nodes = [a for a, b in enumerate(part) if b == i]
-		block_load[i] = sum([G.nodes[v]['weight'] for v in nodes]) # summ weight in block i 
-		block_gates[i] = [G.nodes[v]['gate'] for v in nodes]       # create a list of all gates in each block
+		block_load[i] = sum([G_primitive.nodes[v]['weight'] for v in nodes]) # summ weight in block i 
+		block_gates[i] = [G_primitive.nodes[v]['gate'] for v in nodes]       # create a list of all gates in each block
 	return block_load, block_gates
 
 def _choose_nodes (part, owblock):
@@ -566,16 +696,24 @@ def _move_nodes (G, part_opt, owblock, uwblock, block_load):
 				idx += 1
 	return solns
 
-def refine_blocks(G):
+def refine_blocks(settings, sample):
 	""" after gate assignment, for any block with high toxicity (>12.92), move nodes from that block to others 
 	with the goal to minimize cuts"""
 
-	part_opt = find_best_n (G)
-	G = assign_gates(G, part_opt)   
+	# part_opt = find_best_n (G)
+	# G = assign_gates(G, part_opt)   
 
-	#visualize_assignment2 (G, part_opt)
+	G = nx.Graph()
+	G = nx.read_edgelist(DAG_edgelist_filename (settings, sample), nodetype=str)
+	G = load_gate_assignment (settings, sample, G)
+
+	G_primitive = copy.deepcopy(G)
+	nonprimitives = settings[sample]['in_nodes'].split(',') + settings[sample]['out_nodes'].split(',')
+	for node in nonprimitives:
+		G_primitive.remove_node(node)
+
 	# for the optimal par2tition that yields the minimum cuts, calculate the average weights in each block
-	block_load, block_gates = obt_block_feat (G, part_opt[1])
+	block_load, block_gates = obt_block_feat (G_primitive)
 	block_ow = [i for i in block_load if block_load[i]>12.92]  # list of blocks that are overweight
 	block_uw = list(set(block_load.keys()) - set(block_ow)) # list of blocks that are underweight
 	# check if block_uw can add at least one more nodes
@@ -624,4 +762,40 @@ def compute_refinement_results(k):
 		outfile = './Random graphs/n'+str(k)+'/G'+str(k)+'.'+str(i)+'.solutions.txt'
 		record_solns (G, solns, outfile)
 
+
+
+##########################################
+### Plotting modules                   ###
+##########################################
+
+def visualize_assignment (G, partition, nonprimitives, outfig): 
+	""" visualize the partitioned graph with each color representing a partitioned block """
+	pos =nx.spring_layout(G)
+	fig = plt.figure(figsize=(5,5))
+	ax = fig.add_subplot(1,1,1)
+	color = cm.rainbow(np.linspace(0,1,max(partition[1])+1))
+
+	G_primitive = copy.deepcopy(G)
+	for node in nonprimitives:
+		G_primitive.remove_node(node)
+
+	# draw input and output nodes
+	nx.draw_networkx_nodes(G, pos, nodelist = nonprimitives, node_color = 'lightgrey')
+	labels = {n:n for n in nonprimitives}
+	nx.draw_networkx_labels(G, pos, labels)
+
+	# draw gate nodes
+	for i in range(max(partition[1])+1):
+		nodeIdx = [a for a, b in enumerate(partition[1]) if b == i]
+		nodes = [list(G_primitive.nodes())[n] for n in nodeIdx] 
+		print('part', i, nodes)
+
+		nx.draw_networkx_nodes(G, pos, nodelist = nodes, node_color = color[i])
+		labels = {n:n for n in nodes}
+		nx.draw_networkx_labels(G, pos, labels)
+
+	nx.draw_networkx_edges(G, pos, edgelist=G.edges(), arrowstyle='->')
+	ax.axis('off')
+	plt.savefig(outfig, dpi=200)
+	# plt.show() 
 

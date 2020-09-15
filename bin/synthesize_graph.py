@@ -19,8 +19,7 @@ def main():
 	samples = args.samples.split(',')
 	settings = gp.load_settings(args.settings)
 	for s in samples:
-		## TO BE UPDATED ###
-		
+		generate_random_graph (settings, s)
 
 if __name__ == "__main__":
 	main()
