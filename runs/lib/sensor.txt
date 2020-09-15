@@ -1,0 +1,4 @@
+Sensor	OFF	ON
+PTac	0.0034	2.8
+PTet	0.0013	4.4
+PBAD	0.0082	2.5
