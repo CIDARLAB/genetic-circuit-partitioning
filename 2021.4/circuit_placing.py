@@ -81,6 +81,7 @@ def visualize_hexmap(hexmap, outfile):
 	for node in hexmap.nodes():
 		coor = hexmap.nodes[node]['coor']
 		plt.plot([coor[0]], [coor[1]], markersize=2, marker='o', color=colordict[hexmap.nodes[node]['colorcode']])
+		plt.text(coor[0], coor[1], node)
 
 	# draw edges
 	for edge in hexmap.edges():
@@ -260,8 +261,111 @@ def find_allowed_placement_on_hexmap (G, hexmap, source, steps):
 			allowed = True 
 		trial += 1
 		if trial > steps: 
-			print('no placement solution found')
+			print('no placement solution found, adding relayers')
+			print('T', T)
+			for dist in range(T):
+				print(dist, nx.descendants_at_distance(G, source, dist))
 			break 
+	return placement_tmp, allowed
+
+
+def place_assignment_on_hexmap_wbuffer (G, hexmap, source, steps):
+	# generate a color dictionary
+	color = sns.color_palette('hls', n_colors=4)
+	colordict = {}
+	colorcode = np.arange(1, 5)
+	for k in colorcode:
+		colordict[k] = color[k-1]
+
+	# start from a node that has no outgoing edge
+	if source == 'NA':   # if source is not given
+		for node in G.nodes():
+			if G.out_degree(node) == 0:
+				source = node
+		print('root', source)
+
+	# performing bfs
+	G2 = G.to_undirected()   # convert graph to undirected
+	T = nx.bfs_tree(G2, source=source)
+	print('bfs nodes', list(T.nodes()))
+	print('bfs edges', list(T.edges()))
+
+	allowed = False
+	trial = 0
+
+	while allowed == False:
+
+		# place cells on grid 
+		placement_tmp = copy.deepcopy (G2)
+		buffer_num = 0
+
+		# randomly choose a node from hexagon map that has a colorcode of 1
+		colorcode_1 = [node for node in hexmap.nodes() if hexmap.nodes[node]['colorcode'] == 1]
+		boundary = max([hexmap.nodes[node]['coor'][0] for node in hexmap.nodes()]) 
+		center_locs = [node for node in colorcode_1 if (hexmap.nodes[node]['coor'][0]<=0.6*boundary and hexmap.nodes[node]['coor'][0]>=0.4*boundary) and (hexmap.nodes[node]['coor'][1]<=0.6*boundary and hexmap.nodes[node]['coor'][1]>=0.4*boundary)]
+		# print(center_locs)
+		fp = random.choice(center_locs)   # place the root cell in the randomly selected hexmap node
+		print('placing root at', fp)
+		placement_tmp.nodes[list(T.nodes())[0]]['placement'] = fp
+		placed_cells = [list(T.nodes())[0]]
+		occupied_hexlocs = [fp]
+
+		try:
+			for cell in list(T.nodes()):
+				print('placing neighbor cells of ', cell)
+				nbs = list(set(list(G2.neighbors(cell))) - set(placed_cells))  # not placed neighbors
+				print('neighbors', nbs)
+				avail_locs = list(set(list(hexmap.neighbors(placement_tmp.nodes[cell]['placement']))) - set(occupied_hexlocs))
+				print('available locs', avail_locs)
+				if len(avail_locs) >= len(nbs):   # if there is enough space to place the cell
+					for nb in nbs:
+						print(nb,'not placed')
+						placement = random.choice(avail_locs)
+						placement_tmp.nodes[nb]['placement'] = placement
+						print('placing node at loc', placement)
+						avail_locs.remove(placement)
+						occupied_hexlocs.append(placement)
+						placed_cells.append(nb)
+				else:   # if not enough space to place the cell, add buffer cell
+					if len(avail_locs) != 0:
+						print("adding buffer cell")
+						# add buffer cell
+						buffer_cell = 'B'+str(buffer_num+1)
+						buffer_num += 1
+						placement_tmp.add_node(buffer_cell)
+						placement_tmp.add_edge(cell, buffer_cell)
+						for nb in nbs:
+							placement_tmp.add_edge(buffer_cell, nb)
+							placement_tmp.remove_edge(cell, nb)
+						# place buffer cell
+						placement = random.choice(avail_locs)
+						print('placing buffer cell', buffer_cell, 'at', placement)
+						placement_tmp.nodes[buffer_cell]['placement'] = placement
+						occupied_hexlocs.append(placement)
+						buf_avail_locs = list(set(list(hexmap.neighbors(placement))) - set(occupied_hexlocs))
+						for nb in nbs: 
+							print(nb, 'not placed')
+							placement = random.choice(buf_avail_locs)
+							placement_tmp.nodes[nb]['placement'] = placement
+							print('placing node at loc', placement)
+							buf_avail_locs.remove(placement)
+							occupied_hexlocs.append(placement)
+							placed_cells.append(nb)
+					else: 
+						print('no solution in trial', trial)
+		except KeyError: 
+			print('no solution in trial', trial)
+
+		trial += 1
+		# check whether there's overlap in occupied positions on the hexmap
+		locs = [placement_tmp.nodes[cell]['placement'] for cell in placement_tmp.nodes()]
+		if len(locs) == len(set(locs)) and len(locs) == len(list(placement_tmp.nodes())): 
+			print('found placement solution')
+			allowed = True 
+			break
+		if trial > steps: 
+			break 
+
 	return placement_tmp, allowed
 
 
@@ -316,8 +420,8 @@ def visualize_hexmap_placement_graphviz (hexmap, G_placement, outfile):
 
 if __name__ == '__main__':
 
-	hexmap = initialize_hexmap (50)
-	assign_hexmap_color (hexmap, 50)
+	hexmap = initialize_hexmap (20)
+	assign_hexmap_color (hexmap, 20)
 	# visualize_hexmap (hexmap, './placement/grid_20')
 
 	# path = '/Users/jgzhang/Programs/Cello2/sample-input/DNACompiler/4-input/452'
@@ -331,7 +435,10 @@ if __name__ == '__main__':
 	# T, assigndict = assign_colors (G, 1)
 	# G_placement = place_assignment_on_hexmap (G, assigndict, T, hexmap)
 	# visualize_hexmap_placement_graphviz (hexmap, G_placement, './placement/random_tree')
-	G_placement, allowed = find_allowed_placement_on_hexmap (G, hexmap, 1, 10000)
-	visualize_hexmap_placement_graphviz (hexmap, G_placement, './placement/tree3')
+	# G_placement, allowed = find_allowed_placement_on_hexmap (G, hexmap, 1, 1000)
+	G_placement, allowed = place_assignment_on_hexmap_wbuffer (G, hexmap, 1, 10)
+	print('Found solution', allowed)
+	if allowed: 
+		visualize_hexmap_placement_graphviz (hexmap, G_placement, './placement/tree3')
 
 
