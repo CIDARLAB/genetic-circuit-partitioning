@@ -132,19 +132,17 @@ def synthesize_graph (ports, gates, outdir, t):
 	plt.savefig(outdir+'/DAG.pdf', dpi=200)
 	plt.show()
 
-
 if __name__ == '__main__': 
 
-	i = 'RCA'
-	path = '/Users/jgzhang/Programs/Cello2/sample-input/DNACompiler/bigcircuit/'
-	file = path+i+'/'+i+'.json'
-	dag_file = path+i+'/DAG.edgelist'
-	# if os.path.exists(file) and not os.path.exists(dag_file):
-	if os.path.exists(file):
-		try:
-			print(i)
-			ports, gates = read_json(file)
-			synthesize_graph (ports, gates, path+i, t=10)
-		except (UnboundLocalError, ValueError) as e: 
-			print('error in file', i)
-
+	for i in ['374']:
+		path = './examples/'
+		file = path+i+'/4input_'+i+'.json'
+		dag_file = path+i+'/DAG.edgelist'
+		# if os.path.exists(file) and not os.path.exists(dag_file):
+		if os.path.exists(file):
+			try:
+				print(i)
+				ports, gates = read_json(file)
+				synthesize_graph (ports, gates, path+i, t=10)
+			except (UnboundLocalError, ValueError) as e: 
+				print('error in file', i)

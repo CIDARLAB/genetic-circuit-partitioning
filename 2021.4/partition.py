@@ -255,9 +255,6 @@ def load_part_sol (inputfile):
 		part = int( tokens[0].split(' ')[-1] )
 		nodes = tokens[1].split(',')
 		partDict[part] = nodes
-		# for node in nodes: 
-		# 	if node in ['a', 'b', 'c', 'd', 'e']:
-		# 		print('partition error')
 	return cut, partDict
 
 
@@ -1192,4 +1189,48 @@ def get_optimal_results (G, G_primitive, cut, innodes, outnodes, primitive_only,
 		print('error found')
 
 
-	
+if __name__ == '__main__': 
+	coi = '374'
+	path = './examples'+i
+	dag_file = path+'/DAG.edgelist'
+	part_matrix = path+'/part_matrix.npy'
+	part_sol = path+'/part_solns.txt'
+	primitive_only = True
+
+	if os.path.exists(dag_file):
+		dag, innodes, outnodes = load_graph (dag_file)
+		nonprimitives = innodes + outnodes
+
+		# perform graph partition 
+		partition_mincut_coi (dag_file, nonprimitives, primitive_only, path)
+
+		# if only considering primitive nodes
+		G_primitive = copy.deepcopy(dag)
+		if primitive_only:
+			for node in nonprimitives:
+				if node in dag.nodes():
+					G_primitive.remove_node(node)
+
+		# lod partition result
+		cut, partDict = load_part_sol (part_sol)
+		partG = load_part_graph (part_matrix)
+		part_opt_format = (cut, [get_part(partDict, n) for n in G_primitive.nodes()])
+		T = calc_signal_path (dag, partDict)
+		write_part_sol (path, partDict, T, cut)
+
+		if max(T) > 0:
+			solN = optimize_signal(dag, cut, partDict, 5, True, path+'/optimized_hc/')
+			if solN == 0:
+				solN_relaxed = optimize_signal(dag, cut, partDict, 5, False, path+'/optimized_lc/')
+
+			if os.path.exists(path+'/optimized_lc'):
+				print('optimized with low constraint')
+				get_optimal_results (dag, G_primitive, cut, innodes, outnodes, partDict, True, path+'/optimized_lc')
+			elif os.path.exists(path+'/optimized_hc'):
+				print('optimized with high constraint')
+				get_optimal_results (dag, G_primitive, cut, innodes, outnodes, partDict, False, path+'/optimized_hc')
+			else:	
+				get_optimal_results (dag, G_primitive, cut, innodes, outnodes, partDict, False, path)
+
+
+

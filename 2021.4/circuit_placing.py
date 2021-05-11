@@ -422,23 +422,22 @@ if __name__ == '__main__':
 
 	hexmap = initialize_hexmap (20)
 	assign_hexmap_color (hexmap, 20)
-	# visualize_hexmap (hexmap, './placement/grid_20')
+	# visualize_hexmap (hexmap, './examples/tree3/grid_20')
 
-	# path = '/Users/jgzhang/Programs/Cello2/sample-input/DNACompiler/4-input/452'
+	# path = './examples/374'
 	# G, innodes, outnodes = load_graph (path+'/DAG.edgelist')
 	# G_p = return_prim_graph (G, innodes, outnodes)
-	# visualize_graph_graphviz (G_p, './placement/452dag')
+	# visualize_graph_graphviz (G_p, './examples/374_dag')
 
-	G = generate_graph (20, './placement/tree3')
-	G = load_undirected_graph ('./placement/tree3.edgelist')
-	# visualize_graph_graphviz (G, './placement/tree2_DAG')
+	G = generate_graph (20, './examples/tree3')
+	G = load_undirected_graph ('./examples/tree3.edgelist')
+	# visualize_graph_graphviz (G, './examples/tree3_DAG')
 	# T, assigndict = assign_colors (G, 1)
 	# G_placement = place_assignment_on_hexmap (G, assigndict, T, hexmap)
-	# visualize_hexmap_placement_graphviz (hexmap, G_placement, './placement/random_tree')
+	# visualize_hexmap_placement_graphviz (hexmap, G_placement, './examples/random_tree')
 	# G_placement, allowed = find_allowed_placement_on_hexmap (G, hexmap, 1, 1000)
 	G_placement, allowed = place_assignment_on_hexmap_wbuffer (G, hexmap, 1, 10)
 	print('Found solution', allowed)
 	if allowed: 
-		visualize_hexmap_placement_graphviz (hexmap, G_placement, './placement/tree3')
-
+		visualize_hexmap_placement_graphviz (hexmap, G_placement, './tree3')
 
