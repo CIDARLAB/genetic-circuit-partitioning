@@ -1,0 +1,5 @@
+cut	8
+Partition 0	60,68,62
+Partition 1	74,72,69,73
+Partition 2	63,70,61,71
+Partition 3	64,67,65,66

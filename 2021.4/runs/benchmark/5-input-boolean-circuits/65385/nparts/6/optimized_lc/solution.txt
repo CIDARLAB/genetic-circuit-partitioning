@@ -1,0 +1,90 @@
+path	1
+T	3
+cut	11
+Partition 0	808,809,797,810
+Partition 1	800,804,801,802
+Partition 2	803,807,805,806,811,815
+Partition 3	798,812,799
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820
+path	2
+T	3
+cut	10
+Partition 0	808,809,797,810
+Partition 1	804,801,802
+Partition 2	803,807,805,806,811
+Partition 3	815,798,812,799,800
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820
+path	3
+T	3
+cut	10
+Partition 0	808,809,797,810
+Partition 1	804,801,802
+Partition 2	803,807,805,806,811
+Partition 3	815,798,812,799,800
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820
+path	4
+T	3
+cut	10
+Partition 0	808,809,797,810
+Partition 1	800,804,801,802
+Partition 2	803,807,805,806,811
+Partition 3	798,812,799
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820,815
+path	5
+T	3
+cut	11
+Partition 0	808,809,797,810
+Partition 1	800,804,801,802
+Partition 2	803,807,805,806,811,815
+Partition 3	798,812,799
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820
+path	6
+T	3
+cut	10
+Partition 0	808,809,797,810
+Partition 1	804,801,802
+Partition 2	803,807,805,806,811
+Partition 3	815,798,812,799,800
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820
+path	7
+T	3
+cut	10
+Partition 0	808,809,797,810
+Partition 1	800,804,801,802,815
+Partition 2	803,807,805,806,811
+Partition 3	798,812,799
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820
+path	8
+T	3
+cut	10
+Partition 0	808,809,797,810
+Partition 1	804,801,802
+Partition 2	803,807,805,806,811
+Partition 3	815,798,812,799,800
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820
+path	9
+T	3
+cut	11
+Partition 0	808,809,797,810
+Partition 1	800,804,801,802
+Partition 2	803,807,805,806,811,815
+Partition 3	798,812,799
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820
+path	10
+T	3
+cut	10
+Partition 0	808,809,797,810
+Partition 1	800,804,801,802,815
+Partition 2	803,807,805,806,811
+Partition 3	798,812,799
+Partition 4	817,819,816,813,814
+Partition 5	822,818,796,821,820

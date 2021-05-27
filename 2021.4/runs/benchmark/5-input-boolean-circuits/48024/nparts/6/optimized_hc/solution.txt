@@ -1,0 +1,90 @@
+path	1
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	2
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	3
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	4
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	5
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	6
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	7
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	8
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	9
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812
+path	10
+T	3
+cut	9
+Partition 0	813,814,815,804
+Partition 1	816,817,796,818
+Partition 2	822,798,819,820,821
+Partition 3	805,806,800,807
+Partition 4	808,802,809,810,811
+Partition 5	797,803,799,801,812

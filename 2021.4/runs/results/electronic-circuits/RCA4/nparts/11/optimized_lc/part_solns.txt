@@ -1,0 +1,14 @@
+path	1
+T	5
+cut	21
+Partition 0	138,151,143,139
+Partition 1	170,152,153,169,154,155,160
+Partition 2	145,146,171,147
+Partition 3	172,140,148,149,150
+Partition 4	132,144,133
+Partition 5	176,168,167,166
+Partition 6	163,164,175,162,161,165
+Partition 7	136,141,137
+Partition 8	134,142,135
+Partition 9	157,158,159
+Partition 10	174,173,156

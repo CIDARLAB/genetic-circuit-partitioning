@@ -1,0 +1,15 @@
+cut	25
+Partition 0	132,144,133
+Partition 1	145,146,147
+Partition 2	172,140,171,148
+Partition 3	138,143,139
+Partition 4	151,152,155
+Partition 5	170,153,154
+Partition 6	149,169,150
+Partition 7	134,142,135
+Partition 8	157,158,159
+Partition 9	174,173,156,160
+Partition 10	163,164,165
+Partition 11	136,141,137
+Partition 12	161,175,162
+Partition 13	176,168,167,166

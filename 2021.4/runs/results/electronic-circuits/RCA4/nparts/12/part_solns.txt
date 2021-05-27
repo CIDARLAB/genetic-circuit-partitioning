@@ -1,0 +1,13 @@
+cut	23
+Partition 0	132,144,133
+Partition 1	172,140,148,149
+Partition 2	145,146,171,147
+Partition 3	138,143,139
+Partition 4	170,155,153,154
+Partition 5	151,152,169,150
+Partition 6	174,173,156
+Partition 7	157,158,159,160
+Partition 8	134,142,135,161
+Partition 9	176,137,175,162
+Partition 10	136,163,141,164
+Partition 11	168,167,165,166
