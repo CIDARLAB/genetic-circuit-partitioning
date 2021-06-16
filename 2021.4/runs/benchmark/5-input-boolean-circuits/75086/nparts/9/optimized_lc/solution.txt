@@ -1,0 +1,12 @@
+path	1
+T	4
+cut	19
+Partition 0	818,820,819
+Partition 1	816,817,800
+Partition 2	814,821,813,822
+Partition 3	802,803,806
+Partition 4	804,805,797
+Partition 5	801,807,808
+Partition 6	809,810,812
+Partition 7	799,811,796,798
+Partition 8	825,815,823,824

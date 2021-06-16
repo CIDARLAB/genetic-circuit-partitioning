@@ -1,0 +1,174 @@
+sol	1
+T	2
+cut	5
+Partition 0	380,383,379,382
+Partition 1	391,389,384,390
+Partition 2	386,385,387,381,378,388
+sol	2
+T	2
+cut	5
+Partition 0	383,379,382
+Partition 1	391,389,384,390
+Partition 2	386,385,387,381,378,380,388
+sol	3
+T	2
+cut	5
+Partition 0	380,379,382
+Partition 1	391,389,384,390,383
+Partition 2	386,385,387,381,378,388
+sol	4
+T	2
+cut	6
+Partition 0	380,383,379,382,381
+Partition 1	391,389,384,390
+Partition 2	386,385,387,378,388
+sol	5
+T	2
+cut	5
+Partition 0	380,383,379,382
+Partition 1	391,384,390
+Partition 2	386,385,387,381,378,388,389
+sol	6
+T	2
+cut	5
+Partition 0	380,383,379,382,384
+Partition 1	391,389,390
+Partition 2	386,385,387,381,378,388
+sol	7
+T	2
+cut	6
+Partition 0	379,382,388
+Partition 1	391,389,384,390,383
+Partition 2	386,385,387,381,378,380
+sol	8
+T	2
+cut	5
+Partition 0	383,379,382,389
+Partition 1	391,384,390
+Partition 2	386,385,387,381,378,380,388
+sol	9
+T	2
+cut	5
+Partition 0	383,379,382,384
+Partition 1	391,389,390
+Partition 2	386,385,387,381,378,380,388
+sol	10
+T	2
+cut	6
+Partition 0	383,379,382,384,390
+Partition 1	391,388,389
+Partition 2	386,385,387,381,378,380
+sol	11
+T	2
+cut	6
+Partition 0	380,379,382,381
+Partition 1	391,389,384,390,383
+Partition 2	386,385,387,378,388
+sol	12
+T	2
+cut	6
+Partition 0	380,383,379,382,386,378
+Partition 1	391,389,384,390
+Partition 2	385,387,381,388
+sol	13
+T	2
+cut	6
+Partition 0	380,383,379,382,385,381
+Partition 1	391,389,384,390
+Partition 2	386,387,378,388
+sol	14
+T	2
+cut	6
+Partition 0	380,383,379,382,381,384
+Partition 1	391,389,390
+Partition 2	386,385,387,378,388
+sol	15
+T	2
+cut	5
+Partition 0	379,382,381
+Partition 1	391,389,384,390,383
+Partition 2	386,385,387,378,380,388
+sol	16
+T	2
+cut	6
+Partition 0	380,379,382,386,378
+Partition 1	391,389,384,390,383
+Partition 2	385,387,381,388
+sol	17
+T	2
+cut	6
+Partition 0	380,379,382,385,381
+Partition 1	391,389,384,390,383
+Partition 2	386,387,378,388
+sol	18
+T	2
+cut	6
+Partition 0	380,379,381
+Partition 1	391,389,384,390,383,382
+Partition 2	386,385,387,378,388
+sol	19
+T	2
+cut	5
+Partition 0	380,383,379,382
+Partition 1	391,388,389,390,386,387,378
+Partition 2	385,381,384
+sol	20
+T	2
+cut	6
+Partition 0	380,383,379,382,386,378,384
+Partition 1	391,389,390
+Partition 2	385,387,381,388
+sol	21
+T	2
+cut	6
+Partition 0	380,383,379,382,386,378,384
+Partition 1	391,388,389
+Partition 2	385,387,381,390
+sol	22
+T	2
+cut	6
+Partition 0	380,383,379,382,386,378
+Partition 1	391,388,389
+Partition 2	385,387,381,384,390
+sol	23
+T	2
+cut	6
+Partition 0	380,383,379,382,385,381,384
+Partition 1	391,389,390
+Partition 2	386,387,378,388
+sol	24
+T	2
+cut	5
+Partition 0	379,382,385,381
+Partition 1	391,389,384,390,383
+Partition 2	386,387,378,380,388
+sol	25
+T	2
+cut	5
+Partition 0	383,379,382,384
+Partition 1	391,388,389,390,386,387,378
+Partition 2	385,381,380
+sol	26
+T	2
+cut	5
+Partition 0	383,379,382,384
+Partition 1	391,388,389,390,385,387,381
+Partition 2	386,378,380
+sol	27
+T	2
+cut	6
+Partition 0	380,379,386,378
+Partition 1	391,389,384,390,383,382
+Partition 2	385,387,381,388
+sol	28
+T	2
+cut	6
+Partition 0	380,379,385,381
+Partition 1	391,389,384,390,383,382
+Partition 2	386,387,378,388
+sol	29
+T	2
+cut	5
+Partition 0	380,383,382,384
+Partition 1	391,388,389,390,386,387,378
+Partition 2	385,381,379

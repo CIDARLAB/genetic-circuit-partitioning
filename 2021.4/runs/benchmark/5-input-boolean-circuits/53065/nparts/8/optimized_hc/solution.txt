@@ -1,0 +1,11 @@
+path	1
+T	3
+cut	13
+Partition 0	811,812,810
+Partition 1	817,816,818
+Partition 2	800,803,804
+Partition 3	820,805,809,819
+Partition 4	799,807,808
+Partition 5	801,806,802
+Partition 6	798,813,796
+Partition 7	797,814,815

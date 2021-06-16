@@ -1,0 +1,130 @@
+path	1
+T	3
+cut	17
+Partition 0	816,815,796
+Partition 1	800,803,802
+Partition 2	809,808,813
+Partition 3	804,805,797
+Partition 4	811,812,810
+Partition 5	820,821,822
+Partition 6	826,825,824
+Partition 7	814,801,817,823
+Partition 8	818,799,819
+Partition 9	806,807,798
+path	2
+T	3
+cut	17
+Partition 0	816,815,796
+Partition 1	800,802,803
+Partition 2	809,808,813
+Partition 3	804,805,797
+Partition 4	811,812,810
+Partition 5	820,821,822
+Partition 6	826,825,824
+Partition 7	814,801,817,823
+Partition 8	818,799,819
+Partition 9	806,807,798
+path	3
+T	4
+cut	18
+Partition 0	816,796,815
+Partition 1	800,803,802
+Partition 2	809,808,797
+Partition 3	804,805,810
+Partition 4	811,812,813
+Partition 5	821,822,823
+Partition 6	826,825,824
+Partition 7	814,801,817,820
+Partition 8	818,799,819
+Partition 9	806,807,798
+path	4
+T	6
+cut	19
+Partition 0	802,803,809
+Partition 1	815,816,800
+Partition 2	808,823,796
+Partition 3	804,805,797
+Partition 4	811,812,810
+Partition 5	820,821,822
+Partition 6	826,825,824,813
+Partition 7	814,801,817
+Partition 8	818,799,819
+Partition 9	806,807,798
+path	5
+T	4
+cut	18
+Partition 0	802,803,816
+Partition 1	815,796,800
+Partition 2	809,808,813
+Partition 3	804,805,797
+Partition 4	811,812,810
+Partition 5	820,821,822,823
+Partition 6	826,825,824
+Partition 7	814,801,817
+Partition 8	818,799,819
+Partition 9	806,807,798
+path	6
+T	4
+cut	20
+Partition 0	802,803,810,816
+Partition 1	815,796,800
+Partition 2	823,822,819
+Partition 3	804,805,797
+Partition 4	811,812,813
+Partition 5	821,809,808
+Partition 6	826,825,824
+Partition 7	814,801,817
+Partition 8	818,799,820
+Partition 9	806,807,798
+path	7
+T	4
+cut	18
+Partition 0	816,815,796
+Partition 1	800,803,802
+Partition 2	801,805,804
+Partition 3	797,809,808
+Partition 4	811,812,810
+Partition 5	820,821,822
+Partition 6	826,825,824,813
+Partition 7	814,817,823
+Partition 8	818,799,819
+Partition 9	806,807,798
+path	8
+T	3
+cut	17
+Partition 0	816,796,815
+Partition 1	800,803,802
+Partition 2	809,808,813
+Partition 3	804,805,797
+Partition 4	811,812,810
+Partition 5	820,821,822
+Partition 6	826,825,824
+Partition 7	814,801,817,823
+Partition 8	818,799,819
+Partition 9	806,807,798
+path	9
+T	4
+cut	17
+Partition 0	816,815,796
+Partition 1	800,803,802
+Partition 2	809,808,797
+Partition 3	804,805,810
+Partition 4	811,812,813
+Partition 5	820,821,822,823
+Partition 6	826,825,824
+Partition 7	814,801,817
+Partition 8	818,799,819
+Partition 9	806,807,798
+path	10
+T	4
+cut	18
+Partition 0	802,803,810
+Partition 1	815,796,816,800
+Partition 2	809,808,823
+Partition 3	804,805,797
+Partition 4	811,812,813
+Partition 5	820,821,822
+Partition 6	826,825,824
+Partition 7	814,801,817
+Partition 8	818,799,819
+Partition 9	806,807,798

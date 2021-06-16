@@ -1,0 +1,21 @@
+sol	1
+T	1
+cut	4
+Partition 0	378,382,379,383
+Partition 1	391,387,390
+Partition 2	380,385,384,386
+Partition 3	388,389,381
+sol	2
+T	1
+cut	4
+Partition 0	378,382,379
+Partition 1	391,383,387,390,386
+Partition 2	380,385,384
+Partition 3	388,389,381
+sol	3
+T	1
+cut	4
+Partition 0	378,382,379,383
+Partition 1	391,387,390,386
+Partition 2	380,385,384
+Partition 3	388,389,381

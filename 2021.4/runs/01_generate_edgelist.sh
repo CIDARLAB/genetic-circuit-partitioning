@@ -8,6 +8,6 @@
 
 BIN_PATH='/Users/jgzhang/Work/Densmore_lab/genetic-circuit-partitioning/2021.4/bin'
 
-python3 $BIN_PATH/1_generate_edgelist.py -settings ./settings.txt -samples hexDisplay
+python3 $BIN_PATH/1_generate_edgelist.py -settings ./settings.txt -samples multiplier
 
 

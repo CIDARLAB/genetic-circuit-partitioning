@@ -1,0 +1,14 @@
+sol	1
+T	2
+cut	7
+Partition 0	382,383,384,385
+Partition 1	380,381,379
+Partition 2	386,378,387
+Partition 3	390,389,388
+sol	2
+T	2
+cut	7
+Partition 0	383,384,385
+Partition 1	380,381,379,382
+Partition 2	386,378,387
+Partition 3	390,389,388

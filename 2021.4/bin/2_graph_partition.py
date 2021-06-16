@@ -57,7 +57,6 @@ def main():
 		min_nodes = int (S_bounds[0])
 		max_nodes = int (S_bounds[1])
 
-		print(target_n)
 		if target_n == ['']:  # if user doesn't supply a target number that the graph should be partitioned into 
 			nparts = list(range(int(len(G_primitive.nodes())/max_nodes)+1, int(len(G_primitive.nodes())/min_nodes)+1))
 			os.mkdir (out_path + '/nparts')

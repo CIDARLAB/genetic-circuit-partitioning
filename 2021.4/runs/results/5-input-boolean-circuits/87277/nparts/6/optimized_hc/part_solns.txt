@@ -1,0 +1,1197 @@
+sol	1
+T	4
+cut	8
+Partition 0	797,804,810
+Partition 1	807,808,809
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,801
+sol	2
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,798,807
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	3
+T	3
+cut	8
+Partition 0	797,804,807
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	4
+T	4
+cut	8
+Partition 0	804,810,809
+Partition 1	807,808,797
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	5
+T	3
+cut	9
+Partition 0	797,804,801
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,807
+Partition 5	802,803,796
+sol	6
+T	4
+cut	8
+Partition 0	804,810,811
+Partition 1	807,808,809
+Partition 2	805,806,798
+Partition 3	813,812,801
+Partition 4	800,799,797
+Partition 5	802,803,796
+sol	7
+T	4
+cut	9
+Partition 0	804,810,809
+Partition 1	807,808,801
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,797
+Partition 5	802,803,796
+sol	8
+T	4
+cut	9
+Partition 0	797,804,805
+Partition 1	808,809,810
+Partition 2	806,798,807
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	9
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,807
+sol	10
+T	3
+cut	9
+Partition 0	797,804,798
+Partition 1	808,809,810
+Partition 2	805,806,807
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	11
+T	3
+cut	9
+Partition 0	797,804,799
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,807
+Partition 5	802,803,796
+sol	12
+T	4
+cut	9
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	805,798,797
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	13
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,809
+sol	14
+T	4
+cut	9
+Partition 0	804,810,809
+Partition 1	807,808,799
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,797
+Partition 5	802,803,796
+sol	15
+T	4
+cut	8
+Partition 0	797,804,810
+Partition 1	807,808,809
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	801,802,803
+Partition 5	796,800,799
+sol	16
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,809
+Partition 2	806,798,800
+Partition 3	813,812,811
+Partition 4	799,805,796
+Partition 5	802,803,801
+sol	17
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,809
+Partition 2	806,798,801
+Partition 3	813,812,811
+Partition 4	799,805,796
+Partition 5	802,803,800
+sol	18
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	798,802,807
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	803,796,805
+sol	19
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	798,801,807
+Partition 3	813,812,811
+Partition 4	800,799,805
+Partition 5	802,803,796
+sol	20
+T	4
+cut	10
+Partition 0	797,804,801
+Partition 1	808,809,810
+Partition 2	806,798,807
+Partition 3	813,812,811
+Partition 4	800,799,805
+Partition 5	802,803,796
+sol	21
+T	4
+cut	10
+Partition 0	797,804,805
+Partition 1	808,809,810
+Partition 2	806,798,801
+Partition 3	813,812,811
+Partition 4	800,799,807
+Partition 5	802,803,796
+sol	22
+T	4
+cut	10
+Partition 0	797,804,807
+Partition 1	808,809,810
+Partition 2	806,798,801
+Partition 3	813,812,811
+Partition 4	800,799,805
+Partition 5	802,803,796
+sol	23
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,798,807
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,801
+sol	24
+T	3
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,799,807
+Partition 5	802,803,801
+sol	25
+T	3
+cut	10
+Partition 0	797,804,801
+Partition 1	808,809,810
+Partition 2	805,806,807
+Partition 3	813,812,811
+Partition 4	800,799,798
+Partition 5	802,803,796
+sol	26
+T	4
+cut	9
+Partition 0	804,810,811
+Partition 1	808,809,797
+Partition 2	805,806,798
+Partition 3	813,812,801
+Partition 4	800,799,807
+Partition 5	802,803,796
+sol	27
+T	4
+cut	9
+Partition 0	797,804,801
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,807
+sol	28
+T	4
+cut	9
+Partition 0	797,804,807
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,801
+sol	29
+T	4
+cut	9
+Partition 0	797,804,807
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,801
+Partition 4	800,799,811
+Partition 5	802,803,796
+sol	30
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,808,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,799,809
+Partition 5	802,803,801
+sol	31
+T	4
+cut	9
+Partition 0	804,810,811
+Partition 1	807,808,809
+Partition 2	805,806,797
+Partition 3	813,812,801
+Partition 4	800,799,798
+Partition 5	802,803,796
+sol	32
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,801
+Partition 2	805,806,797
+Partition 3	813,812,811
+Partition 4	800,799,798
+Partition 5	802,803,796
+sol	33
+T	4
+cut	8
+Partition 0	804,810,811
+Partition 1	807,808,809
+Partition 2	805,806,798
+Partition 3	813,812,801
+Partition 4	800,799,796
+Partition 5	802,803,797
+sol	34
+T	4
+cut	9
+Partition 0	804,810,809
+Partition 1	807,808,801
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,797
+sol	35
+T	4
+cut	9
+Partition 0	804,810,809
+Partition 1	807,808,797
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,801
+sol	36
+T	3
+cut	9
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	806,798,807
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,796,805
+sol	37
+T	3
+cut	9
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,807
+Partition 5	802,796,799
+sol	38
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	798,807,799
+Partition 3	813,812,811
+Partition 4	800,801,805
+Partition 5	802,803,796
+sol	39
+T	4
+cut	10
+Partition 0	797,804,805
+Partition 1	808,809,810
+Partition 2	806,798,799
+Partition 3	813,812,811
+Partition 4	800,801,807
+Partition 5	802,803,796
+sol	40
+T	4
+cut	10
+Partition 0	797,804,799
+Partition 1	808,809,810
+Partition 2	806,798,807
+Partition 3	813,812,811
+Partition 4	800,801,805
+Partition 5	802,803,796
+sol	41
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,805,798
+Partition 2	806,808,809
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	42
+T	4
+cut	9
+Partition 0	804,810,809
+Partition 1	807,805,797
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	43
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,805,796
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,809
+sol	44
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,807,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,798
+sol	45
+T	3
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,801,807
+Partition 5	802,803,799
+sol	46
+T	4
+cut	8
+Partition 0	797,807,808
+Partition 1	809,804,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	47
+T	3
+cut	10
+Partition 0	797,804,799
+Partition 1	808,809,810
+Partition 2	805,806,807
+Partition 3	813,812,811
+Partition 4	800,801,798
+Partition 5	802,803,796
+sol	48
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,808,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,801,809
+Partition 5	802,803,799
+sol	49
+T	3
+cut	9
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,797
+sol	50
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,798,799
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,801,809
+Partition 5	802,803,796
+sol	51
+T	3
+cut	9
+Partition 0	804,810,809
+Partition 1	807,798,797
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	52
+T	3
+cut	8
+Partition 0	810,808,809
+Partition 1	807,797,804
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	53
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,809
+Partition 2	806,798,800
+Partition 3	813,812,811
+Partition 4	801,802,803
+Partition 5	796,805,799
+sol	54
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,800,801
+Partition 3	813,812,811
+Partition 4	799,807,798
+Partition 5	802,803,796
+sol	55
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	809,800,801
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	799,807,798
+Partition 5	802,803,796
+sol	56
+T	4
+cut	10
+Partition 0	797,804,801
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	799,807,796
+Partition 5	802,803,800
+sol	57
+T	4
+cut	9
+Partition 0	804,810,811
+Partition 1	807,808,809
+Partition 2	805,806,798
+Partition 3	813,812,801
+Partition 4	799,797,796
+Partition 5	802,803,800
+sol	58
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,800
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	799,797,796
+Partition 5	802,803,801
+sol	59
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,801
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	799,797,796
+Partition 5	802,803,800
+sol	60
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,800,799
+Partition 3	813,812,811
+Partition 4	801,807,798
+Partition 5	802,803,796
+sol	61
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,809
+Partition 2	805,799,796
+Partition 3	813,812,811
+Partition 4	801,806,798
+Partition 5	802,803,800
+sol	62
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,809
+Partition 2	806,798,801
+Partition 3	813,812,811
+Partition 4	800,802,803
+Partition 5	796,805,799
+sol	63
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	798,802,803
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	796,805,807
+sol	64
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	809,802,803
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	796,805,807
+sol	65
+T	3
+cut	9
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	806,798,802
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	796,805,807
+sol	66
+T	3
+cut	9
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,802
+Partition 5	796,807,799
+sol	67
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	798,802,807
+Partition 3	813,812,811
+Partition 4	800,801,805
+Partition 5	803,796,799
+sol	68
+T	3
+cut	9
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	798,802,797
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	803,796,805
+sol	69
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	807,802,798
+Partition 2	806,808,809
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	803,796,805
+sol	70
+T	3
+cut	9
+Partition 0	804,810,809
+Partition 1	807,802,797
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	803,796,805
+sol	71
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,802,798
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,801,809
+Partition 5	803,796,799
+sol	72
+T	3
+cut	10
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	806,798,801
+Partition 3	813,812,811
+Partition 4	800,799,807
+Partition 5	802,796,805
+sol	73
+T	3
+cut	9
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,801,807
+sol	74
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	798,801,807
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,805
+sol	75
+T	4
+cut	10
+Partition 0	797,804,801
+Partition 1	808,809,810
+Partition 2	806,798,807
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,805
+sol	76
+T	4
+cut	10
+Partition 0	797,804,805
+Partition 1	808,809,810
+Partition 2	806,798,801
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,807
+sol	77
+T	4
+cut	10
+Partition 0	797,804,807
+Partition 1	808,809,810
+Partition 2	806,798,801
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,805
+sol	78
+T	4
+cut	10
+Partition 0	797,804,805
+Partition 1	808,809,810
+Partition 2	806,798,807
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,801
+sol	79
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	798,801,797
+Partition 3	813,812,811
+Partition 4	800,799,805
+Partition 5	802,803,796
+sol	80
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,801,798
+Partition 2	806,808,809
+Partition 3	813,812,811
+Partition 4	800,799,805
+Partition 5	802,803,796
+sol	81
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,801,797
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,799,805
+Partition 5	802,803,796
+sol	82
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,805,796
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,799,809
+Partition 5	802,803,801
+sol	83
+T	3
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,807,796
+Partition 3	813,812,811
+Partition 4	800,799,798
+Partition 5	802,803,801
+sol	84
+T	4
+cut	10
+Partition 0	804,810,811
+Partition 1	808,809,806
+Partition 2	805,798,807
+Partition 3	813,812,801
+Partition 4	800,799,797
+Partition 5	802,803,796
+sol	85
+T	4
+cut	10
+Partition 0	804,810,811
+Partition 1	808,809,806
+Partition 2	805,798,797
+Partition 3	813,812,801
+Partition 4	800,799,807
+Partition 5	802,803,796
+sol	86
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,798,796
+Partition 3	813,812,801
+Partition 4	800,799,811
+Partition 5	802,803,807
+sol	87
+T	4
+cut	10
+Partition 0	804,810,811
+Partition 1	808,809,797
+Partition 2	805,806,807
+Partition 3	813,812,801
+Partition 4	800,799,798
+Partition 5	802,803,796
+sol	88
+T	4
+cut	10
+Partition 0	797,804,801
+Partition 1	808,809,810
+Partition 2	805,806,807
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,798
+sol	89
+T	4
+cut	10
+Partition 0	797,804,798
+Partition 1	808,809,810
+Partition 2	805,806,807
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,801
+sol	90
+T	4
+cut	10
+Partition 0	797,804,798
+Partition 1	808,809,810
+Partition 2	805,806,807
+Partition 3	813,812,801
+Partition 4	800,799,811
+Partition 5	802,803,796
+sol	91
+T	4
+cut	9
+Partition 0	804,810,811
+Partition 1	808,809,797
+Partition 2	805,806,798
+Partition 3	813,812,801
+Partition 4	800,799,796
+Partition 5	802,803,807
+sol	92
+T	3
+cut	9
+Partition 0	797,801,807
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,804
+sol	93
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,809
+Partition 2	805,799,796
+Partition 3	813,812,811
+Partition 4	800,806,798
+Partition 5	802,803,801
+sol	94
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	805,798,797
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,801
+sol	95
+T	3
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,799,797
+Partition 5	802,803,801
+sol	96
+T	3
+cut	10
+Partition 0	804,810,809
+Partition 1	807,801,798
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,799,797
+Partition 5	802,803,796
+sol	97
+T	3
+cut	10
+Partition 0	804,810,809
+Partition 1	807,801,797
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,799,798
+Partition 5	802,803,796
+sol	98
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,801,798
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,809
+sol	99
+T	4
+cut	9
+Partition 0	804,810,811
+Partition 1	807,808,809
+Partition 2	805,806,797
+Partition 3	813,812,801
+Partition 4	800,799,796
+Partition 5	802,803,798
+sol	100
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,801
+Partition 2	805,806,797
+Partition 3	813,812,811
+Partition 4	800,799,796
+Partition 5	802,803,798
+sol	101
+T	4
+cut	10
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	806,798,807
+Partition 3	813,812,811
+Partition 4	800,801,805
+Partition 5	802,796,799
+sol	102
+T	3
+cut	10
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	806,798,799
+Partition 3	813,812,811
+Partition 4	800,801,807
+Partition 5	802,796,805
+sol	103
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,803,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,807,798
+sol	104
+T	3
+cut	10
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	805,806,807
+Partition 3	813,812,811
+Partition 4	800,801,798
+Partition 5	802,796,799
+sol	105
+T	3
+cut	9
+Partition 0	797,804,803
+Partition 1	808,809,810
+Partition 2	805,806,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,807,798
+sol	106
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	798,799,796
+Partition 3	813,812,811
+Partition 4	800,801,805
+Partition 5	802,803,807
+sol	107
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	798,799,796
+Partition 3	813,812,811
+Partition 4	800,801,807
+Partition 5	802,803,805
+sol	108
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	808,805,806
+Partition 2	798,807,799
+Partition 3	813,812,811
+Partition 4	800,801,809
+Partition 5	802,803,796
+sol	109
+T	3
+cut	9
+Partition 0	804,810,809
+Partition 1	808,805,806
+Partition 2	798,807,797
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	110
+T	4
+cut	9
+Partition 0	797,805,807
+Partition 1	809,804,810
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	111
+T	3
+cut	9
+Partition 0	797,805,796
+Partition 1	808,809,810
+Partition 2	806,798,807
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,804
+sol	112
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	798,799,797
+Partition 3	813,812,811
+Partition 4	800,801,805
+Partition 5	802,803,796
+sol	113
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,798,799
+Partition 2	806,808,809
+Partition 3	813,812,811
+Partition 4	800,801,805
+Partition 5	802,803,796
+sol	114
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	807,805,796
+Partition 2	806,808,809
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,798
+sol	115
+T	4
+cut	10
+Partition 0	804,810,809
+Partition 1	807,799,797
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,801,805
+Partition 5	802,803,796
+sol	116
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,805,796
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,801,809
+Partition 5	802,803,799
+sol	117
+T	3
+cut	9
+Partition 0	804,810,809
+Partition 1	807,805,796
+Partition 2	806,798,808
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,797
+sol	118
+T	3
+cut	10
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,807,796
+Partition 3	813,812,811
+Partition 4	800,801,798
+Partition 5	802,803,799
+sol	119
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,799,796
+Partition 3	813,812,811
+Partition 4	800,801,807
+Partition 5	802,803,798
+sol	120
+T	3
+cut	9
+Partition 0	797,804,810
+Partition 1	808,809,806
+Partition 2	805,799,796
+Partition 3	813,812,811
+Partition 4	800,801,798
+Partition 5	802,803,807
+sol	121
+T	4
+cut	9
+Partition 0	804,810,809
+Partition 1	808,806,798
+Partition 2	805,807,797
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	122
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	808,806,798
+Partition 2	805,807,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,809
+sol	123
+T	3
+cut	9
+Partition 0	797,807,798
+Partition 1	809,804,810
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,796
+sol	124
+T	3
+cut	9
+Partition 0	797,807,798
+Partition 1	808,809,810
+Partition 2	805,806,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,804
+sol	125
+T	3
+cut	9
+Partition 0	797,799,796
+Partition 1	808,809,810
+Partition 2	805,806,798
+Partition 3	813,812,811
+Partition 4	800,801,807
+Partition 5	802,803,804
+sol	126
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,806
+Partition 2	805,799,796
+Partition 3	813,812,811
+Partition 4	800,801,798
+Partition 5	802,803,809
+sol	127
+T	4
+cut	9
+Partition 0	797,804,810
+Partition 1	807,808,806
+Partition 2	805,799,796
+Partition 3	813,812,811
+Partition 4	800,801,809
+Partition 5	802,803,798
+sol	128
+T	3
+cut	9
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	805,797,796
+Partition 3	813,812,811
+Partition 4	800,801,799
+Partition 5	802,803,798
+sol	129
+T	3
+cut	10
+Partition 0	804,810,809
+Partition 1	807,808,806
+Partition 2	805,798,796
+Partition 3	813,812,811
+Partition 4	800,801,797
+Partition 5	802,803,799
+sol	130
+T	3
+cut	10
+Partition 0	804,810,809
+Partition 1	807,798,799
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,801,797
+Partition 5	802,803,796
+sol	131
+T	3
+cut	10
+Partition 0	804,810,809
+Partition 1	807,799,797
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,801,798
+Partition 5	802,803,796
+sol	132
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,799,796
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,801,798
+Partition 5	802,803,809
+sol	133
+T	4
+cut	10
+Partition 0	797,804,810
+Partition 1	807,799,796
+Partition 2	805,806,808
+Partition 3	813,812,811
+Partition 4	800,801,809
+Partition 5	802,803,798

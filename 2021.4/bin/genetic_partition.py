@@ -484,10 +484,10 @@ def visualize_assignment_graphviz (G, partition, nonprimitives, primitive_only, 
 	for i in range(max(partition[1])+1):
 		nodeIdx = [a for a, b in enumerate(partition[1]) if b == i]
 		nodes = [list(G_primitive.nodes())[n] for n in nodeIdx]
-		if len(list(G.nodes())) < 30: 
-			nx.draw (G, pos, nodelist=nodes, with_labels=True, node_color=color[i])
-		else:
-			nx.draw (G, pos, nodelist=nodes, node_size=5, font_size=0.5, arrowsize=1, width=0.5, with_labels=True, node_color=color[i])
+		# if len(list(G.nodes())) < 30: 
+		nx.draw (G, pos, nodelist=nodes, with_labels=True, node_color=color[i])
+		# else:
+			# nx.draw (G, pos, nodelist=nodes, node_size=5, font_size=0.5, arrowsize=1, width=0.5, with_labels=True, node_color=color[i])
 
 	# plot partitioned cells
 	ax2 = fig.add_subplot(1,2,2)
@@ -530,16 +530,18 @@ def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxN
 	if primitive_only:
 		in_nodes, out_nodes, nonprimitives  = get_nonprimitive_nodes (G)
 		G_primitive = get_G_primitive (G, nonprimitives)
+		G_nodes = G_primitive.nodes()
 	else:
 		G_primitive   = copy.deepcopy (G)
 		nonprimitives = []
+		G_nodes = G_primitive.nodes()
 
 	# calculate original signal traverse time
 	T = calc_signal_path (G, in_nodes, out_nodes, partDict)
-	minT = max(T) 
+	minT_o = max(T) 
 	# print(minT)
 	# get original partition matrix
-	part_opt = (cut, [get_part(partDict, n) for n in G_primitive.nodes()])
+	part_opt = (cut, [get_part(partDict, n) for n in G_nodes])
 	matrix, partG = partition_matrix (G_primitive, part_opt)
 
 	# print('original partition', partDict)
@@ -562,21 +564,23 @@ def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxN
 
 		bestT_dict = dict()
 		bestpartDict_all = dict()
+		timproved_dict = dict() # record the timestep at which T is improved
 
 		for i in range(1, trajectories+1):  # for given number of trajectories
 			print('iteration', i)
 			bestpartDict = copy.deepcopy(partDict)
 			bestpartG    = copy.deepcopy(partG)
-			bestMatrix   = copy.deepcopy(matrix)
-			bestT_list = [minT]
+			bestT_list   = [minT_o]
+			minT_i       = minT_o
 			locked_nodes = []
+			timproved_list = []
 
 			for t in range(1,10000):  # timestep
 				# at each timestep, choose a swap that satisfies the gate number constraints of each cell 
 				# print('t', t)
 				# get partG of the best part
 				cut_bp = cal_cut (G, bestpartDict)
-				part_opt_format_best = (cut_bp, [get_part(bestpartDict, n) for n in G_primitive.nodes()])
+				part_opt_format_best = (cut_bp, [get_part(bestpartDict, n) for n in G_nodes])
 				matrix_best, partG_best = partition_matrix(G_primitive, part_opt_format_best)
 				
 				# get subnetworks that do not satisfy constraints
@@ -619,7 +623,7 @@ def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxN
 					subG_cells = list(set(neighbors)) + [cell]
 					# print('subgraph cells', subG_cells)
 
-					subG_nodes = list( set([n for n in G_primitive.nodes() if get_part(bestpartDict, n) in subG_cells]) - set(locked_nodes) )
+					subG_nodes = list( set([n for n in G_nodes if get_part(bestpartDict, n) in subG_cells]) - set(locked_nodes) )
 					# print('nodes in subgraph', subG_nodes)
 					
 					# choose 1 to n (maxNodes) nodes form this pair to swap 
@@ -678,14 +682,14 @@ def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxN
 
 					if subG_new_loop_free and subG_new_motif_allowed:
 						if subG_best_loop_free and subG_best_motif_allowed:
-							if T_new < minT:
+							if T_new < minT_i:
 								# accept swap 
 								print('both part loop free and motif valid')
 								print('T improved, swap accepted')
 								bestpartDict = partDict_tmp
 								bestpartG    = partG_new
-								bestMatrix   = matrix_new
-								minT = T_new
+								minT_i = T_new
+								timproved_list.append (t)
 								locked_nodes.extend (nodes_to_move)
 
 						else: 
@@ -695,26 +699,30 @@ def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxN
 							print('T improved or equal')
 							bestpartDict = partDict_tmp
 							bestpartG    = partG_new
-							bestMatrix   = matrix_new
-							minT = T_new
+							minT_i = T_new
+							timproved_list.append (t)
 							locked_nodes.extend (nodes_to_move)
 
-					bestT_list.append(minT)
+					bestT_list.append(minT_i)
 				except ValueError: 
 					pass
 			# print('bestT', bestT_list)
 			bestT_dict[i] = bestT_list 
 			bestpartDict_all[i] = bestpartDict
+			timproved_dict[i] = timproved_list
 
 		print('recording solution')
 		# write best partition result and best T 
 		f_out = open(outdir + 'minT.txt', 'w')
 		f_out2 = open(outdir + 'part_solns.txt', 'w')
+		f_out3 = open(outdir + 'part improved.txt', 'w')
 		f_out.write('iteration\tminT\n')
+		f_out3.write('iteration\tt\n')
 		for i in bestT_dict:
 			f_out.write(str(i)+'\t'+','.join([str(T) for T in bestT_dict[i]])+'\n')
+			f_out3.write(str(i)+'\t'+','.join([str(t) for t in timproved_dict[i]])+'\n')
 			cut = cal_cut (G_primitive, bestpartDict_all[i])
-			T = max(calc_signal_path (G, in_nodes, out_nodes, bestpartDict_all[i]))
+			T = bestT_dict[i][-1]
 			f_out2.write('path\t'+str(i)+'\n')
 			f_out2.write('T\t'+str(T)+'\n')
 			f_out2.write('cut\t'+str(cut)+'\n')
