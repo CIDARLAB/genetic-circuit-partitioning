@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "genetic-circuit-partitioning"
+version = "0.1.0"
+description = ""
+authors = ["W.R. Jackson <jackson@justjackson.dev>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pycallgraph = "^1.0.1"
+matplotlib = "^3.4.2"
+networkx = "^2.5.1"
+metis = "^0.2a5"
+seaborn = "^0.11.1"
+ujson = "^4.0.2"
+mpmath = "^1.2.1"
+pygraphviz = "^1.7"
+black = "^21.6b0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
