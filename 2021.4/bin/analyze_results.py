@@ -7,9 +7,11 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import csv
 import numpy as np
-import genetic_partition as gp
+import genetic_partition_test as gp
 import itertools
 from networkx.drawing.nx_agraph import graphviz_layout
+import matplotlib.image as mpimg
+import seaborn as sns
 
 def get_node_number (edgelist):
 	G = nx.read_edgelist (edgelist, nodetype = str, create_using=nx.DiGraph())
@@ -55,6 +57,19 @@ def load_sol (filename):
 			data[sample] = sample_data
 	return data
 
+def plot_network (G, outfig):
+
+	pos = nx.kamada_kawai_layout(G)
+	plt.figure(num=None, figsize=(8,8), dpi=80)
+	nx.draw(
+	    G,
+	    pos=pos,
+	    horizontalalignment='left',
+	    verticalalignment='bottom',
+	    node_color='powderblue'
+	)
+	plt.savefig(outfig, dpi=200)
+	plt.show()
 
 
 def count_nodes (indir1, indir2):
@@ -477,9 +492,248 @@ def plot_deltaD ():
 	plt.show()
 
 
+def visualize_subnetworks_unmet_constraint (path, constraint):
+	""" for each optimization attempt, visualize the nsubnetworks that unmet constraints """
+	bm_path = path + 'runs/benchmark/electronic-circuits/alu/'
+	sol_path = path + 'runs/results/electronic-circuits/alu/nparts/46/'
+	npart = 46
+	# for npart in os.listdir(sol_path):
+	# 	if npart.startswith('.') == False and npart != 'best_solns.txt':
+	# 		print ('npart', npart)
+	# load graph and metis partition
+	edgelist = bm_path + '/DAG.edgelist'
+	G = load_graph (edgelist)
+	in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
+	G_primitive = gp.get_G_primitive (G, nonprimitives)
+
+	# visualize original partition
+	cut, partDict = gp.load_metis_part_sol (sol_path+'part_solns.txt')
+	part_opt = [gp.get_part(partDict, n) for n in G_primitive.nodes()]
+	matrix, partG = gp.partition_matrix (G_primitive, part_opt)
+	cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, [5], 'TRUE')
+	gp.visualize_assignment_graphviz (G, part_opt, nonprimitives, 'TRUE', sol_path, 0, cell_unmet_const)
+
+
+	# part_sol = sol_path + npart + '/part_solns.txt'
+	part_sol = sol_path + 'part_solns.txt'
+	cut, partDict = gp.load_metis_part_sol (part_sol)
+
+	# opt_file = sol_path + npart + '/optimized_'+constraint+'/part_solns.txt'
+	# opt_sol_file = sol_path + npart + '/optimized_'+constraint+'/part_solns.txt'
+	opt_file = sol_path + 'optimized_lc/part_solns.txt'
+	if os.path.exists (opt_file):
+		print('opt exists')
+		timeList = load_timestep (opt_file)
+		if timeList != []:
+			solDict = gp.load_opt_part_sol (opt_file)
+			for iteration in solDict.keys():
+				part = solDict[iteration]['part']
+				if part != partDict:
+					part_opt = [gp.get_part(part, n) for n in G_primitive.nodes()]
+					matrix, partG = gp.partition_matrix (G_primitive, part_opt)
+					cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, [5], 'TRUE')
+					print(iteration, solDict[iteration]['T'], len(cell_unmet_const)/int(npart))
+					# gp.visualize_assignment_graphviz (G, part_opt, nonprimitives, 'TRUE', sol_path+'/optimized_'+constraint, iteration, cell_unmet_const)
+
+
+def generate_edgelist_of_cells (outdir): 
+	""" for partitioned cells, generate an edgelist """
+	bm_path = outdir + 'runs/benchmark/electronic-circuits/md5Core/'
+	sol_path = outdir + 'runs/results/electronic-circuits/md5Core/nparts/40-minimizing unmet/optimized_lc/'
+	part_sol = sol_path + 'part_solns.txt'
+
+	edgelist = bm_path + '/DAG.edgelist'
+	G = load_graph (edgelist)
+	in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
+	G_primitive = gp.get_G_primitive (G, nonprimitives)
+
+	solDict = gp.load_opt_part_sol (part_sol)
+	iteration = 11
+
+	part = solDict[iteration]['part']
+	part_opt = [gp.get_part(part, n) for n in G_primitive.nodes()]
+
+	node_to_partDict = {}
+	for n in G_primitive.nodes():
+		node_to_partDict[n] = str(gp.get_part(part, n))
+
+	matrix, partG = gp.partition_matrix (G_primitive, part_opt)
+
+	# nx.write_edgelist (partG, sol_path+'md5Core_part40_iteration11.edgelist')
+
+	f_out = open (sol_path + 'neighbors.txt', 'w')
+	for node in G_primitive.nodes():
+		neighbors = G_primitive.neighbors(node)
+		f_out.write(node + '\t' + ','.join(neighbors)+'\n')
+
+	return node_to_partDict
+
+def get_cut_edges (g, node_to_partDict):
+
+	cut_edges, internal_edges = [], []
+	for e in g.edges():
+		n1, n2 = e[0], e[1]
+		if node_to_partDict[n1] != node_to_partDict[n2]: 
+			cut_edges.append(e)
+		else: 
+			internal_edges.append(e)
+	return cut_edges, internal_edges
+
+def _scale_xy (array, x_scaler, y_scaler):
+	new_array = np.array ([array[0] * x_scaler, array[1] * y_scaler])
+	return new_array 
+
+
+def plot_cell_edgelist(
+        input_edgelist_fp: str,
+        part_edgelist_fp: str,
+        partition: dict, 
+        save_file: bool = False,
+        output_filename: str = 'test.jpg',
+):
+	original_network = False
+	g = nx.read_edgelist(input_edgelist_fp, create_using=nx.DiGraph())
+	in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (g)
+	g = gp.get_G_primitive (g, nonprimitives)
+	pg = nx.read_edgelist(part_edgelist_fp)
+	cut_edges, internal_edges = get_cut_edges (g, partition)
+
+	plt.figure(num=None, figsize=(15, 15), dpi=80)
+	img_path = "/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/runs/results/Logic-gate-nor-us.png"
+	graph_path = "/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/runs/results/electronic-circuits//"
+	img_list = []
+	nor_img = mpimg.imread(img_path)
+	for _ in pg.nodes():
+		img_list.append(nor_img)
+
+	positions = nx.nx_agraph.graphviz_layout(pg, prog='dot')
+	positions = nx.drawing.layout.rescale_layout_dict (positions, scale=10)
+	positions = {key: _scale_xy(value, 1,1) for (key, value) in positions.items()}
+
+    ## position of nodes
+	pos_communities = dict()
+	for node, part in partition.items():
+		pos_communities[node] = positions[part]
+
+	# position nodes within partition
+	partDict = dict()
+	for node, part in partition.items():
+		try:
+			partDict[part] += [node]
+		except KeyError:
+			partDict[part] = [node]
+
+	pos_nodes = dict()
+	for ci, nodes in partDict.items():
+		subgraph = g.subgraph(nodes)
+		pos_subgraph = nx.planar_layout(subgraph)
+		# pos_subgraph = nx.nx_agraph.graphviz_layout(subgraph)
+		pos_nodes.update(pos_subgraph)
+
+	# combine position
+	pos = dict()
+	for node in g.nodes():
+		print('community position', pos_communities[node])
+		print('node position', pos_nodes[node])
+		print('new position', np.array(pos_communities[node]) + np.array(pos_nodes[node]))
+		pos[node] = np.array(pos_communities[node]) + _scale_xy (pos_nodes[node], 0.5, 0.5)
+
+    # Calculate the number of ranks in here so you can figure out how many
+    # colors you need...
+	y_pos = sorted(list({position[1] for position in positions.values()}))
+	sns.color_palette('Set2', len(y_pos))
+	colors = [y_pos.index(position[1]) for position in positions.values()]
+	plt.title('RCA4 Boolean Logic Network', fontsize=30, ha='center')
+	if original_network:
+		nx.draw (
+			pg, 
+			pos=positions,
+			with_labels=True,
+			node_color=colors,
+			width=0,
+			node_size=1000,
+			node_shape='s',
+			linewidths=30,
+			horizontalalignment='left',
+			verticalalignment='bottom',
+			alpha=0.2,
+		)
+		nx.draw_networkx_edges (g, pos=pos, edgelist=cut_edges, edge_color='red')
+		nx.draw_networkx_edges (g, pos=pos, edgelist=internal_edges, edge_color='k')
+		nx.draw(
+			g,
+			pos=pos,
+			with_labels=True,
+			width=0,
+			horizontalalignment='left',
+			verticalalignment='bottom',
+			alpha=0.7,
+		)
+
+		plt.draw()
+		plt.savefig(graph_path + 'original_network.jpg')
+		return
+    # I'm going to rotate the graph so it makes more sense in terms of an
+    # electrical circuit.
+	flip_xy_pos = {}
+	flipped_pos = {node: (-y, x) for (node, (x, y)) in pos.items()}
+	flipped_positions = {node: (-y, x) for (node, (x, y)) in positions.items()}
+	nx.draw (
+		pg, 
+		pos=flipped_positions,
+		with_labels=False,
+		node_color=colors,
+		width=0,
+		node_size=2000,
+		node_shape='s',
+		linewidths=40,
+		horizontalalignment='left',
+		verticalalignment='bottom',
+		alpha=0.2,
+		)
+	nx.draw_networkx_edges (g, pos=flipped_pos, edgelist=cut_edges, edge_color='red')
+	nx.draw_networkx_edges (g, pos=flipped_pos, edgelist=internal_edges, edge_color='k')
+	nx.draw(
+		g,
+		pos=flipped_pos,
+		with_labels=True,
+		width=0,
+		horizontalalignment='left',
+		verticalalignment='bottom',
+		alpha=0.7,
+	)
+
+
+    # position nodes within each partition 
+
+
+    # plt.imshow(nor_img)
+	# ax = plt.gca()
+	# fig = plt.gcf()
+	# trans = ax.transData.transform
+	# trans2 = fig.transFigure.inverted().transform
+	# imsize = 0.05  # this is the image size
+	# for index, n in enumerate(pg.nodes()):
+	# 	(x, y) = flipped_pos[n]
+	# 	xx, yy = trans((x, y))  # figure coordinates
+	# 	xa, ya = trans2((xx, yy))  # axes coordinates
+	# 	print(f'{xa=}')
+	# 	print(f'{ya=}')
+	# 	print(f'{imsize=}')
+	# 	print(f'{xa - imsize / 2.0=}')
+	# 	print(f'{ya - imsize / 2.0=}')
+	# 	a = plt.axes([(xa / 0.7975) - 0.17, (ya / 0.805) - 0.155, imsize, imsize])
+	# 	a.imshow(img_list[index])
+	# 	a.set_aspect('equal')
+	# 	a.axis('off')
+	# plt.show()
+	plt.draw()
+	plt.savefig(graph_path + 'flipped_network_new.pdf', dpi=300)
+
+
 
 if __name__ == '__main__':
-	PATH = '/Users/jgzhang/Work/Densmore_lab/genetic-circuit-partitioning/2021.4/'
+	PATH = '/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/'
 	# count_nodes (PATH + 'runs/results/4-input-boolean-circuits', PATH + 'runs/results/5-input-boolean-circuits')
 	# partition_stats ()
 	# compile_best_solutions ()
@@ -487,11 +741,15 @@ if __name__ == '__main__':
 	# count_motif()
 	# plot_motif_occurence (PATH + 'runs/results/analysis/motif freq.txt')
 	# plot_deltaD ()
-
+	# G = load_graph (PATH + 'runs/benchmark/electronic-circuits/hexDisplay/DAG.edgelist')
+	# plot_network (G, PATH + 'runs/benchmark/electronic-circuits/hexDisplay/DAG.pdf')
 
 	# best_soln = PATH + 'runs/results/5-input-boolean-circuits/best_solns.txt'
 	# data = load_sol	(best_soln)
 	# avgNode = np.mean([(int(data[bm]['Nodes'])-6)/int(data[bm]['Npart']) for bm in data])
 	# print(avgNode)
+	partition = generate_edgelist_of_cells (PATH)
+	# visualize_subnetworks_unmet_constraint (PATH, 'lc')
 
+	# plot_cell_edgelist (PATH+'runs/benchmark/electronic-circuits/md5Core/DAG.edgelist', PATH+'runs/results/electronic-circuits/md5Core/nparts/40-minimizing unmet/optimized_lc/md5Core_part40_iteration11.edgelist', partition)
 

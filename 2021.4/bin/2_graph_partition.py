@@ -10,6 +10,7 @@ import argparse
 import genetic_partition as gp 
 import os
 import shutil
+import copy
 
 def main():
 
@@ -22,7 +23,7 @@ def main():
 	# Run the command
 	samples = args.samples.split(',')
 	settings = gp.load_settings(args.settings)
-
+	
 	for s in samples:
 		print ('Processing sample', s)
 
@@ -30,8 +31,6 @@ def main():
 		S_bounds        = settings[s]['S_bounds'].split(',')
 		target_n        = settings[s]['target_n'].split(',')
 		primitive_only  = settings[s]['primitive_only']
-		high_constraint = settings[s]['high_constraint']
-		low_constraint  = settings[s]['low_constraint']
 		out_path        = settings[s]['output_path']
 
 		# load graph 
@@ -39,10 +38,10 @@ def main():
 		DAG = gp.load_graph (settings, s)
 
 		# if primitive only is true, input and output nodes will be removed from list of vertices to be partitioned
-		if primitive_only:
+		if primitive_only == 'TRUE':
 			in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (DAG)
 			G_primitive = gp.get_G_primitive (G, nonprimitives)
-		else:
+		elif primitive_only == 'FALSE':
 			G_primitive   = copy.deepcopy(G)
 			nonprimitives = []
 

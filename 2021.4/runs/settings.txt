@@ -1,11 +1,10 @@
-sample	graph_path	lib_path	primitive_only	S_bounds	target_n	max_nodes_to_shift	high_constraint	low_constraint	trajectories	output_path
-276	./benchmark/4-input-boolean-circuits/276	./lib	True	3,7		5	2,2	4	1	./results/4-input-boolean-circuits/276
-80727	./benchmark/5-input-boolean-circuits/80727	./lib	True	3,7		5	2,2	4	10	./results/5-input-boolean-circuits/80727
-alu	./benchmark/electronic-circuits/alu	./lib	True	3,7		5	2,2	4	1	./results/electronic-circuits/alu
-hexDisplay	./benchmark/electronic-circuits/hexDisplay	./lib	True	3,7	15	5	2,2	4	1	./results/electronic-circuits/hexDisplay
-md5Core	./benchmark/electronic-circuits/md5Core	./lib	True	3,7	26	5	2,2	4	5	./results/electronic-circuits/md5Core
-multiplier	./benchmark/electronic-circuits/multiplier	./lib	True	3,7	3	5	2,2	4	1	./results/electronic-circuits/multiplier
-RCA4	./benchmark/electronic-circuits/RCA4	./lib	True	3,7		5	2,2	4	15	./results/electronic-circuits/RCA4
-RCA16	./benchmark/electronic-circuits/RCA16	./lib	True	3,7	35	5	2,2	4	1	./results/electronic-circuits/RCA16
-RCA64	./benchmark/electronic-circuits/RCA64	./lib	True	3,7		5	2,2	4	1	./results/electronic-circuits/RCA64
-
+sample	graph_path	lib_path	primitive_only	S_bounds	target_n	max_nodes_to_shift	high_constraint	low_constraint	loop_free	priority	trajectories	output_path
+276	./benchmark/4-input-boolean-circuits/276	./lib	TRUE	"3,7"		5	"2,2"	4	TRUE	T	1	./results/4-input-boolean-circuits/276/test
+80727	./benchmark/5-input-boolean-circuits/80727	./lib	TRUE	"3,7"		5	"2,2"	4	TRUE	C	10	./results/5-input-boolean-circuits/80727/test	
+hexDisplay	./benchmark/electronic-circuits/hexDisplay	./lib	TRUE	"3,7"		5	"2,2"	5	TRUE	C	10	./results/electronic-circuits/hexDisplay
+md5Core	./benchmark/electronic-circuits/md5Core	./lib	TRUE	"1,7"	40	5	"2,2"	5	TRUE	T	10	./results/electronic-circuits/md5Core
+multiplier	./benchmark/electronic-circuits/multiplier	./lib	TRUE	"3,7"	3	5	"2,2"	4	TRUE	C	1	./results/electronic-circuits/multiplier
+RCA4	./benchmark/electronic-circuits/RCA4	./lib	TRUE	"3,7"		5	"2,2"	5	TRUE	C	10	./results/electronic-circuits/RCA4
+RCA16	./benchmark/electronic-circuits/RCA16	./lib	TRUE	"1,7"	50	5	"2,2"	5	TRUE	C	5	./results/electronic-circuits/RCA16
+RCA64	./benchmark/electronic-circuits/RCA64	./lib	TRUE	"3,7"		5	"2,2"	5	TRUE	C	1	./results/electronic-circuits/RCA64
+alu	./benchmark/electronic-circuits/alu	./lib	TRUE	"1,7"	46	5	"2,2"	5	TRUE	C	10	./results/electronic-circuits/alu

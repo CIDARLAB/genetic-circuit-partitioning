@@ -1,0 +1,205 @@
+path	1
+T	14
+cut	42
+Partition 0	655,656,657
+Partition 1	660,661,662
+Partition 2	636,617,652
+Partition 3	603,616,647,649,648,600
+Partition 6	610,613,623
+Partition 7	653,637,654,638,639,612,640
+Partition 8	609,631,622
+Partition 9	658,659,611
+Partition 10	615,626,627
+Partition 11	605,624,625
+Partition 12	621,618,602
+Partition 13	641,643,644
+Partition 14	632,619,620
+Partition 15	650,651,606
+Partition 16	601,642,645,646
+Partition 17	608,607,630,614
+Partition 18	604,628,629
+Partition 19	634,635,633
+path	2
+T	14
+cut	42
+Partition 0	655,656,657
+Partition 1	660,661,662
+Partition 2	603,616,617,652
+Partition 3	647,649,648
+Partition 4	636,637,600
+Partition 5	653,654,638,639,612,640
+Partition 6	610,613,623
+Partition 8	609,631,622
+Partition 9	658,659,611
+Partition 10	641,614,615,643
+Partition 11	626,625,627
+Partition 12	621,618,602
+Partition 14	632,619,620,624
+Partition 15	650,651,606
+Partition 16	601,642,645,646,644
+Partition 17	605,608,607,630
+Partition 18	604,628,629
+Partition 19	634,635,633
+path	3
+T	14
+cut	43
+Partition 0	655,656,657
+Partition 1	660,661,662
+Partition 2	603,616,617
+Partition 3	647,649,648
+Partition 4	636,637,600
+Partition 5	653,654,638,639,612,640
+Partition 8	609,631,622
+Partition 9	658,659,611
+Partition 10	613,614,615,626,625,627
+Partition 11	610,623,624
+Partition 12	621,618,602
+Partition 13	641,643,644
+Partition 14	632,619,620,630
+Partition 15	650,651,606
+Partition 16	601,642,645,646
+Partition 17	605,608,607,652
+Partition 18	604,628,629
+Partition 19	634,635,633
+path	4
+T	15
+cut	43
+Partition 0	655,656,657
+Partition 1	660,661,662
+Partition 2	603,616,617,652
+Partition 3	647,649,648
+Partition 4	636,637,600
+Partition 5	653,654,638,639,612,640
+Partition 6	610,623,624
+Partition 8	609,631,622
+Partition 9	658,659,611
+Partition 10	615,626,627
+Partition 11	613,614,625
+Partition 12	621,618,602
+Partition 13	641,643,644
+Partition 14	632,619,620,634,635,633
+Partition 15	650,651,606
+Partition 16	601,642,645,646
+Partition 17	605,608,607,630
+Partition 18	604,628,629
+path	5
+T	13
+cut	40
+Partition 0	655,656,657
+Partition 1	660,661,662
+Partition 2	603,616,617
+Partition 3	647,649,648,650,651
+Partition 4	636,637,600
+Partition 6	610,613,623
+Partition 7	653,654,638,639,612,640
+Partition 8	609,631,622
+Partition 9	658,659,611
+Partition 10	615,626,627
+Partition 12	621,618,602
+Partition 13	641,643,644
+Partition 14	632,619,620,624,625
+Partition 16	601,642,645,646
+Partition 17	605,608,606,607,630,652,614
+Partition 18	604,628,629
+Partition 19	634,635,633
+path	6
+T	14
+cut	41
+Partition 0	655,656,657
+Partition 1	661,662,652
+Partition 2	603,616,628,617
+Partition 3	647,649,648
+Partition 4	636,637,600
+Partition 5	604,653,654,638,639,612,640
+Partition 6	610,613,623,624
+Partition 8	609,631,622
+Partition 9	658,659,660,611
+Partition 10	626,625,627
+Partition 12	621,618,602
+Partition 13	615,643,644
+Partition 14	632,619,620
+Partition 15	650,651,606
+Partition 16	601,642,645,646
+Partition 17	605,608,629,607,641,630,614
+Partition 19	634,635,633
+path	7
+T	14
+cut	41
+Partition 0	655,656,657
+Partition 1	660,661,662
+Partition 2	603,616,617,652
+Partition 3	647,649,648
+Partition 4	636,637,600
+Partition 6	610,654,613,623,614,624
+Partition 7	638,639,612,640
+Partition 8	609,631,622
+Partition 9	658,659,611
+Partition 11	615,626,625,627
+Partition 12	621,618,602
+Partition 13	641,643,644
+Partition 14	632,619,620,634,635,633
+Partition 15	650,651,606
+Partition 16	601,642,645,646
+Partition 17	608,629,607,630
+Partition 18	604,605,628,653
+path	8
+T	14
+cut	43
+Partition 0	655,656,657
+Partition 1	660,661,662
+Partition 2	603,616,617,652
+Partition 3	647,649,648
+Partition 4	636,637,600
+Partition 5	653,654,638,639,612,640
+Partition 6	610,613,623
+Partition 8	609,631,622
+Partition 9	658,659,611
+Partition 10	626,625,627
+Partition 12	621,618,602
+Partition 13	615,643,644
+Partition 14	632,619,620,641,630,624
+Partition 15	650,651,606
+Partition 16	601,642,645,646
+Partition 17	605,608,607,614
+Partition 18	604,628,629
+Partition 19	634,635,633
+path	9
+T	14
+cut	40
+Partition 0	655,656,657
+Partition 1	661,662,652
+Partition 2	603,616,617
+Partition 3	647,649,648
+Partition 4	636,637,600
+Partition 6	610,613,623,614,615
+Partition 7	653,654,638,639,612,640
+Partition 8	609,631,622
+Partition 9	658,659,660,611
+Partition 11	626,625,627
+Partition 12	621,618,602
+Partition 13	641,643,644
+Partition 14	632,619,620,624
+Partition 15	650,651,606
+Partition 16	601,642,645,646
+Partition 17	604,605,628,608,629,607,630
+Partition 19	634,635,633
+path	10
+T	12
+cut	41
+Partition 0	655,656,657
+Partition 1	660,661,662
+Partition 2	603,616,617
+Partition 3	647,649,648,650,651
+Partition 4	636,637,600
+Partition 6	610,613,623,624
+Partition 7	653,654,638,639,612,640
+Partition 8	609,631,622
+Partition 9	658,659,611
+Partition 10	626,625,627
+Partition 12	621,618,602
+Partition 13	615,643,644
+Partition 14	632,619,620,614
+Partition 16	601,642,645,646
+Partition 17	605,608,606,607,630,652
+Partition 18	604,628,629,641
+Partition 19	634,635,633

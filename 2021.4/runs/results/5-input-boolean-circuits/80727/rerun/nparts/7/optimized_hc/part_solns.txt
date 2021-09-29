@@ -1,0 +1,100 @@
+path	1
+T	2
+cut	8
+Partition 0	810,811,799
+Partition 1	808,809,818,817
+Partition 2	812,813,796
+Partition 3	801,802,804,805
+Partition 4	816,815,814
+Partition 5	800,803,798
+Partition 6	797,806,807
+path	2
+T	3
+cut	9
+Partition 0	810,811,799
+Partition 1	814,815,797
+Partition 2	812,813,796
+Partition 3	801,802,804,805
+Partition 4	818,817,816
+Partition 5	800,803,798
+Partition 6	806,808,807,809
+path	3
+T	2
+cut	8
+Partition 0	810,811,799
+Partition 1	809,818,817
+Partition 2	812,813,796
+Partition 3	801,802,804,805
+Partition 4	816,814,815
+Partition 5	800,803,798
+Partition 6	797,806,808,807
+path	4
+T	2
+cut	8
+Partition 0	810,811,799
+Partition 1	809,817,818
+Partition 2	812,813,796
+Partition 3	801,802,804,805
+Partition 4	816,815,814
+Partition 5	800,803,798
+Partition 6	797,806,808,807
+path	5
+T	2
+cut	8
+Partition 0	810,811,799
+Partition 1	809,818,817,808
+Partition 2	812,813,796
+Partition 3	797,806,807
+Partition 4	816,815,814
+Partition 5	800,803,798,804
+Partition 6	805,802,801
+path	6
+T	3
+cut	9
+Partition 0	810,811,799
+Partition 1	809,818,817
+Partition 2	812,813,796
+Partition 3	801,802,805
+Partition 4	816,815,814
+Partition 5	800,803,798
+Partition 6	797,806,808,807,804
+path	7
+T	2
+cut	8
+Partition 0	810,811,799
+Partition 1	809,817,818
+Partition 2	812,813,796
+Partition 3	801,802,804,805
+Partition 4	816,815,814
+Partition 5	800,803,798
+Partition 6	797,806,808,807
+path	8
+T	3
+cut	9
+Partition 0	810,811,799
+Partition 1	814,815,797
+Partition 2	812,813,796
+Partition 3	801,802,804,805
+Partition 4	818,817,816
+Partition 5	800,803,798
+Partition 6	806,808,807,809
+path	9
+T	2
+cut	8
+Partition 0	810,811,799
+Partition 1	809,817,818
+Partition 2	812,813,796
+Partition 3	801,802,804,805
+Partition 4	816,815,814
+Partition 5	800,803,798
+Partition 6	797,806,808,807
+path	10
+T	3
+cut	9
+Partition 0	810,811,815
+Partition 1	805,804,799
+Partition 2	796,802,801
+Partition 3	814,812,813
+Partition 4	818,817,816
+Partition 5	800,803,798
+Partition 6	797,806,808,807,809

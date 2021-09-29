@@ -744,7 +744,7 @@ def plot_num_moved_nodes (inputfile):
 
 
 if __name__ =='__main__':
-	path = '/Users/jgzhang/Programs/Cello2/sample-input/DNACompiler/4-input/'
+	# path = '/Users/jgzhang/Programs/Cello2/sample-input/DNACompiler/4-input/'
 	# load_data ('/Users/jgzhang/Work/Densmore lab/Partition/boolean circuit/optimization improvement - 4 input (111820).txt')
 	# count_nodes(path)
 	# plot_modules(path)
@@ -761,6 +761,6 @@ if __name__ =='__main__':
 	# get_motif_occurence (path)
 	# plot_motif_occurence ('./boolean circuit/motif freq.txt')
 	# count_num_moved_nodes (path)
-	plot_num_moved_nodes ('./boolean circuit/number of moved nodes.txt')
+	# plot_num_moved_nodes ('./boolean circuit/number of moved nodes.txt')
 
 

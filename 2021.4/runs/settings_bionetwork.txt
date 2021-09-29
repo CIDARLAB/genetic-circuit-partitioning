@@ -1,0 +1,3 @@
+sample	graph_path	lib_path	primitive_only	S_bounds	target_n	max_nodes_to_shift	priority	trajectories	output_path
+RG_n20_p0.05	./benchmark/bionetwork/random_graph/n20_p0.05	./lib	FALSE	"3,7"		5	C	5	./results/bionetwork/RG_n20_p0.05
+RG_n30_p0.05	./benchmark/bionetwork/random_graph/n30_p0.05	./lib	FALSE	"3,7"		5	C	5	./results/bionetwork/RG_n30_p0.05

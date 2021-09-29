@@ -1,0 +1,150 @@
+path	1
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	161,159,160
+Partition 8	134,142,157,158,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	167,165,166,168
+path	2
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	161,159,160
+Partition 8	134,142,157,158,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	167,165,166,168
+path	3
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	161,159,160
+Partition 8	134,142,157,158,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	167,165,166,168
+path	4
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	161,159,160
+Partition 8	134,142,157,158,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	167,165,166,168
+path	5
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	161,159,160
+Partition 8	134,142,157,158,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	167,165,166,168
+path	6
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	157,158,159
+Partition 8	134,142,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	161,167,165,166,168,160
+path	7
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	157,158,159
+Partition 8	134,142,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	161,167,165,166,168,160
+path	8
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	161,159,160
+Partition 8	134,142,157,158,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	167,165,166,168
+path	9
+T	5
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	151,152,155,153,154
+Partition 5	169,150,170
+Partition 6	173,156,174
+Partition 7	161,159,162,160
+Partition 8	134,142,157,158,135
+Partition 9	175,137,176
+Partition 10	136,141,163,164
+Partition 11	167,165,166,168
+path	10
+T	6
+cut	23
+Partition 0	132,144,133
+Partition 1	149,140,148,172
+Partition 2	145,146,147,171
+Partition 3	138,143,139
+Partition 4	155,153,154,170
+Partition 5	151,152,169,150
+Partition 6	173,156,174
+Partition 7	157,158,159
+Partition 8	134,142,135
+Partition 9	175,137,162,176
+Partition 10	136,141,163,164
+Partition 11	161,167,165,166,168,160
