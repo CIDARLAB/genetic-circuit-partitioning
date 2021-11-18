@@ -1,50 +1,49 @@
 path	1
 T	1
-cut	23
+cut	24
 Partition 0	2
-Partition 1	0
+Partition 1	10,28
 Partition 2	11
-Partition 3	25,1,4,8,27,16
+Partition 3	1,4,8,16,14,22
 Partition 4	18
 Partition 5	5,17,3
-Partition 6	13,12
+Partition 6	0,6
 Partition 7	7
 Partition 8	9
-Partition 9	10,28,21,24,20,29
-Partition 10	14,15,22,26
-Partition 11	19,23
-Partition 12	6
+Partition 9	15,21,24,20,29
+Partition 10	26
+Partition 11	25,27,19,23
+Partition 13	12
+Partition 14	13
 path	2
 T	1
-cut	20
+cut	23
 Partition 0	2
 Partition 1	13,10,12
-Partition 2	4
-Partition 3	16
-Partition 4	18
-Partition 5	5,17,3
-Partition 6	0,6,25,1,27,14,15,22,26
-Partition 7	11
-Partition 8	9
-Partition 9	28,21,24,20,29
-Partition 10	8,7
-Partition 11	19,23
-path	3
-T	1
-cut	28
-Partition 0	2
-Partition 1	13,10
 Partition 2	11
-Partition 3	1,4,8,16,12
+Partition 3	1,4,8,16,14,22
 Partition 4	18
 Partition 5	5,17,3
-Partition 6	27
+Partition 6	0,6
 Partition 7	7
 Partition 8	9
-Partition 9	21,20
-Partition 10	28,14,15,22,26
+Partition 9	21,24,20,29
+Partition 10	28,15,26
+Partition 11	27,19,23
+Partition 13	25
+path	3
+T	1
+cut	21
+Partition 0	2
+Partition 1	0,6,13,25,10
+Partition 2	11
+Partition 3	1,4,8,16
+Partition 4	18
+Partition 5	5,17,3
+Partition 6	20
+Partition 7	7
+Partition 8	9
+Partition 9	12,21,24,29
 Partition 11	19,23
-Partition 12	24,29
-Partition 13	0
-Partition 14	25
-Partition 15	6
+Partition 13	28,14,15,22,26
+Partition 15	27

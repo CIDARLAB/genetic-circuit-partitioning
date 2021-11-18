@@ -495,9 +495,10 @@ def plot_deltaD ():
 
 def visualize_subnetworks_unmet_constraint (path, constraint):
 	""" for each optimization attempt, visualize the nsubnetworks that unmet constraints """
-	bm_path = path + 'runs/benchmark/electronic-circuits/md5Core/'
-	sol_path = path + 'runs/results/electronic-circuits/md5Core/nparts/32/'
-	npart = 32
+	bm_path = path + 'runs/benchmark/electronic-circuits/alu'
+	sol_path = path + 'runs/results/electronic-circuits/alu/nparts/45/'
+	npart = 45
+
 	# for npart in os.listdir(sol_path):
 	# 	if npart.startswith('.') == False and npart != 'best_solns.txt':
 	# 		print ('npart', npart)
@@ -506,42 +507,44 @@ def visualize_subnetworks_unmet_constraint (path, constraint):
 	G = load_graph (edgelist)
 	in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
 	G_primitive = gp.get_G_primitive (G, nonprimitives)
+	# G_primitive = G
 
 	# visualize original partition
 	cut, partDict = gp.load_metis_part_sol (sol_path+'part_solns.txt')
 	part_opt = [gp.get_part(partDict, n) for n in G_primitive.nodes()]
 	matrix, partG = gp.partition_matrix (G_primitive, part_opt)
 	qs_matrix = gp.calc_qs (G_primitive, part_opt)
-	cell_unmet_const, cell_met_const = gp.get_cells_unmet_qs_constraint (matrix, partG, qs_matrix, [3], 'TRUE')
+	cell_unmet_const, cell_met_const = gp.get_cells_unmet_qs_constraint (matrix, partG, qs_matrix, [4], 'TRUE')
 	# gp.visualize_assignment_graphviz (G, part_opt, nonprimitives, 'TRUE', sol_path, 0, cell_unmet_const)
-
 
 	# part_sol = sol_path + npart + '/part_solns.txt'
 	part_sol = sol_path + 'part_solns.txt'
 	cut, partDict = gp.load_metis_part_sol (part_sol)
 
-	f_out = open (sol_path + 'optimized_lc/iteration-1-ed.txt', 'w')
+	f_out = open (sol_path + 'optimized_lc/iteration-2.txt', 'w')
 	opt_file = sol_path + 'optimized_lc/part_solns.txt'
 	if os.path.exists (opt_file):
 		timeList = load_timestep (opt_file)
 		if timeList != []:
 			solDict = gp.load_opt_part_sol (opt_file)
-			for iteration in [4]:
+			for iteration in [2]:
 				part = solDict[iteration]['part']
 				if part != partDict:
 					part_opt = [gp.get_part(part, n) for n in G_primitive.nodes()]
 					matrix, partG = gp.partition_matrix (G_primitive, part_opt)
 					qs_matrix = gp.calc_qs (G_primitive, part_opt)
 					median_qs_best = np.mean(np.sum(qs_matrix, axis=1))
-					cell_unmet_const, cell_met_const = gp.get_cells_unmet_qs_constraint (matrix, partG, qs_matrix, [3], 'TRUE')
-					print(qs_matrix)
+					cell_unmet_const, cell_met_const = gp.get_cells_unmet_qs_constraint (matrix, partG, qs_matrix, [4], 'TRUE')
+				
 					for idx, p in enumerate(part):
 						# print('Partition '+str(part_num)+' '+','.join(part[p]))
 						qs = list(qs_matrix[idx])
 						sumqs = sum(qs)
-						f_out.write('Partition '+str(idx+1)+'\t'+str(sumqs)+'\t'+str(len(part[p]))+'\t'+', '.join([str(int(v)) for v in qs])+'\t'+', '.join(part[p])+'\t'+'\t'+', '.join([converted_names[v] for v in part[p]])+'\n')
+						f_out.write('Partition '+str(idx+1)+'\t'+str(sumqs)+'\t'+str(len(part[p]))+'\t'+', '.join([str(int(v)) for v in qs])+'\t'+', '.join(part[p])+'\t'+'\t'+', '.join([v for v in part[p]])+'\n')
+						print('Partition '+str(idx+1)+'\t'+str(sumqs)+'\t'+str(len(part[p]))+'\t'+', '.join([str(int(v)) for v in qs])+'\t'+', '.join(part[p])+'\t'+'\t'+', '.join([v for v in part[p]])+'\n')
 					print(iteration, median_qs_best, solDict[iteration]['T'], len(cell_unmet_const))
 					# gp.visualize_assignment_graphviz (G, part_opt, nonprimitives, 'TRUE', sol_path+'/optimized_'+constraint, iteration, cell_unmet_const)
+
 
 
 def compare_runs (path, constraint):
@@ -1004,8 +1007,8 @@ def parameter_scan_bionetworks (PATH):
 	sol_path = PATH + 'runs/results/bionetwork/RG_n30_p0.05/nparts/'
 
 	G = load_graph (bm)
-	# in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
-	# G_primitive = gp.get_G_primitive (G, nonprimitives)
+	in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
+	G_primitive = gp.get_G_primitive (G, nonprimitives)
 
 	sols = []
 	for targetn in os.listdir(sol_path):
@@ -1032,33 +1035,34 @@ def parameter_scan_bionetworks (PATH):
 								motif_allowed = gp.check_motif_allowed(matrix, conn)
 								if motif_allowed: 
 									sols.append((endN, int(conn)))
+									gp.visualize_assignment_graphviz (G, part_opt[1], nonprimitives, 'FALSE', sol_path, 'N_'+str(endN)+'_conn_'+str(conn), [])
 	
 	# plot solutions
-	fig = plt.figure(figsize=(5,5))
-	ax = fig.add_subplot(111)
-	sol_count = []
-	counted = []
-	for sol in sols: 
-		if sol not in counted: 
-			count = sols.count(sol)
-			sol_count.append ((sol, count))
-			counted.append(sol)
-	print(sol_count)
-	x, y, z = [], [], []
-	for sol in sol_count: 
-		x.append (sol[0][0])
-		y.append (sol[0][1])
-		z.append (sol[1])
-	print(x)
-	print(y)
-	print(z)
-	ax.scatter(np.array(x), np.array(y), s=np.array(z)*20, alpha=0.4, c='blue', edgecolors='grey', linewidth=1)
-	ax.set_xlim([0, 10])
-	ax.set_ylim([0, 7])
-	ax.set_xlabel('Number of Submodules in Valid Solutions')
-	ax.set_ylabel('Maximum Connuections between submodules')
-	plt.savefig(sol_path+'Solution_space.pdf', dpi=100)
-	plt.show()
+	# fig = plt.figure(figsize=(5,5))
+	# ax = fig.add_subplot(111)
+	# sol_count = []
+	# counted = []
+	# for sol in sols: 
+	# 	if sol not in counted: 
+	# 		count = sols.count(sol)
+	# 		sol_count.append ((sol, count))
+	# 		counted.append(sol)
+	# print(sol_count)
+	# x, y, z = [], [], []
+	# for sol in sol_count: 
+	# 	x.append (sol[0][0])
+	# 	y.append (sol[0][1])
+	# 	z.append (sol[1])
+	# print(x)
+	# print(y)
+	# print(z)
+	# ax.scatter(np.array(x), np.array(y), s=np.array(z)*20, alpha=0.4, c='blue', edgecolors='grey', linewidth=1)
+	# # ax.set_xlim([0, 10])
+	# # ax.set_ylim([0, 7])
+	# ax.set_xlabel('Number of Submodules in Valid Solutions')
+	# ax.set_ylabel('Maximum Connuections between submodules')
+	# plt.savefig(sol_path+'Solution_space.png', dpi=100)
+	# plt.show()
 
 def plot_histogram() : 
 	""" plot histogram of number of nodes in each cell"""
@@ -1093,7 +1097,7 @@ def plot_histogram() :
 
 
 if __name__ == '__main__':
-	PATH = '/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/'
+	PATH = '/home/ubuntu/genetic-circuit-partitioning/2021.4/'
 	# count_nodes (PATH + 'runs/results/4-input-boolean-circuits', PATH + 'runs/results/5-input-boolean-circuits')
 	# partition_stats ()
 	# compile_best_solutions ()
@@ -1113,13 +1117,13 @@ if __name__ == '__main__':
 	# visualize_subnetworks_unmet_constraint (PATH, 'lc')
 	# compare_runs (PATH, 'lc')
 	# compare_gatenum_distribution (PATH, 'lc')
-	compare_qs_distribution (PATH, 'lc')
+	# compare_qs_distribution (PATH, 'lc')
 
 	# plot_cell_edgelist (PATH+'runs/benchmark/electronic-circuits/alu/DAG.edgelist', PATH+'runs/results/electronic-circuits/alu/nparts/45/optimized_lc/part_iteration2.edgelist', partition)
 	# g = nx.read_edgelist(PATH+'runs/benchmark/electronic-circuits/md5Core/DAG.edgelist', create_using=nx.DiGraph())
 	# in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (g)
 
-	# parameter_scan_bionetworks (PATH)
+	parameter_scan_bionetworks (PATH)
 
 	# plot_histogram ()
 	

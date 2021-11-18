@@ -1,6 +1,6 @@
 path	1
-T	4
-cut	15
+T	6
+cut	14
 Partition 0	7506,7496
 Partition 1	7512,7515,7494
 Partition 2	7490,7505,7504
@@ -11,11 +11,11 @@ Partition 6	7514,7513
 Partition 7	7511,7497,7510
 Partition 8	7493,7508,7509
 Partition 9	7498,7495
-Partition 10	7502,7491,7499
-Partition 11	7503,7500,7501
+Partition 10	7503,7502,7491,7499
+Partition 11	7500,7501
 path	2
-T	4
-cut	15
+T	6
+cut	14
 Partition 0	7506,7496
 Partition 1	7512,7515,7494
 Partition 2	7490,7505,7504
@@ -26,10 +26,10 @@ Partition 6	7514,7513
 Partition 7	7511,7497,7510
 Partition 8	7493,7508,7509
 Partition 9	7498,7495
-Partition 10	7502,7491,7499
-Partition 11	7503,7500,7501
+Partition 10	7503,7501,7502,7491,7499
+Partition 11	7500
 path	3
-T	4
+T	6
 cut	15
 Partition 0	7506,7496
 Partition 1	7512,7515,7494
@@ -41,26 +41,28 @@ Partition 6	7514,7513
 Partition 7	7511,7497,7510
 Partition 8	7493,7508,7509
 Partition 9	7498,7495
-Partition 10	7502,7491,7499
-Partition 11	7503,7500,7501
+Partition 10	7491
+Partition 11	7503,7500,7501,7502
+Partition 12	7499
 path	4
-T	4
+T	6
 cut	15
 Partition 0	7506,7496
 Partition 1	7512,7515,7494
 Partition 2	7490,7505,7504
 Partition 3	7492,7507
 Partition 4	7517,7518,7516
-Partition 5	7519,7521,7520
+Partition 5	7503,7519,7521,7520,7502
 Partition 6	7514,7513
 Partition 7	7511,7497,7510
 Partition 8	7493,7508,7509
 Partition 9	7498,7495
-Partition 10	7502,7491,7499
-Partition 11	7503,7500,7501
+Partition 10	7499
+Partition 11	7500,7501
+Partition 12	7491
 path	5
-T	4
-cut	15
+T	6
+cut	14
 Partition 0	7506,7496
 Partition 1	7512,7515,7494
 Partition 2	7490,7505,7504
@@ -70,6 +72,6 @@ Partition 5	7519,7521,7520
 Partition 6	7514,7513
 Partition 7	7511,7497,7510
 Partition 8	7493,7508,7509
-Partition 9	7498,7495
-Partition 10	7502,7491,7499
-Partition 11	7503,7500,7501
+Partition 9	7495
+Partition 10	7503,7502,7491,7499,7498
+Partition 11	7500,7501

@@ -1,51 +1,4 @@
 path	1
-T	4
-cut	12
-Partition 1	385,379
-Partition 3	393,394
-Partition 4	381,391
-Partition 6	384,383,389,392
-Partition 7	382
-Partition 8	380,386,390,387,388
-Partition 9	378
-path	2
-T	4
-cut	14
-Partition 0	390
-Partition 1	385,379
-Partition 2	384,389,392
-Partition 3	393,394
-Partition 4	381,391
-Partition 5	383
-Partition 7	380,382,386,378
-Partition 8	387
-Partition 9	388
-path	3
-T	5
-cut	16
-Partition 0	388
-Partition 1	383,389
-Partition 2	392
-Partition 3	393,394
-Partition 4	381,391
-Partition 5	379,378
-Partition 6	384
-Partition 7	385
-Partition 8	380,382,386,387
-Partition 9	390
-path	4
-T	5
-cut	14
-Partition 0	394
-Partition 1	384,385,389,379
-Partition 3	390,393,391
-Partition 4	378
-Partition 5	382,383
-Partition 6	392,381
-Partition 7	380
-Partition 8	386,387
-Partition 9	388
-path	5
 T	5
 cut	15
 Partition 0	390
@@ -53,8 +6,57 @@ Partition 1	385,379
 Partition 2	392
 Partition 3	393,394
 Partition 4	381,391
-Partition 5	383,389
-Partition 6	384
+Partition 5	383
+Partition 6	384,389
+Partition 7	380
+Partition 8	386,387,388
+Partition 9	382,378
+path	2
+T	4
+cut	12
+Partition 0	390
+Partition 1	385,379
+Partition 2	392
+Partition 3	393,394
+Partition 4	381,391
+Partition 5	383
+Partition 6	384,389
+Partition 7	380,382,386,387,388,378
+path	3
+T	6
+cut	15
+Partition 0	390
+Partition 1	385,379
+Partition 2	392
+Partition 3	393,394
+Partition 4	381,391
+Partition 5	383
+Partition 6	384,389
+Partition 7	382
+Partition 8	380,386,387
+Partition 9	388,378
+path	4
+T	5
+cut	14
+Partition 0	390
+Partition 1	385,379
+Partition 2	392
+Partition 3	393,394
+Partition 4	381,391,378
+Partition 6	384,389
 Partition 7	388
-Partition 8	380,382,386,387
-Partition 9	378
+Partition 8	386,387
+Partition 9	380,382,383
+path	5
+T	6
+cut	15
+Partition 0	390
+Partition 1	385,379
+Partition 2	392
+Partition 3	393,394
+Partition 4	381,391
+Partition 5	383
+Partition 6	384,389
+Partition 7	382
+Partition 8	380,386
+Partition 9	387,388,378

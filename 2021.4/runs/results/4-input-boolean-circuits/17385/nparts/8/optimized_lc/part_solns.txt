@@ -1,30 +1,29 @@
 path	1
 T	5
-cut	13
-Partition 0	379,382
-Partition 1	383,380
-Partition 2	385,378
-Partition 3	387,386,389
+cut	12
+Partition 0	379,382,380
+Partition 1	383
+Partition 2	385
+Partition 3	387,378,386,389
 Partition 4	384,388
 Partition 5	394,393
 Partition 6	392,391
 Partition 7	381,390
 path	2
 T	5
-cut	13
-Partition 0	379,382
-Partition 1	383,380
+cut	11
+Partition 0	379
+Partition 1	382,380
 Partition 2	385,378
-Partition 3	387,386,389
+Partition 3	381,390,383,387,386,389
 Partition 4	384,388
 Partition 5	394,393
 Partition 6	392,391
-Partition 7	381,390
 path	3
 T	5
-cut	13
-Partition 0	379,382
-Partition 1	383,380
+cut	12
+Partition 0	379,382,380
+Partition 1	383
 Partition 2	385,378
 Partition 3	387,386,389
 Partition 4	384,388
@@ -33,20 +32,18 @@ Partition 6	392,391
 Partition 7	381,390
 path	4
 T	5
-cut	13
-Partition 0	379,382
-Partition 1	383,380
+cut	11
+Partition 0	379
+Partition 1	382,380
 Partition 2	385,378
-Partition 3	387,386,389
+Partition 3	381,390,383,387,386,389
 Partition 4	384,388
 Partition 5	394,393
 Partition 6	392,391
-Partition 7	381,390
 path	5
 T	5
-cut	13
-Partition 0	379,382
-Partition 1	383,380
+cut	11
+Partition 0	379,382,383,380
 Partition 2	385,378
 Partition 3	387,386,389
 Partition 4	384,388

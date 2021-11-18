@@ -655,7 +655,8 @@ def visualize_assignment_graphviz (G, partition, nonprimitives, primitive_only, 
 		if (e[1], e[0]) in partG.edges(): loops.append(e)
 		else: nloops.append(e)
 
-	pos = graphviz_layout(partG, prog='dot')
+	# pos = graphviz_layout(partG, prog='dot')
+	pos = nx.spring_layout(partG)
 	nx.draw_networkx_nodes(partG, pos, node_size=300, node_color='#b18ea6')
 	if highlight !=[] :
 		nx.draw_networkx_nodes(partG, pos, nodelist=highlight, node_size=300, node_color='red')
@@ -667,15 +668,12 @@ def visualize_assignment_graphviz (G, partition, nonprimitives, primitive_only, 
 	nx.draw_networkx_edges(partG, pos, nloops)
 	ax2.axis('off')
 
-	plt.savefig(outdir+'/'+str(iteration)+'_DAG_part.pdf', dpi=200)
+	plt.savefig(outdir+'/'+str(iteration)+'_DAG_part.png', dpi=200)
 	# plt.show()
 
 ###########################################
 # Optimize partition result to satisfy motif constraints
 ###########################################
-
-
-
 
 def get_cells_unmet_constraint (matrix, partG, motif_constraint, loop_free):
 	"""
@@ -723,7 +721,7 @@ def distance_constraint (G, cells, partList):
 					distance = False
 	return distance
 
-def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxNodes, populate_cell, dist_boolean, motif_constraint, loop_free, priority, timestep, trajectories, outdir):
+def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxNodes, populate_cell, populate_cell_rate, dist_boolean, motif_constraint, loop_free, priority, timestep, trajectories, outdir):
 	""" 
 	optimize based on signal travel time from inputs to the output 
 	1. calculate the times that inputs have to traverse cell boundries 
@@ -839,7 +837,7 @@ def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxN
 							# print(nodes_to_move)
 							# given certain probability, new cells can be added
 							if len(subG_nodes)/len(subG_cells) >= populate_cell: 
-								new_cell = np.random.poisson(1)
+								new_cell = np.random.poisson(populate_cell_rate)
 								# print('new cells', new_cell)
 								subG_cells.extend ([max(partList_tmp)+c for c in range(1, new_cell+1)])
 								# print('add new cells', subG_cells)

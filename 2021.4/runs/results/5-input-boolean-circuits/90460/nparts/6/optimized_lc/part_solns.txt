@@ -1,45 +1,58 @@
 path	1
-T	3
-cut	12
-Partition 0	797,814,801,802
-Partition 1	804,810,813,811,798
-Partition 2	815,816,800,803,796
+T	4
+cut	11
+Partition 0	797,814,798,801,802
+Partition 1	815,804,813,816
+Partition 2	800,803,796
 Partition 3	819,820,821,817,818
-Partition 4	809,799,806,807,808
-Partition 5	805,812,824,822,823
+Partition 4	805,809,799,806,807,808
+Partition 5	824,822,823
+Partition 6	812,810,811
 path	2
-T	3
-cut	12
-Partition 0	797,814,801,802
-Partition 1	804,810,813,811,798
-Partition 2	815,816,800,803,796
+T	4
+cut	13
+Partition 0	797,814,815,801,802
+Partition 1	804,810,798
+Partition 2	800,803,796
 Partition 3	819,820,821,817,818
-Partition 4	809,799,806,807,808
-Partition 5	805,812,824,822,823
+Partition 4	799,806,807
+Partition 5	805,809,812,808,824,823
+Partition 6	813,816
+Partition 7	822
+Partition 8	811
 path	3
-T	3
+T	5
 cut	12
-Partition 0	797,814,801,802
-Partition 1	804,810,813,811,798
-Partition 2	815,816,800,803,796
-Partition 3	819,820,821,817,818
-Partition 4	809,799,806,807,808
-Partition 5	805,812,824,822,823
+Partition 0	797,814,815,801,802
+Partition 1	804,810,811,798
+Partition 2	800,803,796
+Partition 3	819,820,821,817,818,822
+Partition 4	799,806,807
+Partition 5	805,809,812,808,824,823
+Partition 6	816
+Partition 7	813
 path	4
-T	3
-cut	12
+T	5
+cut	14
 Partition 0	797,814,801,802
-Partition 1	804,810,813,811,798
-Partition 2	815,816,800,803,796
+Partition 1	804,810,811,798
+Partition 2	800,803,796
 Partition 3	819,820,821,817,818
 Partition 4	809,799,806,807,808
-Partition 5	805,812,824,822,823
+Partition 5	816,824,822,823
+Partition 6	805
+Partition 7	815
+Partition 8	813
+Partition 9	812
 path	5
-T	3
-cut	12
-Partition 0	797,814,801,802
-Partition 1	804,810,813,811,798
-Partition 2	815,816,800,803,796
+T	4
+cut	13
+Partition 0	797,814,815,798,801,802
+Partition 1	810
+Partition 2	813,800,803
 Partition 3	819,820,821,817,818
-Partition 4	809,799,806,807,808
-Partition 5	805,812,824,822,823
+Partition 4	799,806,807,808
+Partition 5	805,809,812,816,824,822,823
+Partition 6	804
+Partition 7	811
+Partition 8	796

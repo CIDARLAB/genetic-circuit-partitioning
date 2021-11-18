@@ -24,13 +24,13 @@ Partition 7	6,1,4,8,27,11,16,22,20
 Partition 8	19,23
 path	3
 T	5
-cut	17
+cut	20
 Partition 0	7
 Partition 1	2,5
+Partition 2	21,24,29
 Partition 3	14,15,26
 Partition 4	17,3
 Partition 5	18
-Partition 6	0,6,13,25,10,28,12,21,24
-Partition 7	1,4,8,27,11,16,22,9,20
+Partition 6	0,13,25,10,28,12,9
+Partition 7	6,1,4,8,27,11,16,22,20
 Partition 8	19,23
-Partition 10	29

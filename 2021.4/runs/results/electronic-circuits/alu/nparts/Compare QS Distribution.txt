@@ -1,1 +1,0 @@
-Start cell number	Iteration	End cell number	QS Number	QS Distribution by cell

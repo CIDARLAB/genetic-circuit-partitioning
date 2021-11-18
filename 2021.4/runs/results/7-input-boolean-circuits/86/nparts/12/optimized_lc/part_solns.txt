@@ -1,77 +1,80 @@
 path	1
 T	7
-cut	20
+cut	19
 Partition 0	3525,3528,3527
 Partition 1	3526,3539,3524
 Partition 2	3537,3538,3540
-Partition 3	3545,3546,3550,3544
+Partition 3	3545,3546,3550,3551
 Partition 4	3549,3523
-Partition 5	3547,3548,3551
+Partition 5	3547,3548
 Partition 6	3521,3534,3520
-Partition 7	3535,3536,3533
-Partition 8	3532,3542,3541
+Partition 7	3535,3532,3536,3533
+Partition 8	3542,3541
 Partition 9	3529,3522,3530
 Partition 10	3543,3552,3553
 Partition 11	3531,3554,3555
+Partition 15	3544
 path	2
-T	7
-cut	20
+T	5
+cut	18
 Partition 0	3525,3528,3527
 Partition 1	3526,3539,3524
 Partition 2	3537,3538,3540
-Partition 3	3545,3546,3544,3549,3523
-Partition 4	3550
-Partition 5	3547,3548,3551
+Partition 3	3545,3546,3544,3523
+Partition 4	3550,3549,3551
+Partition 5	3547,3548
 Partition 6	3521,3534,3520
-Partition 7	3535,3536,3533
-Partition 8	3532,3542,3541
+Partition 7	3535,3532,3536,3533
+Partition 8	3541
 Partition 9	3529,3522,3530
-Partition 10	3543,3552,3553
+Partition 10	3542,3543,3552,3553
 Partition 11	3531,3554,3555
 path	3
 T	5
-cut	21
-Partition 0	3525,3528,3527
-Partition 1	3526,3539,3524
-Partition 2	3537,3538,3540
-Partition 3	3545,3546,3544
-Partition 4	3550,3549
-Partition 5	3547,3548,3551
-Partition 6	3521,3534,3520
-Partition 7	3535,3536,3533
-Partition 8	3532,3542,3541
-Partition 9	3529,3522,3530
-Partition 10	3543,3552,3553
-Partition 11	3531,3554,3555
-Partition 12	3523
-path	4
-T	7
-cut	21
+cut	20
 Partition 0	3525,3528,3527
 Partition 1	3526,3539,3524
 Partition 2	3537,3538,3540
 Partition 3	3545,3546
-Partition 4	3544,3549,3523
-Partition 5	3547,3548,3551
+Partition 4	3550,3549
+Partition 5	3547,3548
 Partition 6	3521,3534,3520
-Partition 7	3535,3536,3533
-Partition 8	3532,3542,3541
+Partition 7	3535,3533
+Partition 8	3532,3536,3542,3541
 Partition 9	3529,3522,3530
-Partition 10	3543,3552,3553
+Partition 10	3551,3543,3552,3553
 Partition 11	3531,3554,3555
-Partition 12	3550
-path	5
-T	4
-cut	20
-Partition 0	3525,3528,3527
+Partition 12	3544
+Partition 14	3523
+path	4
+T	5
+cut	19
+Partition 0	3528,3527
 Partition 1	3526,3539,3524
 Partition 2	3537,3538,3540
-Partition 3	3545,3546,3550,3549
-Partition 4	3544,3523
-Partition 5	3547,3548,3551
+Partition 3	3545,3546,3544,3523
+Partition 4	3550,3549
+Partition 5	3547,3548,3525
 Partition 6	3521,3534,3520
-Partition 7	3535,3536,3533
-Partition 8	3532,3542,3541
+Partition 7	3535,3536,3542,3533
+Partition 8	3541
 Partition 9	3529,3522,3530
-Partition 10	3543,3552,3553
+Partition 10	3551,3543,3552,3553
 Partition 11	3531,3554,3555
+Partition 12	3532
+path	5
+T	5
+cut	19
+Partition 0	3553
+Partition 1	3526,3539,3524
+Partition 2	3537,3538,3540
+Partition 3	3545,3546,3550,3548,3549,3525,3551
+Partition 4	3547
+Partition 5	3528,3527
+Partition 6	3521,3534,3520
+Partition 7	3535,3533
+Partition 8	3532,3536,3542,3541
+Partition 9	3529,3522,3530
+Partition 10	3543,3552
+Partition 11	3531,3554,3555
+Partition 12	3544,3523

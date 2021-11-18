@@ -1,64 +1,75 @@
 path	1
 T	4
 cut	17
-Partition 0	382,386,387,378
-Partition 2	393,394
-Partition 3	391
-Partition 4	392
-Partition 5	381
-Partition 6	380
-Partition 7	388
-Partition 8	390
-Partition 9	385,383,389
-Partition 11	384,379
-path	2
-T	4
-cut	16
 Partition 0	379
 Partition 1	385
-Partition 2	390
-Partition 3	393,394
+Partition 2	390,393
+Partition 3	394
+Partition 4	392
 Partition 5	381,391
 Partition 6	386
 Partition 7	378
 Partition 8	387,388
 Partition 9	384
-Partition 10	380
-Partition 11	382,383,389,392
-path	3
-T	3
-cut	14
-Partition 0	379
-Partition 2	385,390
-Partition 3	393,394
-Partition 5	381,391
-Partition 7	378
-Partition 8	388
-Partition 9	380,386,387
-Partition 10	382,383
-Partition 11	384,389,392
-path	4
-T	3
-cut	13
+Partition 10	380,382
+Partition 11	383,389
+path	2
+T	4
+cut	17
 Partition 0	379
 Partition 1	385
-Partition 4	394
-Partition 5	390,393,392,381,391
-Partition 7	378
-Partition 8	387,388
-Partition 10	380,386
-Partition 11	382,384,383,389
-path	5
-T	5
-cut	16
-Partition 1	385,390
-Partition 2	393,394
-Partition 3	388
-Partition 4	382
+Partition 2	390,393
+Partition 3	394
+Partition 4	392
 Partition 5	381,391
 Partition 6	386
 Partition 7	378
-Partition 8	387
-Partition 9	380
-Partition 10	383,389,392
-Partition 11	384,379
+Partition 8	387,388
+Partition 9	384
+Partition 10	380,382
+Partition 11	383,389
+path	3
+T	4
+cut	17
+Partition 0	379
+Partition 1	385
+Partition 2	390,393
+Partition 3	394
+Partition 4	392
+Partition 5	381,391
+Partition 6	386
+Partition 7	378
+Partition 8	387,388
+Partition 9	384
+Partition 10	380,382
+Partition 11	383,389
+path	4
+T	4
+cut	17
+Partition 0	379
+Partition 1	385
+Partition 2	390,393
+Partition 3	394
+Partition 4	392
+Partition 5	381,391
+Partition 6	386
+Partition 7	378
+Partition 8	387,388
+Partition 9	384
+Partition 10	380,382
+Partition 11	383,389
+path	5
+T	4
+cut	17
+Partition 0	379
+Partition 1	385
+Partition 2	390,393
+Partition 3	394
+Partition 4	392
+Partition 5	381,391
+Partition 6	386
+Partition 7	378
+Partition 8	387,388
+Partition 9	384
+Partition 10	380,382
+Partition 11	383,389

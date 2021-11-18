@@ -4,7 +4,7 @@
 # 	All rights reserved.
 #	OSI Non-Profit Open Software License ("Non-Profit OSL") 3.0 license.
 
-BIN_PATH='/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/bin'
+BIN_PATH='/home/ubuntu/genetic-circuit-partitioning/2021.4/bin'
 
-python3 $BIN_PATH/3_partition_optimize_bionetworks.py -settings ./settings_bionetwork.txt -samples RG_n30_p0.05
+python3 $BIN_PATH/3_partition_optimize_bionetworks.py -settings ./settings_bionetwork.txt -samples RG_n40_p0.05,RG_n50_p0.05
 

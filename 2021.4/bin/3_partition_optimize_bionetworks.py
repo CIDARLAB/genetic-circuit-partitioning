@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #	Copyright (C) 2021 by
-#	Jing Zhang <jgzhang@bu.edu>, Densmore Lab, Boston University
+#	Jing Zhang <jgzhang@bu.edu>, CIDAR Lab, Boston University
 # 	All rights reserved.
 #	OSI Non-Profit Open Software License ("Non-Profit OSL") 3.0 license.
 
@@ -38,7 +38,7 @@ def main():
 		loop_free       = 'FALSE'
 		trajectories    = int(settings[s]['trajectories'])
 		out_path        = settings[s]['output_path']
-		timestep        = 200000
+		timestep        = 20000
 
 		print('S_bounds', S_bounds)
 		print('maxNodes', maxNodes)
@@ -89,10 +89,23 @@ def main():
 				else: 
 					os.mkdir(opt_path)
 				# gp.visualize_assignment_graphviz (G, [gp.get_part(partDict, n) for n in G.nodes()], nonprimitives, primitive_only, outdir+str(npart), 1, [])
-				for conn in range(int(lowest_connectivity), int(highest_connectivity)+1):
+				for conn in range(int(lowest_connectivity), int(highest_connectivity+10)+1):
 					print ('target connectivity', conn)
 					opt_path = outdir + str(npart) + '/optimized/' + str(conn) + '/'
-					gp.optimize_signal_subnetwork (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, 3, False, str(conn), loop_free, priority, timestep, trajectories, opt_path)
+					gp.optimize_signal_subnetwork (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, 3, 3, False, str(conn), loop_free, priority, timestep, trajectories, opt_path)
+					solDict = gp.load_opt_part_sol (opt_path + 'part_solns.txt')
+					for iteration in solDict.keys():
+						part = solDict[iteration]['part'] 
+						part_opt = [gp.get_part(part, n) for n in G_primitive.nodes()]
+						matrix, partG = gp.partition_matrix (G_primitive, part_opt)
+						cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, [conn], loop_free)
+						if cell_unmet_const == []: 
+							break
+					else: 
+						continue
+					break 
+								
+		
 		# gp.determine_best_solution_bionetwork (DAG, primitive_only, str(median_connectivity), outdir)
 
 
