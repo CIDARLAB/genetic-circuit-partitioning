@@ -1,8 +1,0 @@
-cut	10
-Partition 0	800,803,796
-Partition 1	801,802,807
-Partition 2	805,806,808
-Partition 3	797,813,812
-Partition 4	809,799,811,810
-Partition 5	818,816,817
-Partition 6	798,815,804,814
