@@ -22,7 +22,7 @@ def main():
 	settings = gp.load_settings(args.settings)
 
 	for s in samples:
-		
+		print('sample ', s)
 		graph_path = settings[s]['graph_path']
 		JSON_file  = graph_path + '/' + s + '.json'
 		# load json file 

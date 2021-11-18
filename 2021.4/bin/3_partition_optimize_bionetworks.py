@@ -12,12 +12,10 @@ from pycallgraph import PyCallGraph
 from pycallgraph.output import GraphvizOutput
 import os
 import datetime
+import shutil
 import copy
 
 def main():
-
-	graphviz = GraphvizOutput()
-	graphviz.output_file = 'partition_RCA4.png'
 
 	begin_time = datetime.datetime.now()
 
@@ -40,6 +38,10 @@ def main():
 		loop_free       = 'FALSE'
 		trajectories    = int(settings[s]['trajectories'])
 		out_path        = settings[s]['output_path']
+		timestep        = 200000
+
+		print('S_bounds', S_bounds)
+		print('maxNodes', maxNodes)
 
 		# load graph 
 		G   = gp.load_graph_undirected (settings, s)
@@ -48,8 +50,10 @@ def main():
 		outdir = out_path + '/nparts/'
 		connectivity_order = gp.rank_connectivity (DAG, primitive_only, outdir)
 		lowest_connectivity = min([c for (n, c) in connectivity_order])
+		highest_connectivity = max([c for (n, c) in connectivity_order])
 		print('median degree of connectivity in subgraphs', connectivity_order)
 		print('lowest median degree of connectivity in subgraph', lowest_connectivity)
+		print('highest median degree of connectivity in subgraph', highest_connectivity)
 
 		# if primitive only is true, input and output nodes will be removed from list of vertices to be partitioned
 		if primitive_only == 'TRUE':
@@ -59,16 +63,37 @@ def main():
 			G_primitive   = copy.deepcopy(G)
 			nonprimitives = []
 
+		actual_n = {}
 		# optimize graph partition results to satisfy constraints
 		nparts = list(range(int(len(G_primitive.nodes())/int(S_bounds[1]))+1, int(len(G_primitive.nodes())/int(S_bounds[0]))+1))
-		for npart in sorted(nparts):
-			print('target n', npart)
-			median_connectivity = [c for (n, c) in connectivity_order if n == npart]
-			print('median connectivity', median_connectivity)
+		for npart in nparts:
+			part_sol = outdir + str(npart) + '/part_solns.txt'
+			if os.path.exists(part_sol):
+				cut, partDict = gp.load_metis_part_sol (part_sol)
+				actual_n[npart] = [len(partDict.keys())]
+			# median_connectivity = [c for (n, c) in connectivity_order if int(n) == npart][0]
+		sorted_n = sorted(actual_n.items(), key=lambda kv: kv[1])
+		sorted_n = [tn for (tn, n) in sorted_n]
+
+		for npart in sorted_n: 
+			opt_path = outdir + str(npart) + '/optimized/'
 			part_sol = outdir + str(npart) + '/part_solns.txt'
 			cut, partDict = gp.load_metis_part_sol (part_sol)
-			# gp.optimize_signal_subnetwork (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, str(lowest_connectivity), loop_free, priority, trajectories, outdir + str(npart) + '/optimized/')
 
+			if maxNodes + int(S_bounds[1]) >= max([len(v) for v in list(partDict.values())]): 
+				print('target n', npart)
+
+				if os.path.exists(opt_path):
+					shutil.rmtree(opt_path)
+					os.mkdir(opt_path)
+				else: 
+					os.mkdir(opt_path)
+				# gp.visualize_assignment_graphviz (G, [gp.get_part(partDict, n) for n in G.nodes()], nonprimitives, primitive_only, outdir+str(npart), 1, [])
+				for conn in range(int(lowest_connectivity), int(highest_connectivity)+1):
+					print ('target connectivity', conn)
+					opt_path = outdir + str(npart) + '/optimized/' + str(conn) + '/'
+					gp.optimize_signal_subnetwork (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, 3, False, str(conn), loop_free, priority, timestep, trajectories, opt_path)
+		# gp.determine_best_solution_bionetwork (DAG, primitive_only, str(median_connectivity), outdir)
 
 
 			# for npart in os.listdir(outdir):
