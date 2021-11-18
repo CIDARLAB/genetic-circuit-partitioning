@@ -1,0 +1,100 @@
+path	1
+T	4
+cut	10
+Partition 0	802,799,811,801,812
+Partition 1	818,817,810
+Partition 2	813,800,803
+Partition 3	797,806,807
+Partition 4	804,796,798
+Partition 5	816,815,814
+Partition 6	809,808,805
+path	2
+T	3
+cut	11
+Partition 0	802,799,811
+Partition 1	818,816,817
+Partition 2	814,815,813,800
+Partition 3	797,806,807
+Partition 4	796,801,798
+Partition 5	803,810,812
+Partition 6	809,808,804,805
+path	3
+T	4
+cut	13
+Partition 0	802,811,814,812
+Partition 1	818,816,817
+Partition 2	798,801,799
+Partition 3	797,806,807
+Partition 4	804,805,808
+Partition 5	800,813,796
+Partition 6	810,809,803,815
+path	4
+T	4
+cut	12
+Partition 0	802,811,810
+Partition 1	818,816,817
+Partition 2	812,814,815
+Partition 3	797,806,807
+Partition 4	804,805,808,796,809
+Partition 5	803,800,813
+Partition 6	801,798,799
+path	5
+T	4
+cut	12
+Partition 0	802,799,811
+Partition 1	818,816,817,812
+Partition 2	813,808,800
+Partition 3	797,806,807
+Partition 4	804,805,796
+Partition 5	803,810,815,814
+Partition 6	801,798,809
+path	6
+T	4
+cut	12
+Partition 0	802,798,801
+Partition 1	818,816,817
+Partition 2	814,815,805
+Partition 3	797,806,807,813
+Partition 4	804,796,800
+Partition 5	809,808,810
+Partition 6	803,799,811,812
+path	7
+T	3
+cut	12
+Partition 0	802,799,811,801
+Partition 1	818,816,817,812
+Partition 2	814,815,813
+Partition 3	797,806,800
+Partition 4	804,796,798
+Partition 5	803,810,807
+Partition 6	809,808,805
+path	8
+T	2
+cut	12
+Partition 0	802,798,801
+Partition 1	818,817,810,803
+Partition 2	812,811,816,813
+Partition 3	797,806,807
+Partition 4	805,808,809
+Partition 5	800,796,804
+Partition 6	799,814,815
+path	9
+T	5
+cut	11
+Partition 0	802,799,811
+Partition 1	818,816,817,812
+Partition 2	803,810,801
+Partition 3	797,806,807
+Partition 4	804,805,796,798
+Partition 5	800,813,814
+Partition 6	809,815,808
+path	10
+T	4
+cut	13
+Partition 0	811,815,812,814
+Partition 1	818,816,817
+Partition 2	809,810,802
+Partition 3	797,806,813,800
+Partition 4	805,808,807
+Partition 5	798,804,796
+Partition 6	801,803,799

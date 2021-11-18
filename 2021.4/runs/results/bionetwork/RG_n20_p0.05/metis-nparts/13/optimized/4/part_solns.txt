@@ -1,0 +1,48 @@
+path	1
+T	8
+cut	22
+Partition 0	9
+Partition 1	4
+Partition 2	10,12
+Partition 3	1
+Partition 4	17
+Partition 5	13,5,11,18,19
+Partition 6	2,15
+Partition 7	6
+Partition 8	0
+Partition 9	16
+Partition 10	8,14
+Partition 11	7
+Partition 12	3
+path	2
+T	8
+cut	25
+Partition 0	9
+Partition 1	4
+Partition 2	10,12
+Partition 3	1
+Partition 4	15,13,5,6
+Partition 5	18,19
+Partition 6	2
+Partition 7	3
+Partition 8	0
+Partition 9	16
+Partition 10	17,11
+Partition 11	7
+Partition 12	8,14
+path	3
+T	8
+cut	25
+Partition 0	9
+Partition 1	4
+Partition 2	10,12
+Partition 3	1
+Partition 4	17,13,5,11
+Partition 5	18,19
+Partition 6	2
+Partition 7	0,15
+Partition 8	6
+Partition 9	16
+Partition 10	3
+Partition 11	7
+Partition 12	8,14

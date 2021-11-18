@@ -1,0 +1,90 @@
+path	1
+T	9
+cut	25
+Partition 0	1665,1669,1670,1671
+Partition 1	1672,1684,1683
+Partition 2	1662,1685,1704,1703
+Partition 3	1694
+Partition 4	1701,1702
+Partition 5	1691,1692
+Partition 6	1674,1675,1681,1682,1680
+Partition 8	1677,1678,1688,1693,1698
+Partition 10	1679,1668,1686,1664
+Partition 12	1667,1697,1695,1696
+Partition 13	1663
+Partition 14	1673
+Partition 17	1676
+Partition 18	1700,1699
+Partition 19	1666,1687,1689,1690
+path	2
+T	7
+cut	27
+Partition 0	1672
+Partition 1	1662,1685
+Partition 2	1704,1703
+Partition 3	1689
+Partition 4	1700,1701
+Partition 5	1666,1687,1691,1692,1694
+Partition 6	1674,1693,1698,1673,1699
+Partition 8	1677,1678,1688
+Partition 9	1680,1663,1676
+Partition 10	1679,1665,1669,1668,1664
+Partition 11	1675,1681,1682,1670,1671
+Partition 12	1667,1697,1695,1696
+Partition 13	1684
+Partition 14	1683
+Partition 15	1690,1702
+Partition 17	1686
+path	3
+T	5
+cut	24
+Partition 0	1666
+Partition 1	1672,1670,1671
+Partition 2	1704,1703
+Partition 4	1700,1701
+Partition 5	1691,1692,1694
+Partition 6	1674,1693,1665,1669,1673
+Partition 7	1698,1699
+Partition 8	1677,1678,1688
+Partition 9	1687,1689,1663,1676,1686
+Partition 10	1668,1664
+Partition 11	1675,1681,1682,1679,1680
+Partition 12	1667,1697,1695,1696
+Partition 13	1684,1683,1662,1685
+Partition 14	1690,1702
+path	4
+T	8
+cut	24
+Partition 0	1666,1672,1691,1670,1671
+Partition 1	1684,1683,1662,1685
+Partition 2	1704,1703
+Partition 3	1689,1690
+Partition 4	1701,1702
+Partition 5	1692,1694,1700
+Partition 6	1674,1675,1693,1665,1673
+Partition 7	1698,1699
+Partition 8	1677,1678,1688
+Partition 9	1681,1682,1680,1663,1676
+Partition 10	1679,1668,1686,1664
+Partition 12	1667,1697,1695,1696
+Partition 14	1687
+Partition 15	1669
+path	5
+T	6
+cut	28
+Partition 0	1666
+Partition 1	1672,1684,1683,1670,1671
+Partition 2	1704,1703
+Partition 3	1690,1702
+Partition 5	1691,1692,1694
+Partition 6	1674,1675,1693,1665,1673
+Partition 7	1697,1698,1695,1696,1699
+Partition 8	1677,1678,1688
+Partition 9	1663,1676
+Partition 10	1679,1664
+Partition 11	1681,1680,1668,1686
+Partition 12	1667
+Partition 13	1682
+Partition 14	1662,1685
+Partition 15	1687,1689,1700,1701
+Partition 16	1669

@@ -1,0 +1,50 @@
+path	1
+T	6
+cut	10
+Partition 0	381,378
+Partition 1	384,385
+Partition 2	379,380
+Partition 3	386,391
+Partition 4	390,392
+Partition 5	382,383
+Partition 6	388,387,389
+path	2
+T	6
+cut	10
+Partition 0	381,378
+Partition 1	384,385
+Partition 2	379,380
+Partition 3	386,391
+Partition 4	390,392
+Partition 5	382,383
+Partition 6	388,387,389
+path	3
+T	6
+cut	10
+Partition 0	381,378
+Partition 1	384,385
+Partition 2	379,380
+Partition 3	386,391
+Partition 4	390,392
+Partition 5	382,383
+Partition 6	388,387,389
+path	4
+T	6
+cut	10
+Partition 0	381,378
+Partition 1	384,385
+Partition 2	379,380
+Partition 3	386,391
+Partition 4	390,392
+Partition 5	382,383
+Partition 6	388,387,389
+path	5
+T	6
+cut	10
+Partition 0	381,378
+Partition 1	384,385
+Partition 2	379,380
+Partition 3	386,391
+Partition 4	390,392
+Partition 5	382,383
+Partition 6	388,387,389

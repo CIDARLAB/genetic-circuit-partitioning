@@ -1,0 +1,14 @@
+Npart	Sol	Nodes	Constraint	Valid Motif_METIS	Valid Motif_Optimized	Cycle Free_METIS	Cycle Free_Optimized	T_Metis	T_Optimized	cut_Metis	cut_Optimized
+4	1	18	lc	False	True	False	True	4	2	6	5
+4	3	18	lc	False	True	False	True	4	2	6	5
+4	6	18	lc	False	True	False	True	4	2	6	5
+4	10	18	lc	False	True	False	True	4	2	6	5
+4	15	18	lc	False	True	False	True	4	2	6	5
+4	22	18	lc	False	True	False	True	4	2	6	5
+4	35	18	lc	False	True	False	True	4	2	6	5
+4	44	18	lc	False	True	False	True	4	2	6	5
+3	10	18	lc	True	True	False	True	3	1	4	3
+3	83	18	lc	True	True	False	True	3	1	4	3
+2	1	18	lc	True	True	False	True	2	1	2	2
+3	1	18	hc	True	True	False	True	3	2	4	3
+2	1	18	hc	True	True	False	True	2	1	2	2

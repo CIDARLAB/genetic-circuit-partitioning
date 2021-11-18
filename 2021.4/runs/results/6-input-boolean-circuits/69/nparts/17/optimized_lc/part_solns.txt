@@ -1,0 +1,92 @@
+path	1
+T	5
+cut	22
+Partition 0	1689,1680
+Partition 1	1687,1688
+Partition 2	1666
+Partition 3	1696,1697
+Partition 5	1665,1679,1664
+Partition 6	1681
+Partition 7	1690,1691,1682,1663
+Partition 8	1686,1701,1699,1700
+Partition 9	1677,1678,1684,1683,1685
+Partition 10	1675,1676
+Partition 11	1662,1671,1672
+Partition 12	1695,1698
+Partition 13	1694,1692,1693
+Partition 14	1668,1669
+Partition 15	1667,1670,1673,1674
+path	2
+T	7
+cut	23
+Partition 0	1689,1680
+Partition 1	1687,1688,1696,1662
+Partition 2	1697,1698
+Partition 3	1699,1700
+Partition 4	1681
+Partition 5	1665,1679,1664
+Partition 6	1682,1663
+Partition 7	1690,1691
+Partition 9	1684,1683
+Partition 10	1686,1701,1685
+Partition 11	1675,1671,1672,1676
+Partition 12	1666,1694,1695
+Partition 13	1692,1693
+Partition 14	1668,1669
+Partition 15	1677,1678
+Partition 16	1667,1670,1673,1674
+path	3
+T	6
+cut	21
+Partition 1	1687,1688,1696,1689,1680
+Partition 2	1697,1698
+Partition 3	1699,1700
+Partition 5	1665,1679,1664
+Partition 6	1662,1681,1682,1663
+Partition 7	1690,1691
+Partition 9	1686,1701,1685
+Partition 10	1675,1676
+Partition 11	1671,1672
+Partition 12	1666,1694,1695
+Partition 13	1692,1693
+Partition 14	1677,1668,1669
+Partition 15	1667,1670,1673,1674,1678
+Partition 16	1684,1683
+path	4
+T	7
+cut	22
+Partition 0	1687,1688
+Partition 1	1696,1690,1691
+Partition 2	1697,1698
+Partition 3	1689
+Partition 5	1681,1665,1679,1680,1664
+Partition 6	1682,1663
+Partition 8	1686,1701,1699,1700
+Partition 9	1684,1683
+Partition 10	1685
+Partition 11	1662,1671,1672,1676
+Partition 12	1666,1694,1695
+Partition 13	1692,1693
+Partition 14	1667,1670,1673,1674,1668
+Partition 15	1675
+Partition 16	1677,1678,1669
+path	5
+T	7
+cut	24
+Partition 0	1689,1680
+Partition 1	1687,1688
+Partition 2	1696,1697
+Partition 3	1699
+Partition 4	1665
+Partition 5	1679,1664
+Partition 6	1662,1681,1682,1663
+Partition 7	1690,1691
+Partition 8	1667
+Partition 9	1684,1683
+Partition 10	1686,1701,1685,1700
+Partition 11	1675,1671,1672,1676
+Partition 12	1666,1694,1695,1698
+Partition 13	1692,1693
+Partition 14	1668
+Partition 15	1670,1673,1674,1678
+Partition 16	1677,1669

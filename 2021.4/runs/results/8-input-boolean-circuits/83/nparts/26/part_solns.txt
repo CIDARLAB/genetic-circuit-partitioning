@@ -1,0 +1,27 @@
+cut	28
+Partition 0	7492
+Partition 1	7496
+Partition 2	7507,7506
+Partition 3	7504
+Partition 4	7490
+Partition 5	7505
+Partition 6	7519
+Partition 7	7521
+Partition 8	7520
+Partition 9	7518
+Partition 10	7517,7516
+Partition 11	7494
+Partition 12	7512,7515
+Partition 13	7503
+Partition 14	7502
+Partition 15	7500,7501
+Partition 16	7498
+Partition 17	7491
+Partition 18	7499
+Partition 19	7514
+Partition 20	7513
+Partition 21	7497
+Partition 22	7493
+Partition 23	7508,7495
+Partition 24	7509
+Partition 25	7511,7510

@@ -1,0 +1,100 @@
+path	1
+T	2
+cut	12
+Partition 0	812,813,798
+Partition 1	806,814,815
+Partition 2	808,802,810,811
+Partition 3	804,799,803
+Partition 4	800,796,801,807
+Partition 5	809,805,797
+Partition 6	818,816,817
+path	2
+T	3
+cut	11
+Partition 0	812,813,798
+Partition 1	811,817,818,816
+Partition 2	797,799,801,805
+Partition 3	802,808,807
+Partition 4	803,800,796
+Partition 5	809,810,804
+Partition 6	815,806,814
+path	3
+T	3
+cut	10
+Partition 0	813,814,806
+Partition 1	798,812,797
+Partition 2	807,799,805
+Partition 3	801,802,804
+Partition 4	803,800,796
+Partition 5	809,810,811,808
+Partition 6	818,816,817,815
+path	4
+T	4
+cut	11
+Partition 0	812,798,797
+Partition 1	799,801,802
+Partition 2	806,814,813
+Partition 3	808,807,805
+Partition 4	803,800,796
+Partition 5	809,810,804
+Partition 6	818,816,817,815,811
+path	5
+T	4
+cut	11
+Partition 0	812,813,798
+Partition 1	805,806,814
+Partition 2	801,802,800
+Partition 3	808,804,807,803
+Partition 4	796,797,799
+Partition 5	809,810,811
+Partition 6	818,816,817,815
+path	6
+T	3
+cut	10
+Partition 0	812,813,798
+Partition 1	805,806,814
+Partition 2	797,807,808,802
+Partition 3	801,804,803
+Partition 4	800,796,799
+Partition 5	809,810,815
+Partition 6	818,816,817,811
+path	7
+T	3
+cut	11
+Partition 0	806,814,807
+Partition 1	812,798,813
+Partition 2	797,799,805
+Partition 3	801,802,804
+Partition 4	803,800,796
+Partition 5	809,810,811,808
+Partition 6	818,816,817,815
+path	8
+T	5
+cut	11
+Partition 0	814,815,816
+Partition 1	807,797,808
+Partition 2	799,805,802
+Partition 3	811,810,817,818
+Partition 4	803,800,796
+Partition 5	809,804,801
+Partition 6	806,798,813,812
+path	9
+T	4
+cut	10
+Partition 0	812,813,798
+Partition 1	805,806,799
+Partition 2	814,815,802
+Partition 3	808,811,810,807,797
+Partition 4	803,800,796
+Partition 5	809,801,804
+Partition 6	818,816,817
+path	10
+T	3
+cut	11
+Partition 0	812,813,814
+Partition 1	806,807,797
+Partition 2	799,805,798
+Partition 3	802,808,811
+Partition 4	803,800,796,801
+Partition 5	809,810,804
+Partition 6	818,816,817,815

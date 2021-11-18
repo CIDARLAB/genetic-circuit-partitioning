@@ -1,0 +1,70 @@
+path	1
+T	6
+cut	17
+Partition 0	394
+Partition 1	390
+Partition 2	388
+Partition 3	392,391
+Partition 4	381,393
+Partition 5	384
+Partition 6	382,380
+Partition 7	379,383
+Partition 8	385
+Partition 9	378,386
+Partition 10	387,389
+path	2
+T	6
+cut	17
+Partition 0	394
+Partition 1	390
+Partition 2	388
+Partition 3	392,391
+Partition 4	381,393
+Partition 5	384
+Partition 6	382,380
+Partition 7	379,383
+Partition 8	385
+Partition 9	378,386
+Partition 10	387,389
+path	3
+T	6
+cut	17
+Partition 0	394
+Partition 1	390
+Partition 2	388
+Partition 3	392,391
+Partition 4	381,393
+Partition 5	384
+Partition 6	382,380
+Partition 7	379,383
+Partition 8	385
+Partition 9	378,386
+Partition 10	387,389
+path	4
+T	6
+cut	17
+Partition 0	394
+Partition 1	390
+Partition 2	388
+Partition 3	392,391
+Partition 4	381,393
+Partition 5	384
+Partition 6	382,380
+Partition 7	379,383
+Partition 8	385
+Partition 9	378,386
+Partition 10	387,389
+path	5
+T	6
+cut	17
+Partition 0	394
+Partition 1	390
+Partition 2	388
+Partition 3	392,391
+Partition 4	381,393
+Partition 5	384
+Partition 6	382,380
+Partition 7	379,383
+Partition 8	385
+Partition 9	378,386
+Partition 10	387,389

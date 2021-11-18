@@ -1,0 +1,18 @@
+cut	19
+Partition 0	7493
+Partition 1	7508,7509
+Partition 2	7491,7499
+Partition 3	7495,7498
+Partition 4	7500,7501
+Partition 5	7503,7502
+Partition 6	7521,7520
+Partition 7	7519,7518
+Partition 8	7504
+Partition 9	7490,7505
+Partition 10	7507,7492
+Partition 11	7506,7496
+Partition 12	7515,7516
+Partition 13	7512,7494
+Partition 14	7514,7513
+Partition 15	7511,7517
+Partition 16	7510,7497

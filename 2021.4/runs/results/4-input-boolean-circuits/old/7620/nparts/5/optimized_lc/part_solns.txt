@@ -1,0 +1,32 @@
+sol	1
+T	3
+cut	9
+Partition 0	379,390,387
+Partition 1	392,389,391
+Partition 2	384,380,381
+Partition 3	383,382,378
+Partition 4	386,388,385
+sol	2
+T	4
+cut	9
+Partition 0	390,387,392
+Partition 1	389,391,379
+Partition 2	384,380,381
+Partition 3	383,382,378
+Partition 4	386,388,385
+sol	3
+T	3
+cut	9
+Partition 0	379,390,387
+Partition 1	392,389,391
+Partition 2	384,380,381
+Partition 3	385,386,388
+Partition 4	378,383,382
+sol	4
+T	3
+cut	10
+Partition 0	390,387,384
+Partition 1	392,391,388
+Partition 2	380,381,386
+Partition 3	385,383,382
+Partition 4	378,379,389

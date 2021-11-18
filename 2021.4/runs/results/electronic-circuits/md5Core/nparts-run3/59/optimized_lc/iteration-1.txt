@@ -1,0 +1,72 @@
+Partition 1	3	"2, 1"	2093					Partition 1	3	"2, 1"	2093
+Partition 2	3	"3, 1"	"2133, 2135, 2134, 2136"								
+Partition 3	3	"2, 1"	"2109, 2108"								
+Partition 4	3	"2, 1"	2141								
+Partition 5	3	"2, 1"	2097								
+Partition 6	3	"2, 1"	2127								
+Partition 7	3	"2, 1"	"2105, 2106"								
+Partition 8	3	"2, 1"	"2085, 2086, 2081, 2084"		Merged from P45						
+Partition 9	3	"2, 1"	"2090, 2092"								
+Partition 10	2	"1, 1"	"2118, 2073, 2119"								
+Partition 11	3	"2, 1"	"2112, 2113, 2110"								
+Partition 12	3	"2, 1"	2087								
+Partition 13	3	"2, 1"	2177								
+Partition 14	2	"2, 0"	"2199, 2200, 2184"								
+Partition 15	3	"2, 1"	"2150, 2151"								
+Partition 16	3	"2, 1"	"2146, 2147, 2145, 2148"								
+Partition 17	3	"2, 1"	"2196, 2194"								
+Partition 66			2170								
+Partition 18			2172		Remove 2170						
+Partition 19	3	"1, 2"	"2142, 2076"								
+Partition 20	3	"1, 2"	"2072, 2156, 2155, 2159"								
+Partition 21	3	"1, 2"	"2064, 2125, 2126, 2182"								
+Partition 67			2168								
+Partition 68			2167								
+Partition 22			2171		"Remove 2167, 2168"						
+Partition 23	3	"1, 2"	2185								
+Partition 24	3	"1, 2"	"2098, 2094, 2095"								
+Partition 25			2128		Split into single gate cells						
+Partition 69			2176								
+Partition 70			2173								
+Partition 71			2175								
+Partition 72			2178								
+Partition 26	3	"2, 1"	2174								
+Partition 27	3	"1, 2"	"2129, 2143, 2068, 2192"		Merge 2192 from P56						
+Partition 28	3	"2, 1"	"2191, 2193, 2190"								
+Partition 29	3	"1, 2"	"2070, 2161"								
+Partition 30	3	"2, 1"	2169								
+Partition 31	3	"1, 2"	"2096, 2075"								
+Partition 32	2	"1, 1"	2154								
+Partition 33	3	"2, 1"	"2162, 2165"								
+Partition 34	3	"2, 1"	"2130, 2139"								
+Partition 35	2	"1, 1"	"2131, 2132"		Merge 2132 from P2						
+Partition 36	3	"2, 1"	2144								
+Partition 37	3	"2, 1"	2107								
+Partition 38	3	"2, 1"	"2116, 2117"								
+Partition 39	2	"1, 1"	"2114, 2071, 2115"								
+Partition 40	3	"0, 3"	"2077, 2078, 2102, 2101, 2067"								
+Partition 41	3	"2, 1"	"2103, 2104"								
+Partition 42	2	"1, 1"	"2082, 2083"								
+Partition 43	3	"2, 1"	2163								
+Partition 44	2	"1, 1"	"2069, 2111"								
+Partition 45	3	"2, 1"	"2081, 2084"								
+Partition 46	3	"2, 1"	"2158, 2160"								
+Partition 47	3	"2, 1"	"2120, 2179"								
+Partition 48	3	"2, 1"	2137								
+Partition 49	2	"0, 2"	"2157, 2074"								
+Partition 50	3	"2, 1"	"2124, 2183"								
+Partition 51	3	"2, 1"	"2138, 2140"								
+Partition 52	3	"2, 1"	"2121, 2122, 2123"								
+Partition 53	3	"1, 2"	"2088, 2089, 2062"								
+Partition 54	3	"2, 1"	2180								
+Partition 55	2	"0, 2"	"2063, 2099, 2100"								
+Partition 56	3	"1, 2"	2066								
+Partition 57	3	"3, 0"	"2186, 2195, 2197, 2198"								
+Partition 58	3	"2, 1"	2091								
+Partition 59	3	"3, 1"	"2187, 2189"		Remove 2188						
+Partition 60	3	"2, 1"	"2153, 2152"								
+Partition 61	3	"2, 1"	2181								
+Partition 62	3	"2, 1"	2149								
+Partition 63	3	"2, 1"	"2164, 2166"								
+Partition 64	3	"2, 1"	"2079, 2080, 2065"		Merge 2065 from P23						
+Partition 65	3	"2,1"	2188								

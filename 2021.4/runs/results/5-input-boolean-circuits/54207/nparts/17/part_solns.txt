@@ -1,0 +1,18 @@
+cut	19
+Partition 0	798
+Partition 1	813
+Partition 2	815
+Partition 3	814
+Partition 4	812
+Partition 5	811
+Partition 6	797
+Partition 7	799,796
+Partition 8	809
+Partition 9	808
+Partition 10	816
+Partition 11	810,806
+Partition 12	801
+Partition 13	800
+Partition 14	802
+Partition 15	804,803
+Partition 16	805,807

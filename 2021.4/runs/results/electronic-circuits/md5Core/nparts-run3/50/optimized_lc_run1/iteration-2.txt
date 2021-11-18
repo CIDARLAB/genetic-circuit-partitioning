@@ -1,0 +1,64 @@
+Partition 1	5.0	3, 2	2142, 2143, 2144, 2076
+Partition 2	2.0	0, 2	2066, 2131
+Partition 3	4.0	3, 1	2132, 2133, 2135, 2134, 2136
+Partition 4	3.0	2, 1	2138, 2140
+Partition 5	1.0	0, 1	2129, 2068
+Partition 6	3.0	2, 1	2130, 2139
+Partition 7	3.0	2, 1	2146, 2147, 2145, 2148
+Partition 8	3.0	2, 1	2088, 2089
+Partition 9	3.0	2, 1	2150, 2151
+Partition 10	2.0	0, 2	2063, 2099, 2100
+Partition 11	2.0	0, 2	2082, 2083, 2062
+Partition 12	3.0	2, 1	2087
+Partition 13	3.0	1, 2	2098, 2094, 2095
+Partition 14	3.0	2, 1	2097
+Partition 15	2.0	1, 1	2106
+Partition 16	2.0	0, 2	2077, 2090, 2067
+Partition 17	3.0	2, 1	2107
+Partition 18	3.0	2, 1	2078, 2091
+Partition 19	2.0	1, 1	2069, 2111
+Partition 20	3.0	2, 1	2109
+Partition 21	3.0	2, 1	2112, 2113, 2110
+Partition 22	3.0	1, 2	2065, 2185
+Partition 23	3.0	1, 2	2096, 2075
+Partition 24	3.0	2, 1	2079, 2080
+Partition 25	3.0	2, 1	2081, 2085, 2084, 2086
+Partition 26	4.0	3, 1	2168, 2171
+Partition 27	3.0	1, 2	2072, 2156, 2155, 2159
+Partition 28	2.0	0, 2	2157, 2074
+Partition 29	3.0	2, 1	2164, 2166
+Partition 30	3.0	2, 1	2161
+Partition 31	3.0	1, 2	2070, 2163
+Partition 32	3.0	2, 1	2162, 2165
+Partition 33	3.0	2, 1	2153, 2152
+Partition 34	5.0	4, 1	2170, 2169, 2172
+Partition 35	5.0	3, 2	2128, 2176, 2175, 2178
+Partition 36	5.0	4, 1	2174, 2173, 2177
+Partition 37	3.0	2, 1	2127
+Partition 38	3.0	2, 1	2186, 2195
+Partition 39	2.0	2, 0	2200
+Partition 40	3.0	2, 1	2124, 2183
+Partition 41	3.0	3, 0	2196, 2194, 2197, 2198
+Partition 42	3.0	2, 1	2187, 2189
+Partition 43	3.0	2, 1	2192, 2191, 2193, 2190
+Partition 44	3.0	2, 1	2182
+Partition 45	4.0	3, 1	2120, 2179, 2181
+Partition 46	3.0	1, 2	2064, 2125, 2126, 2188
+Partition 47	2.0	1, 1	2114, 2071, 2115
+Partition 48	3.0	2, 1	2116, 2117
+Partition 49	2.0	1, 1	2118, 2073, 2119
+Partition 50	3.0	2, 1	2121, 2122
+Partition 51	2.0	1, 1	2108
+Partition 52	3.0	2, 1	2102, 2103, 2101, 2104
+Partition 53	2.0	1, 1	2199, 2184
+Partition 54	3.0	2, 1	2158, 2160
+Partition 55	3.0	2, 1	2180
+Partition 56	2.0	1, 1	2123
+Partition 57	3.0	2, 1	2137
+Partition 58	3.0	2, 1	2105
+Partition 59	3.0	2, 1	2092
+Partition 60	3.0	2, 1	2093
+Partition 61	3.0	2, 1	2149
+Partition 62	3.0	2, 1	2141
+Partition 63	2.0	1, 1	2154
+Partition 64	3.0	2, 1	2167

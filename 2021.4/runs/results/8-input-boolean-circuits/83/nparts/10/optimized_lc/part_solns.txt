@@ -1,0 +1,68 @@
+path	1
+T	4
+cut	13
+Partition 0	7492,7507,7506
+Partition 1	7505,7504,7496
+Partition 2	7490,7512,7494
+Partition 3	7517,7516
+Partition 4	7519,7521,7520,7518
+Partition 5	7509,7511,7510
+Partition 6	7515,7514,7497,7513
+Partition 7	7493,7508,7495
+Partition 8	7491,7499,7498
+Partition 9	7503,7500,7501,7502
+path	2
+T	4
+cut	13
+Partition 0	7492,7507,7506
+Partition 1	7505,7504,7496
+Partition 2	7490,7512,7515,7494
+Partition 3	7517,7516
+Partition 4	7519,7521,7520,7518
+Partition 5	7509,7511,7510
+Partition 6	7514,7497,7513
+Partition 7	7493,7508,7495
+Partition 8	7491,7499,7498
+Partition 9	7503,7500,7501,7502
+path	3
+T	5
+cut	15
+Partition 0	7492,7507,7521,7506
+Partition 1	7505,7504,7496
+Partition 2	7490,7512,7494
+Partition 3	7515,7516
+Partition 4	7517,7518
+Partition 5	7509,7511,7510
+Partition 6	7514,7497,7513
+Partition 7	7493,7508,7495
+Partition 8	7491,7499,7498
+Partition 9	7503,7500,7501,7502
+Partition 11	7520
+Partition 12	7519
+path	4
+T	3
+cut	15
+Partition 0	7492,7507,7506
+Partition 1	7505,7504,7496
+Partition 2	7490,7494
+Partition 3	7515,7516
+Partition 4	7519,7521,7520,7517,7518
+Partition 5	7509,7511,7510
+Partition 6	7514,7497,7513
+Partition 7	7493,7508,7495
+Partition 8	7491,7499,7498
+Partition 9	7503,7500,7501,7502
+Partition 10	7512
+path	5
+T	4
+cut	13
+Partition 0	7492,7507,7506
+Partition 1	7505,7504,7496
+Partition 2	7490,7512,7515,7494
+Partition 3	7517,7516
+Partition 4	7519,7521,7520,7518
+Partition 5	7509,7511,7510
+Partition 6	7514,7497,7513
+Partition 7	7493,7508,7495
+Partition 8	7491,7499,7498
+Partition 9	7503,7500,7501,7502

@@ -1,0 +1,5 @@
+cut	5
+Partition 0	389,382,383
+Partition 1	381,386,387
+Partition 2	378,384,380
+Partition 3	379,385,388

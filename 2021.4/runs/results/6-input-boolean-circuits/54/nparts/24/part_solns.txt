@@ -1,0 +1,25 @@
+cut	41
+Partition 0	1699,1703,1704
+Partition 1	1676,1702
+Partition 2	1700,1701
+Partition 3	1696,1697
+Partition 4	1679,1678,1677
+Partition 5	1698,1680,1705
+Partition 6	1681,1682
+Partition 7	1713,1714
+Partition 8	1663,1685,1715
+Partition 9	1664,1707
+Partition 10	1662,1675,1665
+Partition 11	1693,1692,1691
+Partition 12	1690,1689
+Partition 13	1687,1688
+Partition 14	1671,1686,1670
+Partition 15	1717,1716
+Partition 16	1673,1674,1669
+Partition 17	1672,1711,1710
+Partition 18	1694,1695
+Partition 19	1719,1718
+Partition 20	1723,1722,1720,1721
+Partition 21	1708,1709
+Partition 22	1683,1668,1684
+Partition 23	1667,1666,1712,1706

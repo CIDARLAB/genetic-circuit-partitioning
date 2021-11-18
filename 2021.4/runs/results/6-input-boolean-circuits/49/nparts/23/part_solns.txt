@@ -1,0 +1,24 @@
+cut	28
+Partition 0	1665
+Partition 1	1668,1669
+Partition 2	1662
+Partition 3	1675
+Partition 4	1687
+Partition 5	1670
+Partition 6	1677
+Partition 7	1694,1685
+Partition 8	1667
+Partition 9	1686,1688
+Partition 10	1693,1689
+Partition 11	1682
+Partition 12	1679
+Partition 13	1678,1681
+Partition 14	1666
+Partition 15	1663
+Partition 16	1683,1684
+Partition 17	1671
+Partition 18	1664
+Partition 19	1676,1674
+Partition 20	1692
+Partition 21	1691,1690,1680
+Partition 22	1672,1673

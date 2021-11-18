@@ -1,0 +1,20 @@
+cut	25
+Partition 0	3521,3534
+Partition 1	3535,3533
+Partition 2	3532
+Partition 3	3536,3542
+Partition 4	3529,3522
+Partition 5	3530,3520
+Partition 6	3543
+Partition 7	3553,3552
+Partition 8	3555,3554,3531
+Partition 9	3544
+Partition 10	3545,3546
+Partition 11	3551
+Partition 12	3547,3548
+Partition 13	3550,3523,3549
+Partition 14	3524,3527
+Partition 15	3525,3528
+Partition 16	3526,3539
+Partition 17	3540,3541
+Partition 18	3537,3538
