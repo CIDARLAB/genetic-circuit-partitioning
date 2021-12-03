@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import csv
 import numpy as np
-import genetic_circuit_partition as gp
+import genetic_partition_test as gp
 import itertools
 from networkx.drawing.nx_agraph import graphviz_layout
 import matplotlib.image as mpimg
@@ -22,7 +22,11 @@ def load_graph (edgelist):
 	G = nx.read_edgelist (edgelist, nodetype = str, create_using=nx.DiGraph())
 	return G
 
-
+def load_samples (filename):
+	""" load list of samples """
+	lines = [open(filename, 'r').read().strip("\n")][0].split('\n')
+	samples = lines[0].split(',')
+	return samples 
 
 def load_data (filename):
 	"""Load data file"""
@@ -1003,12 +1007,12 @@ def convert_name (inputfile):
 
 def parameter_scan_bionetworks (PATH):
 	""" plot solutions scanned by initial n and connectivity constraint """
-	bm = PATH + 'runs/benchmark/bionetwork/random_graph/n30_p0.05/DAG.edgelist'
-	sol_path = PATH + 'runs/results/bionetwork/RG_n30_p0.05/nparts/'
+	bm = PATH + 'runs/benchmark/bionetwork/random_graph/n100_p0.01/DAG.edgelist'
+	sol_path = PATH + 'runs/results/bionetwork/RG_n100_p0.01/nparts/'
 
 	G = load_graph (bm)
-	in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
-	G_primitive = gp.get_G_primitive (G, nonprimitives)
+	# in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
+	# G_primitive = gp.get_G_primitive (G, nonprimitives)
 
 	sols = []
 	for targetn in os.listdir(sol_path):
@@ -1024,45 +1028,49 @@ def parameter_scan_bionetworks (PATH):
 						opt_part_sol = opt_path + conn + '/part_solns.txt'
 						if os.path.exists(opt_part_sol):
 							solDict = gp.load_opt_part_sol (opt_part_sol)
-							print(solDict)
+							# print(solDict)
 							for ite in solDict.keys():
-								print(solDict[ite])
+								print('iteration', ite)
+								# print(solDict[ite])
 								part = solDict[ite]['part']
 								part_opt = (cut, [gp.get_part(part, n) for n in G.nodes()])
-								print(part_opt)
+								# print(part_opt)
 								endN = len(set(part_opt[1]))
 								matrix, partG = gp.partition_matrix (G, part_opt[1])
 								motif_allowed = gp.check_motif_allowed(matrix, conn)
-								if motif_allowed: 
+								cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, conn, 'FALSE')
+								print(cell_unmet_const)
+								if cell_unmet_const == []: 
 									sols.append((endN, int(conn)))
-									gp.visualize_assignment_graphviz (G, part_opt[1], nonprimitives, 'FALSE', sol_path, 'N_'+str(endN)+'_conn_'+str(conn), [])
-	
+									print('found a solution', (endN, int(conn)))
+									# gp.visualize_assignment_graphviz (G, part_opt[1], nonprimitives, 'FALSE', opt_path + str(conn) + '/', 'N_'+str(endN)+'_conn_'+str(conn), [])
+	print('solutions', sols)
 	# plot solutions
-	# fig = plt.figure(figsize=(5,5))
-	# ax = fig.add_subplot(111)
-	# sol_count = []
-	# counted = []
-	# for sol in sols: 
-	# 	if sol not in counted: 
-	# 		count = sols.count(sol)
-	# 		sol_count.append ((sol, count))
-	# 		counted.append(sol)
-	# print(sol_count)
-	# x, y, z = [], [], []
-	# for sol in sol_count: 
-	# 	x.append (sol[0][0])
-	# 	y.append (sol[0][1])
-	# 	z.append (sol[1])
-	# print(x)
-	# print(y)
-	# print(z)
-	# ax.scatter(np.array(x), np.array(y), s=np.array(z)*20, alpha=0.4, c='blue', edgecolors='grey', linewidth=1)
-	# # ax.set_xlim([0, 10])
-	# # ax.set_ylim([0, 7])
-	# ax.set_xlabel('Number of Submodules in Valid Solutions')
-	# ax.set_ylabel('Maximum Connuections between submodules')
-	# plt.savefig(sol_path+'Solution_space.png', dpi=100)
-	# plt.show()
+	fig = plt.figure(figsize=(5,5))
+	ax = fig.add_subplot(111)
+	sol_count = []
+	counted = []
+	for sol in sols: 
+		if sol not in counted: 
+			count = sols.count(sol)
+			sol_count.append ((sol, count))
+			counted.append(sol)
+	print(sol_count)
+	x, y, z = [], [], []
+	for sol in sol_count: 
+		x.append (sol[0][0])
+		y.append (sol[0][1])
+		z.append (sol[1])
+	print(x)
+	print(y)
+	print(z)
+	ax.scatter(np.array(x), np.array(y), s=np.array(z)*20, alpha=0.4, c='blue', edgecolors='grey', linewidth=1)
+	# ax.set_xlim([10, 20])
+	# ax.set_ylim([0, 10])
+	ax.set_xlabel('Number of Submodules in Valid Solutions')
+	ax.set_ylabel('Maximum Connuections between submodules')
+	plt.savefig(sol_path+'Solution_space.png', dpi=100)
+	plt.show()
 
 def plot_histogram() : 
 	""" plot histogram of number of nodes in each cell"""
@@ -1098,6 +1106,8 @@ def plot_histogram() :
 
 if __name__ == '__main__':
 	PATH = '/home/ubuntu/genetic-circuit-partitioning/2021.4/'
+	# sample_list = load_samples (PATH + 'runs/samples.txt')
+
 	# count_nodes (PATH + 'runs/results/4-input-boolean-circuits', PATH + 'runs/results/5-input-boolean-circuits')
 	# partition_stats ()
 	# compile_best_solutions ()
@@ -1127,3 +1137,13 @@ if __name__ == '__main__':
 
 	# plot_histogram ()
 	
+	# s_no_sols = ''
+	# for s in ['6input_54']: 
+	# 	inp = s[0]
+	# 	name = s.split('_')[1]
+	# 	# print(inp, name)
+	# 	data = load_sol (PATH + 'runs/results/' + inp + '-input-boolean-circuits/' + name + '/nparts/best_solns.txt')
+	# 	print(data)
+	# 	if data == {}:
+	# 		s_no_sols += ','+s
+	# print(s_no_sols)

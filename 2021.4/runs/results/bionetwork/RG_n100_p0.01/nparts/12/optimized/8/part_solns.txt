@@ -1,0 +1,95 @@
+path	1
+T	9
+cut	52
+Partition 0	7,12,61,86,17,80,39,48,36
+Partition 1	63,78,23,28,68,97,34,44
+Partition 2	9,14,25,79,43,53,75
+Partition 3	1,29,99,81,90,82,58
+Partition 4	67,16,18,21,76,66,70,87
+Partition 5	3,65,6,24,20,0,50,95
+Partition 6	2,38,51,5,15,47,8,56
+Partition 7	4,55,71,13,46,52,88,57
+Partition 8	84,32,33,96,35,22,93,64,83
+Partition 9	26,49,62,89,98,37,92,54
+Partition 10	30,41,60,19
+Partition 11	10,77,40,27,69,31,42,59,74
+Partition 12	73
+Partition 13	91,85
+Partition 15	11
+Partition 17	72
+Partition 19	94
+Partition 21	45
+path	2
+T	22
+cut	79
+Partition 0	7,12,61,86,17,80,39,48,36
+Partition 1	28,99,74
+Partition 2	71,25,72,57,19
+Partition 3	9,14,94,88,53
+Partition 4	67,16,18,21,76,66,70,87
+Partition 5	3,65,6,24,20,0,50,95
+Partition 6	2,38,51,5,15,47,8,56
+Partition 7	1,45,4,55,97,60
+Partition 8	84,32,33,96,35,22,93,64,83
+Partition 9	68,29,46,52
+Partition 11	77,62,89,40,27,69,44,59,58
+Partition 13	31,37
+Partition 14	49,42,85,81,90
+Partition 15	30
+Partition 19	34
+Partition 20	82
+Partition 21	13
+Partition 24	26
+Partition 25	43
+Partition 26	79
+Partition 30	11,41
+Partition 32	75
+Partition 34	73
+Partition 35	63
+Partition 36	23,91
+Partition 40	10,98
+Partition 41	78,92
+Partition 42	54
+path	3
+T	26
+cut	85
+Partition 0	7,12,61,86,17,80,39,48,36
+Partition 1	55,52,88,54
+Partition 2	89,68,57
+Partition 3	10,98,27,28,42,19,44,75
+Partition 4	67,16,18,21,76,66,70,87
+Partition 5	3,65,6,24,20,0,50,95
+Partition 6	2,38,51,5,15,47,8,56
+Partition 7	62,78,40,69,43,74
+Partition 8	84,32,33,96,35,22,93,64,83
+Partition 9	29,31,73
+Partition 11	4,49,59
+Partition 13	37
+Partition 14	71
+Partition 15	14
+Partition 18	13
+Partition 19	41
+Partition 21	30,34
+Partition 22	92,58
+Partition 24	90
+Partition 28	97
+Partition 30	77
+Partition 32	82
+Partition 34	45
+Partition 35	26
+Partition 40	60
+Partition 41	25
+Partition 44	99
+Partition 46	94
+Partition 47	81
+Partition 48	53
+Partition 49	72
+Partition 54	79
+Partition 55	1
+Partition 57	9
+Partition 59	11
+Partition 60	85
+Partition 62	46
+Partition 66	23
+Partition 67	91
+Partition 68	63

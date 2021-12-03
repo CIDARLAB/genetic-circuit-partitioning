@@ -1,0 +1,93 @@
+path	1
+T	2
+cut	57
+Partition 0	29,31,84
+Partition 1	2,18,36,45
+Partition 2	61,76,97,81
+Partition 3	16,30,33,80
+Partition 4	60,96,70
+Partition 5	21,57,82
+Partition 6	3,10,72,87
+Partition 7	32,39,92
+Partition 8	7,12,44,49
+Partition 9	42,65,69,91
+Partition 10	22,37,95
+Partition 11	4,40,58,88
+Partition 12	55,53,99
+Partition 13	20,6,59,67,94
+Partition 14	25,11,51
+Partition 15	13,52,74,85
+Partition 16	1,35,89
+Partition 17	0,15,19,47
+Partition 18	41,66,79
+Partition 19	93,50,56
+Partition 20	43,62,71,86
+Partition 21	5,77,83
+Partition 22	24,64,68,48
+Partition 23	8,73,78,90
+Partition 24	28,14,17
+Partition 25	26,27,38,63
+Partition 26	9,46,54,98
+Partition 27	23,75,34
+path	2
+T	2
+cut	57
+Partition 0	29,31,84
+Partition 1	2,18,36,45
+Partition 2	61,76,97,81
+Partition 3	16,30,33,80
+Partition 4	60,96,70
+Partition 5	21,57,82
+Partition 6	3,10,72,87
+Partition 7	32,39,92
+Partition 8	7,12,44,49
+Partition 9	42,65,69,91
+Partition 10	22,37,95
+Partition 11	4,40,58,88
+Partition 12	55,53,99
+Partition 13	20,6,59,67,94
+Partition 14	25,11,51
+Partition 15	13,52,74,85
+Partition 16	1,35,89
+Partition 17	0,15,19,47
+Partition 18	41,66,79
+Partition 19	93,50,56
+Partition 20	43,62,71,86
+Partition 21	5,77,83
+Partition 22	24,64,68,48
+Partition 23	8,73,78,90
+Partition 24	28,14,17
+Partition 25	26,27,38,63
+Partition 26	9,46,54,98
+Partition 27	23,75,34
+path	3
+T	2
+cut	57
+Partition 0	29,31,84
+Partition 1	2,18,36,45
+Partition 2	61,76,97,81
+Partition 3	16,30,33,80
+Partition 4	60,96,70
+Partition 5	21,57,82
+Partition 6	3,10,72,87
+Partition 7	32,39,92
+Partition 8	7,12,44,49
+Partition 9	42,65,69,91
+Partition 10	22,37,95
+Partition 11	4,40,58,88
+Partition 12	55,53,99
+Partition 13	20,6,59,67,94
+Partition 14	25,11,51
+Partition 15	13,52,74,85
+Partition 16	1,35,89
+Partition 17	0,15,19,47
+Partition 18	41,66,79
+Partition 19	93,50,56
+Partition 20	43,62,71,86
+Partition 21	5,77,83
+Partition 22	24,64,68,48
+Partition 23	8,73,78,90
+Partition 24	28,14,17
+Partition 25	26,27,38,63
+Partition 26	9,46,54,98
+Partition 27	23,75,34

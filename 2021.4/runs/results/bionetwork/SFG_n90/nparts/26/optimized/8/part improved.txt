@@ -1,0 +1,4 @@
+iteration	t
+1	962
+2	
+3	

@@ -1,0 +1,21 @@
+cut	102
+Partition 0	37,49,62,78
+Partition 1	19,61,60,55,23
+Partition 2	40,57,80,56
+Partition 3	74,3,63,66,12
+Partition 4	14,79,83,7,81
+Partition 5	77,18,68,65
+Partition 6	13,84,21,59
+Partition 7	1,24,28,5
+Partition 8	4,89,86,48
+Partition 9	2,42,44,16,29,31
+Partition 10	76,9,10,58
+Partition 11	34,15,22,87
+Partition 12	69,75,8,67
+Partition 13	51,50,27,73,52
+Partition 14	0,64,72,26,70
+Partition 15	38,17,88,39
+Partition 16	11,20,54,85,25
+Partition 17	6,53,35,41
+Partition 18	30,43,32,36,82
+Partition 19	71,47,45,33,46

@@ -6,4 +6,4 @@
 
 BIN_PATH='/home/ubuntu/genetic-circuit-partitioning/2021.4/bin'
 
-python3 $BIN_PATH/3_partition_optimize.py -settings ./settings.txt -samples 6input_26,6input_72,6input_5,6input_67,6input_14,7input_59,8input_46,7input_87,6input_54,7input_36
+python3 $BIN_PATH/3_partition_optimize.py -settings ./settings.txt -samples 6input_72

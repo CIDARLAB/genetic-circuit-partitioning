@@ -1,0 +1,13 @@
+cut	231
+Partition 0	13dpg_c,amp_c,3pg_c,2pg_c,gln__L_e,h2o_e
+Partition 1	fdp_c,g3p_c,f6p_c,e4p_c,s7p_c,xu5p__D_c
+Partition 2	dhap_c,6pgc_c,ru5p__D_c,nh4_c,r5p_c,nh4_e
+Partition 3	co2_c,akg_c,succoa_c,pyr_c,nad_c,accoa_c
+Partition 4	atp_c,adp_c,pep_c,nadp_c,g6p_c,oaa_c
+Partition 5	pi_c,coa_c,nadh_c,gln__L_c,h2o_c,glu__L_c,nadph_c
+Partition 6	q8h2_c,for_c,6pgl_c,pi_e,pyr_e,for_e
+Partition 7	h_e,q8_c,succ_c,succ_e,fum_c,fum_e
+Partition 8	h_c,mal__L_c,akg_e,lac__D_c,lac__D_e,mal__L_e
+Partition 9	acald_c,etoh_c,acald_e,etoh_e,glu__L_e
+Partition 10	cit_c,icit_c,acon_C_c,glx_c,o2_c,o2_e
+Partition 11	actp_c,ac_c,ac_e,co2_e,fru_e,glc__D_e

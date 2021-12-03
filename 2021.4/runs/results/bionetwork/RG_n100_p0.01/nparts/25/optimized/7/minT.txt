@@ -1,0 +1,4 @@
+iteration	minT
+1	12
+2	12
+3	12

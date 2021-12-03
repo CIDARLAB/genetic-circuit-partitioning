@@ -81,24 +81,25 @@ def main():
 					# print('optimizing with high constraint')
 					# gp.optimize_signal_bruteforce (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, high_constraint, outdir + str(npart) +'/optimized_hc/')
 					# print('execution time', datetime.datetime.now()-begin_time)
+			
 			# gp.determine_best_solution (DAG, primitive_only, high_constraint, low_constraint, outdir)
 
-		else:
-			for n in target_n:
-				print('target npart', n)
-				outdir = out_path + '/nparts/'
-				part_sol = outdir + n + '/part_solns.txt'
-				cut, partDict = gp.load_metis_part_sol (part_sol)
-				if len(list(G.nodes()))>=25:
-					print('optimizing by subnetworks')
-					print('optimizing with low constraint')
-					gp.optimize_signal_subnetwork_qs (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, 3, low_constraint, loop_free, priority, trajectories, outdir + n + '/optimized_lc/')
-					# print('optimizing with high constraint')
-					# gp.optimize_signal_subnetwork_qs (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, high_constraint, loop_free, priority, trajectories, outdir + n + '/optimized_hc/')
-				else:
-					print('brute-force optimizing')
-					gp.optimize_signal_bruteforce (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, low_constraint, outdir + n + '/optimized_lc/')
-					gp.optimize_signal_bruteforce (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, low_constraint, outdir + n + '/optimized_hc/')
+		# else:
+		# 	for n in target_n:
+		# 		print('target npart', n)
+		# 		outdir = out_path + '/nparts/'
+		# 		part_sol = outdir + n + '/part_solns.txt'
+		# 		cut, partDict = gp.load_metis_part_sol (part_sol)
+		# 		if len(list(G.nodes()))>=25:
+		# 			print('optimizing by subnetworks')
+		# 			print('optimizing with low constraint')
+		# 			gp.optimize_signal_subnetwork_qs (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, 3, low_constraint, loop_free, priority, trajectories, outdir + n + '/optimized_lc/')
+		# 			# print('optimizing with high constraint')
+		# 			# gp.optimize_signal_subnetwork_qs (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, high_constraint, loop_free, priority, trajectories, outdir + n + '/optimized_hc/')
+		# 		else:
+		# 			print('brute-force optimizing')
+		# 			gp.optimize_signal_bruteforce (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, low_constraint, outdir + n + '/optimized_lc/')
+		# 			gp.optimize_signal_bruteforce (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, low_constraint, outdir + n + '/optimized_hc/')
 			
 				# # if optimizing based on previous results
 				# iteration = 2

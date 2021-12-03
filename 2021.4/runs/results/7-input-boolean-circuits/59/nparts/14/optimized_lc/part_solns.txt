@@ -1,138 +1,124 @@
 path	1
-T	17
-cut	35
-Partition 2	3521,3552,3561,3574,3562
-Partition 3	3556,3560
-Partition 4	3536,3537,3555,3538
-Partition 5	3524,3569,3577,3568
-Partition 6	3527,3528,3534,3535,3522
-Partition 8	3539,3540
-Partition 9	3578,3579,3580
-Partition 11	3565,3566
-Partition 12	3531,3558,3559,3520,3557
-Partition 13	3576,3573
-Partition 14	3541
-Partition 15	3550
-Partition 16	3553,3554
-Partition 17	3575
-Partition 18	3529,3530
-Partition 19	3551
-Partition 21	3570,3571,3572
-Partition 22	3525,3563,3564,3523,3567
-Partition 24	3542,3543,3526,3532,3533
-Partition 25	3545,3546,3544
-Partition 26	3549,3547,3548
+T	23
+cut	43
+Partition 0	3536,3537,3538,3539,3535
+Partition 3	3558,3559
+Partition 5	3563,3564
+Partition 6	3521,3529
+Partition 7	3569
+Partition 8	3530,3531,3528
+Partition 9	3549,3547,3548,3577,3578,3579
+Partition 11	3561,3562
+Partition 12	3570,3571
+Partition 13	3574,3575,3565,3576,3567,3566,3573
+Partition 14	3572
+Partition 15	3533
+Partition 16	3525
+Partition 18	3580
+Partition 22	3523
+Partition 23	3545,3546,3527,3522
+Partition 24	3552,3555,3553,3556,3554,3550
+Partition 27	3560,3568
+Partition 29	3557
+Partition 30	3541,3520
+Partition 31	3544
+Partition 33	3543
+Partition 34	3526,3532,3534
+Partition 35	3542
+Partition 38	3551
+Partition 40	3524
+Partition 42	3540
 path	2
-T	13
-cut	46
-Partition 0	3563,3564,3526,3532,3523
-Partition 1	3550,3551
-Partition 2	3521,3529,3561,3530,3531
-Partition 3	3555,3554,3527,3528,3522
-Partition 4	3567
-Partition 5	3524,3569,3559,3560,3568
-Partition 6	3525
-Partition 7	3547,3548
-Partition 8	3536,3537,3538
-Partition 9	3534,3535,3578,3579
-Partition 10	3543,3533,3544
-Partition 11	3562
-Partition 12	3570,3571,3520
-Partition 13	3565,3572,3576,3566,3573
-Partition 14	3541
-Partition 16	3552
-Partition 17	3580
-Partition 18	3577
-Partition 19	3557
-Partition 20	3545,3546,3540
-Partition 22	3539
-Partition 24	3542
-Partition 27	3558
-Partition 28	3556
-Partition 29	3553
-Partition 30	3549
-Partition 31	3575
-Partition 32	3574
-path	3
-T	16
-cut	39
-Partition 0	3553,3554
-Partition 1	3574,3550,3551
-Partition 2	3529,3530,3531
-Partition 3	3555,3556
+T	8
+cut	36
+Partition 0	3552,3553,3538,3525,3563,3554,3523
+Partition 2	3530,3531,3527,3528,3522,3558,3557
 Partition 4	3536,3537,3535
-Partition 5	3546,3539,3540
-Partition 6	3527,3528,3534,3522
-Partition 7	3524,3569
-Partition 8	3543,3545,3544
+Partition 7	3524,3569,3577,3568
+Partition 8	3543,3545,3546,3540,3544
+Partition 9	3549,3547,3548,3578,3579,3580
+Partition 11	3565,3567,3566
+Partition 12	3570,3571,3572,3573
+Partition 13	3526,3532,3533
+Partition 14	3521,3529,3574,3575,3551
+Partition 15	3541
+Partition 16	3560
+Partition 17	3542
+Partition 18	3564
+Partition 19	3559
+Partition 20	3550
+Partition 21	3520
+Partition 23	3561,3562
+Partition 27	3576
+Partition 28	3555,3556
+Partition 29	3539
+Partition 30	3534
+path	3
+T	14
+cut	35
+Partition 0	3553,3525,3563,3523
+Partition 1	3574,3575,3550,3551
+Partition 3	3536,3555,3556,3554,3534,3535
+Partition 5	3558,3559,3560,3557
+Partition 6	3530,3531,3527,3528,3522
+Partition 7	3524,3569,3577,3568
+Partition 8	3543,3545,3526,3532,3533,3544
 Partition 9	3549,3547,3548,3579,3580
-Partition 11	3526,3532,3533
-Partition 12	3541,3542,3570,3571,3520
-Partition 13	3576,3567,3566,3573
-Partition 14	3560
-Partition 16	3577
-Partition 17	3572
-Partition 18	3557
-Partition 19	3552
+Partition 11	3561,3562,3565
+Partition 12	3564,3570,3571,3572
+Partition 13	3537,3538,3539,3576,3567,3566,3573
+Partition 14	3541
+Partition 16	3529
+Partition 18	3552
+Partition 19	3521
 Partition 20	3578
-Partition 21	3558,3559
-Partition 22	3568
-Partition 23	3538,3525,3563,3564,3523
-Partition 24	3521,3561,3562,3565
-Partition 25	3575
+Partition 21	3546,3540
+Partition 22	3542
+Partition 27	3520
 path	4
-T	14
-cut	38
-Partition 0	3563,3523
-Partition 1	3550,3551
-Partition 2	3521,3561,3574,3562
-Partition 3	3552,3553,3525,3554
-Partition 4	3537,3538,3539,3531
-Partition 6	3527,3528,3522
-Partition 7	3565,3524,3569,3567,3566
-Partition 8	3543,3545,3546,3540,3544
+T	9
+cut	35
+Partition 0	3553,3525,3563,3523
+Partition 1	3521,3552,3574,3550,3551
+Partition 2	3561
+Partition 3	3555,3556,3554
+Partition 4	3536,3537,3538,3535
+Partition 5	3558,3559,3560,3557
+Partition 6	3530,3531,3527,3528,3522
+Partition 7	3524,3569,3577,3568
 Partition 9	3549,3547,3548,3578,3579
-Partition 11	3526,3532,3533
+Partition 10	3541,3542
+Partition 11	3543,3526,3532,3534,3533,3544
 Partition 12	3570,3571,3520
-Partition 13	3575,3576,3573
-Partition 14	3568
-Partition 15	3560
-Partition 16	3557
-Partition 17	3541
-Partition 21	3564,3572
-Partition 22	3577
-Partition 23	3580
-Partition 24	3558,3559
-Partition 25	3529,3530
-Partition 27	3536,3555,3556,3534,3535
-Partition 28	3542
+Partition 13	3575,3572,3576,3567,3566,3573
+Partition 14	3562
+Partition 18	3565
+Partition 19	3580
+Partition 20	3545
+Partition 23	3546
+Partition 24	3539,3540
+Partition 25	3564
+Partition 26	3529
 path	5
-T	14
-cut	42
-Partition 0	3563,3523
-Partition 3	3553,3554
-Partition 4	3536,3537,3538,3525,3535
-Partition 5	3524,3569,3568
-Partition 6	3527,3534,3522
-Partition 8	3543,3545,3546,3540,3544
-Partition 9	3549,3547,3548,3579,3580
-Partition 10	3542
-Partition 11	3562,3565,3526,3532,3533
-Partition 12	3541,3531,3528,3520,3557
-Partition 13	3576,3567,3566,3573
-Partition 14	3571
-Partition 15	3572
-Partition 16	3564
-Partition 17	3577
-Partition 18	3575
-Partition 19	3550
-Partition 20	3539
-Partition 21	3574
-Partition 22	3551
-Partition 23	3578
-Partition 24	3521,3529,3561,3530
-Partition 25	3552
-Partition 28	3559
-Partition 29	3558
-Partition 31	3555,3556,3560
-Partition 32	3570
+T	12
+cut	34
+Partition 0	3553,3525,3563,3523
+Partition 1	3574,3575,3551
+Partition 2	3521,3529,3561
+Partition 3	3536,3555,3556,3554,3534,3535
+Partition 4	3538,3539
+Partition 5	3558,3559,3560
+Partition 6	3530,3531,3527,3528,3522
+Partition 7	3524,3569,3577,3568
+Partition 8	3545,3546,3549,3540,3579,3580
+Partition 9	3547,3548
+Partition 10	3542,3543,3544
+Partition 11	3565,3526,3532,3533
+Partition 12	3564,3570,3571,3572,3520,3557
+Partition 13	3567,3566
+Partition 14	3578
+Partition 17	3550
+Partition 18	3552
+Partition 20	3541,3562
+Partition 21	3537
+Partition 22	3576,3573

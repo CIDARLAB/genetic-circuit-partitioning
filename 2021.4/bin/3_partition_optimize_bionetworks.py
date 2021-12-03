@@ -46,7 +46,7 @@ def main():
 		# load graph 
 		G   = gp.load_graph_undirected (settings, s)
 		DAG = gp.load_graph (settings, s)
-
+	
 		outdir = out_path + '/nparts/'
 		connectivity_order = gp.rank_connectivity (DAG, primitive_only, outdir)
 		lowest_connectivity = min([c for (n, c) in connectivity_order])
@@ -74,36 +74,84 @@ def main():
 			# median_connectivity = [c for (n, c) in connectivity_order if int(n) == npart][0]
 		sorted_n = sorted(actual_n.items(), key=lambda kv: kv[1])
 		sorted_n = [tn for (tn, n) in sorted_n]
-
+		# sorted_n = [n for (n, c) in connectivity_order][:5]
 		for npart in sorted_n: 
 			opt_path = outdir + str(npart) + '/optimized/'
 			part_sol = outdir + str(npart) + '/part_solns.txt'
 			cut, partDict = gp.load_metis_part_sol (part_sol)
+			min_conn, max_conn, median_conn = gp.get_connectivity (DAG, primitive_only, partDict)
 
 			if maxNodes + int(S_bounds[1]) >= max([len(v) for v in list(partDict.values())]): 
-				print('target n', npart)
-
-				if os.path.exists(opt_path):
-					shutil.rmtree(opt_path)
-					os.mkdir(opt_path)
-				else: 
-					os.mkdir(opt_path)
+				print('TARGET N', npart)
+				# if os.path.exists(opt_path):
+				# 	shutil.rmtree(opt_path)
+				# 	os.mkdir(opt_path)
+				# else: 
+				# 	os.mkdir(opt_path)
 				# gp.visualize_assignment_graphviz (G, [gp.get_part(partDict, n) for n in G.nodes()], nonprimitives, primitive_only, outdir+str(npart), 1, [])
-				for conn in range(int(lowest_connectivity), int(highest_connectivity+10)+1):
+				
+				if os.path.exists(opt_path) == False: 
+					if os.path.exists(opt_path) == False: os.mkdir(opt_path)
+				
+				for conn in range(int(min_conn), int(max_conn)+1):
 					print ('target connectivity', conn)
 					opt_path = outdir + str(npart) + '/optimized/' + str(conn) + '/'
-					gp.optimize_signal_subnetwork (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, 3, 3, False, str(conn), loop_free, priority, timestep, trajectories, opt_path)
-					solDict = gp.load_opt_part_sol (opt_path + 'part_solns.txt')
-					for iteration in solDict.keys():
-						part = solDict[iteration]['part'] 
-						part_opt = [gp.get_part(part, n) for n in G_primitive.nodes()]
-						matrix, partG = gp.partition_matrix (G_primitive, part_opt)
-						cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, [conn], loop_free)
-						if cell_unmet_const == []: 
+					if os.path.exists(opt_path):
+						has_solution = False
+						result = gp.choose_best_iteration (DAG, primitive_only, partDict, [conn], loop_free, opt_path)
+						
+						if result != []: 
+							besti, order, solDict = result[0], result[1], result[2]
+							tot_i = len(solDict.keys())
+							sol_i = 0
+
+							if len(order) > 3: order = order[0:3]
+
+							for iteration in order:
+								print('continuing itegration', iteration)
+								part = solDict[iteration]['part'] 
+								cut = solDict[iteration]['cut']
+								part_opt = [gp.get_part(part, n) for n in G_primitive.nodes()]
+								matrix, partG = gp.partition_matrix (G_primitive, part_opt)
+								cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, [conn], loop_free)
+								# print('cell_unmet', cell_unmet_const)
+								if len(cell_unmet_const) == 0:
+									print('has solution') 
+									has_solution = True
+								else:
+									print('optimizing iteration', iteration)
+									soln_found, recorded_path = gp.optimize_signal_subnetwork (DAG, primitive_only, S_bounds, cut, part, maxNodes, 3, 3, True, [conn], loop_free, priority, timestep, 1, tot_i+sol_i, opt_path)
+									if soln_found == False: 
+										if len(cell_unmet_const) < 3: 
+											soln_found, recorded_path = gp.split_cells (DAG, primitive_only, S_bounds, cut, partDict, iteration, maxNodes, [conn], loop_free, priority, trajectories, opt_path)
+									sol_i += recorded_path
+									if soln_found:
+										has_solution = True
+										print('optimizing has solution')
+
+								# if found a solution, break
+								if has_solution: 
+									print('has solution, breaking')
+									break 
+							else:
+								continue
 							break
+
 					else: 
-						continue
-					break 
+						os.mkdir(opt_path)
+						print('running graph partitioning')
+						gp.optimize_signal_subnetwork_tmp (DAG, primitive_only, S_bounds, cut, partDict, maxNodes, 3, 3, False, str(conn), loop_free, priority, timestep, trajectories, opt_path)
+						solDict = gp.load_opt_part_sol (opt_path + 'part_solns.txt')
+						for iteration in solDict.keys():
+							part = solDict[iteration]['part'] 
+							part_opt = [gp.get_part(part, n) for n in G_primitive.nodes()]
+							matrix, partG = gp.partition_matrix (G_primitive, part_opt)
+							cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, [conn], loop_free)
+							if cell_unmet_const == []: 
+								break
+						else: 
+							continue
+						break 
 								
 		
 		# gp.determine_best_solution_bionetwork (DAG, primitive_only, str(median_connectivity), outdir)

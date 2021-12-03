@@ -1,0 +1,4 @@
+iteration	minT
+1	9
+2	9
+3	9

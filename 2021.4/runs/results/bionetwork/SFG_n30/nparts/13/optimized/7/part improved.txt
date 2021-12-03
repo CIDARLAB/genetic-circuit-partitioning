@@ -1,0 +1,4 @@
+iteration	t
+1	640
+2	
+3	

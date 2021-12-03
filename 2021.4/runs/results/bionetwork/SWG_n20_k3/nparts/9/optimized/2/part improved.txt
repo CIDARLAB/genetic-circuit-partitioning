@@ -1,0 +1,4 @@
+iteration	t
+1	172
+2	
+3	

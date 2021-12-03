@@ -48,7 +48,10 @@ def main():
 		# make output directories
 		if os.path.exists(out_path) == False:
 			os.mkdir(out_path)
-		if os.path.exists(out_path + '/nparts/') == False:
+		if os.path.exists(out_path + '/nparts/'):
+			shutil.rmtree(out_path + '/nparts/')
+			os.mkdir(out_path+'/nparts/')
+		else: 
 			os.mkdir(out_path+'/nparts/')
 
 		# partition the graph into n parts 
@@ -63,13 +66,15 @@ def main():
 				outdir   = out_path + '/nparts/' + str(n)
 				if os.path.exists(outdir) == False:
 					os.mkdir(outdir)
-				part_opt = gp.clustering_nparts_wrapper (G_primitive, int(n), outdir)
+				# part_opt = gp.clustering_nparts_wrapper (G_primitive, int(n), outdir)
+				part_opt = gp.partition_nparts_wrapper (G_primitive, int(n), outdir)
 				# gp.visualize_assignment_graphviz (DAG, part_opt, nonprimitives, primitive_only, outdir, 0)
 
 		else:                 # if user provides a target number
 			for npart in target_n: 
 				os.mkdir(out_path+'/nparts/'+ npart)
-				part_opt = gp.clustering_nparts_wrapper (G_primitive, int(n), out_path+'/nparts/'+ npart)
+				# part_opt = gp.clustering_nparts_wrapper (G_primitive, int(n), out_path+'/nparts/'+ npart)
+				part_opt = gp.partition_nparts_wrapper (G_primitive, int(n), outdir)
 				# gp.visualize_assignment_graphviz (DAG, part_opt, nonprimitives, primitive_only, out_path+'/nparts/'+n, 0)
 
 

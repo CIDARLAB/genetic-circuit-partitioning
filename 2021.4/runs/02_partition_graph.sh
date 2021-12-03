@@ -6,5 +6,6 @@
 
 # Perform metis graph partition
 
-BIN_PATH='/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/bin'
-python3 $BIN_PATH/2_graph_partition_bionetworks.py -settings ./settings_bionetwork.txt -samples RG_n40_p0.05,RG_n50_p0.05
+BIN_PATH='/home/ubuntu/genetic-circuit-partitioning/2021.4/bin'
+
+python3 $BIN_PATH/2_graph_partition.py -settings ./settings.txt -samples 7input_87_c5,6input_54_c5,7input_36_c5,8input_80_c5,7input_72_c5,7input_71_c5,7input_15_c5,7input_45_c5,7input_65_c5,7input_1_c5,8input_6_c5,7input_80_c5,7input_95_c5,7input_69_c5,7input_54_c5,7input_89_c5,7input_90_c5,8input_70_c5,7input_19_c5,7input_2_c5
