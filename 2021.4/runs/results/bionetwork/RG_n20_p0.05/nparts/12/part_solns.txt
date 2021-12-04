@@ -1,10 +1,13 @@
 cut	23
-Partition 0	3,1,8
-Partition 1	17,9,11
-Partition 2	15,6,14
-Partition 3	0
-Partition 4	12
-Partition 5	7
-Partition 6	2,16
-Partition 7	18,19
-Partition 8	13,4,10,5
+Partition 0	15
+Partition 1	10,12
+Partition 2	4,9
+Partition 3	1
+Partition 4	13,5
+Partition 5	18,19
+Partition 6	16
+Partition 7	17,11
+Partition 8	0,6
+Partition 9	14
+Partition 10	2,3
+Partition 11	7,8

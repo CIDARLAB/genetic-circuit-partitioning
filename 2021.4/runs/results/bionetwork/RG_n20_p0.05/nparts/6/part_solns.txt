@@ -1,4 +1,7 @@
-cut	5
-Partition 0	0,17,3,7,13,5,1,6,8,16,11,18,19
-Partition 1	2,15,4,9,10,12
-Partition 2	14
+cut	16
+Partition 0	15,4,9
+Partition 1	13,18,19
+Partition 2	10,5,1,12
+Partition 3	0,17,6
+Partition 4	2,3,7
+Partition 5	8,14,16,11

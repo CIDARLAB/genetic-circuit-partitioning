@@ -1,0 +1,12 @@
+cut	12
+Partition 0	8
+Partition 1	9,11
+Partition 2	18,0
+Partition 3	6,10
+Partition 4	4,17
+Partition 5	5
+Partition 6	3,19
+Partition 7	14,15
+Partition 8	13,12
+Partition 9	1,16
+Partition 10	2,7

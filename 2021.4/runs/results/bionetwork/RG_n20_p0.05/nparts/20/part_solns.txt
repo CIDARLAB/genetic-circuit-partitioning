@@ -1,12 +1,21 @@
-cut	29
-Partition 0	3,6
-Partition 1	18
-Partition 2	17
-Partition 3	0,7
-Partition 4	11
-Partition 5	2,4,12
-Partition 6	13,14
-Partition 7	10,16
-Partition 8	15,5,1,8
-Partition 9	9
-Partition 10	19
+cut	30
+Partition 0	
+Partition 1	15
+Partition 2	9
+Partition 3	4
+Partition 4	12
+Partition 5	1
+Partition 6	5
+Partition 7	10
+Partition 8	19
+Partition 9	13,18
+Partition 10	7
+Partition 11	6
+Partition 12	11
+Partition 13	0
+Partition 14	17
+Partition 15	3
+Partition 16	2
+Partition 17	16
+Partition 18	14
+Partition 19	8

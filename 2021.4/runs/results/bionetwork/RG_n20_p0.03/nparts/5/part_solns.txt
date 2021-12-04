@@ -1,0 +1,6 @@
+cut	7
+Partition 0	17,10,18,0
+Partition 1	4,6,8,9
+Partition 2	1,2,7,16
+Partition 3	5,13,12,11
+Partition 4	3,19,14,15
