@@ -1,4 +1,0 @@
-iteration	minT
-1	14
-2	14
-3	14

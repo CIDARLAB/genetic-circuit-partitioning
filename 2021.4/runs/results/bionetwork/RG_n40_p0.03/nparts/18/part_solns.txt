@@ -1,0 +1,19 @@
+cut	34
+Partition 0	30,20
+Partition 1	21,19
+Partition 2	5,1,14
+Partition 3	3,27
+Partition 4	4,22,16
+Partition 5	6,18
+Partition 6	7,24
+Partition 7	35,23,33
+Partition 8	13,25,34
+Partition 9	32,36
+Partition 10	11,29
+Partition 11	28,26
+Partition 12	0,37
+Partition 13	8,9
+Partition 14	39,12
+Partition 15	17,38
+Partition 16	15,10
+Partition 17	2,31

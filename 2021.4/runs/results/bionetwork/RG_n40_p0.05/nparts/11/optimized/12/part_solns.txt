@@ -1,5 +1,5 @@
 path	1
-T	16
+T	NA
 cut	50
 Partition 0	32,14,38
 Partition 1	0,2,13,17
@@ -13,7 +13,7 @@ Partition 8	29,7,35
 Partition 9	39,6,30
 Partition 10	4,27,16,37
 path	2
-T	16
+T	NA
 cut	50
 Partition 0	32,14,38
 Partition 1	0,2,13,17
@@ -27,7 +27,7 @@ Partition 8	29,7,35
 Partition 9	39,6,30
 Partition 10	4,27,16,37
 path	3
-T	16
+T	NA
 cut	50
 Partition 0	32,14,38
 Partition 1	0,2,13,17

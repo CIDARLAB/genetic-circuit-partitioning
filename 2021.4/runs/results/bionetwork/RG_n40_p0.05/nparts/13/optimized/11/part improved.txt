@@ -1,4 +1,4 @@
 iteration	t
 1	
-2	
+2	5972
 3	

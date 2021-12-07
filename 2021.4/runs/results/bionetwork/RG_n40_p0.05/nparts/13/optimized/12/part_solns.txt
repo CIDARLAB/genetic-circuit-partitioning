@@ -1,5 +1,5 @@
 path	1
-T	18
+T	NA
 cut	58
 Partition 0	32,14,36
 Partition 1	2,13,17
@@ -15,7 +15,7 @@ Partition 10	18,3,11
 Partition 11	33,9,12
 Partition 12	10,20,19,30
 path	2
-T	18
+T	NA
 cut	58
 Partition 0	32,14,36
 Partition 1	2,13,17
@@ -31,7 +31,7 @@ Partition 10	18,3,11
 Partition 11	33,9,12
 Partition 12	10,20,19,30
 path	3
-T	18
+T	NA
 cut	58
 Partition 0	32,14,36
 Partition 1	2,13,17
