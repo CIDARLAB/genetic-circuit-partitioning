@@ -1,0 +1,9 @@
+cut	13
+Partition 0	3,4,5,10,15,16,29,49
+Partition 1	28,39,48,40,43,44,45
+Partition 2	7,20,23,31,47,41
+Partition 3	0,1,2,11,26,38
+Partition 4	9,14,18,34,36
+Partition 5	6,17,25,46,24,32
+Partition 6	22,27,30,33,35,37
+Partition 7	8,12,13,19,21,42

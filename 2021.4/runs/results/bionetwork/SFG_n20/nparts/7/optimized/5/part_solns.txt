@@ -1,0 +1,30 @@
+path	1
+T	NA
+cut	15
+Partition 0	2,3,8,17
+Partition 1	18
+Partition 2	1,11,15
+Partition 3	5,7,10
+Partition 4	9,4,6
+Partition 5	0,12,13
+Partition 6	14,16,19
+path	2
+T	NA
+cut	15
+Partition 0	2,3,8,17
+Partition 1	18
+Partition 2	1,11,15
+Partition 3	5,7,10
+Partition 4	9,4,6
+Partition 5	0,12,13
+Partition 6	14,16,19
+path	3
+T	NA
+cut	15
+Partition 0	2,3,8,17
+Partition 1	18
+Partition 2	1,11,15
+Partition 3	5,7,10
+Partition 4	9,4,6
+Partition 5	0,12,13
+Partition 6	14,16,19

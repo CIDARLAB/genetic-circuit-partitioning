@@ -1,13 +1,13 @@
 path	1
-T	3
-cut	13
-Partition 0	2,3,8,17
+T	NA
+cut	11
+Partition 0	0,2,3,8,10,16,17
 Partition 1	1,11,15,18
 Partition 2	9,5,6,7
-Partition 3	0,4,10,16
+Partition 3	4
 Partition 4	12,13,14,19
 path	2
-T	3
+T	NA
 cut	13
 Partition 0	2,3,8,17
 Partition 1	1,11,15,18
@@ -15,10 +15,10 @@ Partition 2	9,5,6,7
 Partition 3	0,4,10,16
 Partition 4	12,13,14,19
 path	3
-T	3
-cut	13
-Partition 0	2,3,8,17
+T	NA
+cut	11
+Partition 0	0,2,3,8,10,16,17
 Partition 1	1,11,15,18
-Partition 2	9,5,6,7
-Partition 3	0,4,10,16
+Partition 2	5,6,7
+Partition 3	9,4
 Partition 4	12,13,14,19
