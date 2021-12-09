@@ -1,0 +1,4 @@
+targetN	Iteration	EndN	Nodes	Constraint	Valid Motif_METIS	Valid Motif_Optimized	Cycle Free_METIS	Cycle Free_Optimized	T_Metis	T_Optimized	cut_Metis	cut_Optimized
+14	3	22	87	lc	False	True	False	True	5	6	39	50
+14	4	22	87	lc	False	True	False	True	5	6	39	50
+13	4	22	87	lc	False	True	False	True	5	6	40	53

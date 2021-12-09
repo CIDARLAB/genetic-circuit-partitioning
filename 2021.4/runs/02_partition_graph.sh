@@ -8,4 +8,4 @@
 
 BIN_PATH='/home/ubuntu/genetic-circuit-partitioning/2021.4/bin'
 
-python3 $BIN_PATH/2_graph_partition_bionetworks.py -settings ./settings_bionetwork.txt -samples SFG_n60_0.60_0.05_0.35
+python3 $BIN_PATH/2_graph_partition.py -settings ./settings.txt -samples 7input_65_c6,7input_80_c6,7input_71_c6,7input_15_c6,7input_45_c6,7input_69_c6,7input_54_c6,7input_89_c6,7input_90_c6
