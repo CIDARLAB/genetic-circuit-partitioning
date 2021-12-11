@@ -1,65 +1,61 @@
 path	1
-T	7
-cut	25
-Partition 0	16,61,54,60,50,53
-Partition 1	48,56
+T	NA
+cut	21
+Partition 0	61,54,60,50,53
 Partition 2	31,32
 Partition 3	19,30,12,29,20
 Partition 4	4,5,6,36
 Partition 5	67,34,33,35
-Partition 6	22,21,27,28
-Partition 7	7,11,52,40,10
+Partition 7	8,7,11,52,40,10
 Partition 8	69,45
 Partition 9	0,1,63,65,64
 Partition 10	15,14,42,41
-Partition 11	57,62,24,46,44
-Partition 12	39,2,47,23,66
+Partition 11	66
+Partition 12	39,2,47
 Partition 13	37,51,25,26,49
 Partition 14	3,18,59,38,43,55
-Partition 15	13
-Partition 17	9,58
-Partition 18	68
-Partition 23	8,17
+Partition 15	17
+Partition 16	16,48,62,24,23,68,46
+Partition 17	44
+Partition 18	9,58,13,22,21,57,27,28
+Partition 19	56
 path	2
-T	5
-cut	21
+T	NA
+cut	22
 Partition 0	61,54,60,50,53
 Partition 1	9,58
-Partition 2	16,57,48,56,62,31,32,46,43,44
+Partition 2	16,48,31,32
 Partition 3	19,30,12,29,20
 Partition 4	4,5,6,36
 Partition 5	67,34,33,35
 Partition 6	13,22,21,27,28
-Partition 7	8,7,11,52,40,10
-Partition 8	69,45
-Partition 9	0,1,63,14,65,64
-Partition 10	42,41
-Partition 11	24,68
+Partition 7	7,11,52,40,10
+Partition 8	8,17
+Partition 9	0,1,63,65,64
+Partition 10	15,14,42,41
+Partition 11	57,62,24,68,46,44
 Partition 12	39,2,47,23,66
 Partition 13	37,51,25,26,49
-Partition 14	3,18,59
-Partition 16	38,55
-Partition 17	15
-Partition 19	17
+Partition 14	3,18,59,38,43,55
+Partition 16	56
+Partition 19	69,45
 path	3
-T	7
-cut	26
+T	NA
+cut	19
 Partition 0	61,54,60,50,53
 Partition 1	9,58
-Partition 2	16,48,56,31,32
+Partition 2	16,57,48,56,31,32
 Partition 3	19,30,12,29,20
 Partition 4	4,5,6,36
 Partition 5	67,34,33,35
-Partition 6	13,22,21,27
-Partition 7	8,7,11,52,40,10
-Partition 8	69,45
-Partition 9	0,1
-Partition 10	17,15,14,42,41
-Partition 11	63,57,62,46,44
-Partition 12	39,2,47
-Partition 13	37,51,25,26,49
+Partition 6	13,22,21,27,28
+Partition 7	7,11,40,10
+Partition 8	8,69,17,15,14,45
+Partition 9	0,1,63,65,64
+Partition 10	42,41
+Partition 11	24,23,68
+Partition 12	39,2,47,66
+Partition 13	37,51,25,26,49,46
 Partition 14	3,18,59,38,43,55
-Partition 16	24,23,65,64
-Partition 19	66
-Partition 20	68
-Partition 22	28
+Partition 15	52
+Partition 18	62,44

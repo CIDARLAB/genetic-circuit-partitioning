@@ -1,0 +1,12 @@
+cut	59
+Partition 0	30,20,22,25,23,24
+Partition 1	59,27,29,57,28,26
+Partition 2	33,62,32,17,64,31
+Partition 3	16,58,14,18,60,56
+Partition 4	52,19,53,55,21,54,51
+Partition 5	39,37,40,41,11,38
+Partition 6	9,50,65,67,42,66
+Partition 7	10,61,63,8,12,15,13
+Partition 8	1,0,69,2,36,68
+Partition 9	3,35,6,34,5,4,7
+Partition 10	47,49,48,46,45,43,44

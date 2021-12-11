@@ -1,4 +1,4 @@
 iteration	minT
-1	5
-2	5
-3	5
+1	NA
+2	NA
+3	NA

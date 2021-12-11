@@ -1,5 +1,5 @@
 path	1
-T	2
+T	NA
 cut	22
 Partition 0	5,79,72,30
 Partition 1	11,17,48,41,80
@@ -21,7 +21,7 @@ Partition 16	19,24,87,86,25
 Partition 17	82,53,59,74
 Partition 18	65,66,29,67,60
 path	2
-T	2
+T	NA
 cut	22
 Partition 0	5,79,72,30
 Partition 1	11,17,48,41,80
@@ -43,7 +43,7 @@ Partition 16	19,24,87,86,25
 Partition 17	82,53,59,74
 Partition 18	65,66,29,67,60
 path	3
-T	2
+T	NA
 cut	22
 Partition 0	5,79,72,30
 Partition 1	11,17,48,41,80

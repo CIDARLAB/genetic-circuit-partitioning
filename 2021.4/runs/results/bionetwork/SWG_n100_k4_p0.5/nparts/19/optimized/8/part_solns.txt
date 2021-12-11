@@ -1,0 +1,90 @@
+path	1
+T	NA
+cut	120
+Partition 0	56,82,54,57
+Partition 1	78,80,79
+Partition 2	97,36,58,35
+Partition 3	18,17,30,29
+Partition 4	12,11,51,9,10
+Partition 5	7,6,8,88
+Partition 6	49,34,60
+Partition 7	62,63,61
+Partition 8	47,48,69,87,86
+Partition 9	15,13,72,37
+Partition 10	76,74,77,73,55,75
+Partition 11	0,99,98,42
+Partition 12	64,52,33,31,53
+Partition 13	96,44
+Partition 14	43,21,23,22
+Partition 15	68,25,27,24,26
+Partition 16	5,65,3,2,83,81,28
+Partition 17	41,19,93,95,14,16,38,40
+Partition 18	94,90,89,92,91
+Partition 20	71
+Partition 21	66
+Partition 29	4
+Partition 32	1
+Partition 38	32
+Partition 41	70
+Partition 42	20
+Partition 43	67
+Partition 44	59
+Partition 45	39
+Partition 48	50
+Partition 49	84,85
+Partition 50	45
+Partition 51	46
+path	2
+T	NA
+cut	109
+Partition 0	58,87,56,54,57
+Partition 1	81,82,79
+Partition 2	97,36,38,35,40
+Partition 3	17,30,29,71
+Partition 4	1,4,12,11,9,10
+Partition 5	20,7,6,18,8,88
+Partition 6	51,49,34,60,50
+Partition 7	85,83,62,63
+Partition 8	47,48,69,39,86
+Partition 9	15,13,72,70,37
+Partition 10	76,74,77,73,78,75
+Partition 11	0,99,98,42
+Partition 12	64,52,84,33,31
+Partition 13	96,32,44,46,45,53
+Partition 14	43,21,23,22
+Partition 15	68,25,27,24,26
+Partition 16	67,5,65,3,2,28,66
+Partition 17	41,93,95,14,16
+Partition 18	94,90,89,92,91
+Partition 22	19
+Partition 24	55
+Partition 27	80
+Partition 31	61
+Partition 32	59
+path	3
+T	NA
+cut	106
+Partition 0	58,59,55,56,54,57
+Partition 1	18,81,78,80,82,79
+Partition 2	97,36,38,35,40
+Partition 3	17,30,29,71
+Partition 4	12,11
+Partition 5	4,20,7,6,8,88
+Partition 6	51,49,34,60,50
+Partition 7	62,63,61
+Partition 8	47,48,69,87,39,86
+Partition 9	15,13,72,70,37
+Partition 10	76,74,77,73,75
+Partition 11	0,99,98,1,42,67
+Partition 12	64,52,84,33,31
+Partition 13	96,32,44,46,45,53
+Partition 14	43,21,23,22
+Partition 15	68,25,27,24,26
+Partition 16	5,65,3,2,28
+Partition 17	41,19,95,14,16
+Partition 18	94,90,89,92,91
+Partition 23	93
+Partition 27	85,83
+Partition 30	10
+Partition 33	9
+Partition 36	66

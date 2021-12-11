@@ -1,0 +1,25 @@
+path	1
+T	NA
+cut	17
+Partition 0	0,1,19,16,18,14
+Partition 1	2,4,5,13,3
+Partition 2	12,15,11,7,9,10
+Partition 3	6,17
+Partition 4	8
+path	2
+T	NA
+cut	17
+Partition 0	0,1,19,16,18,14
+Partition 1	2,4,5,3,6
+Partition 2	12,15,11,7,9,10
+Partition 3	13
+Partition 5	8
+Partition 6	17
+path	3
+T	NA
+cut	17
+Partition 0	0,1,19,16,18,14
+Partition 1	2,4,5,13,3
+Partition 2	12,15,11,7,9,10
+Partition 3	6,17
+Partition 4	8

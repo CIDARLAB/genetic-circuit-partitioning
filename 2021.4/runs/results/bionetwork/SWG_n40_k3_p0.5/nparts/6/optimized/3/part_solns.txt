@@ -1,0 +1,30 @@
+path	1
+T	NA
+cut	8
+Partition 0	21,9,16,22,20,29
+Partition 1	0,1,2,19,18,30
+Partition 2	8,7,26,6,15,17,28
+Partition 3	39,38,23,24,25,27
+Partition 4	4,3,31,13,10,37,36
+Partition 5	5,33,32,34,12,11,35
+Partition 7	14
+path	2
+T	NA
+cut	9
+Partition 0	21,9,16,22,20,29
+Partition 1	0,1,2,19,18,30
+Partition 2	8,7,26,6,15,17,28
+Partition 3	39,38,24,25,27
+Partition 4	4,3,31,13,10,37,36
+Partition 5	5,33,32,34,12,11,35
+Partition 6	14
+Partition 7	23
+path	3
+T	NA
+cut	7
+Partition 0	21,9,16,22,20,29
+Partition 1	0,1,2,19,18,30
+Partition 2	8,7,26,6,15,17,28,14
+Partition 3	39,38,23,24,25,27
+Partition 4	4,3,31,13,10,37,36
+Partition 5	5,33,32,34,12,11,35

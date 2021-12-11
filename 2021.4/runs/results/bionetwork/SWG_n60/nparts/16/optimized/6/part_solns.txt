@@ -1,0 +1,81 @@
+path	1
+T	NA
+cut	76
+Partition 0	56,36
+Partition 1	19,5
+Partition 2	16,17,20,18
+Partition 3	24,21,23,22
+Partition 4	1,11,14
+Partition 5	7,9,10,44
+Partition 6	3,4,35,12,40,38
+Partition 7	43,39,8,41
+Partition 8	47,34,42
+Partition 9	33,46
+Partition 10	2,50,30,48,54
+Partition 11	32
+Partition 12	53,55
+Partition 13	51,49
+Partition 14	59,26,28,57
+Partition 15	0,37
+Partition 19	13
+Partition 22	15,45
+Partition 23	29
+Partition 28	52
+Partition 29	27,31,25
+Partition 31	58
+Partition 33	6
+path	2
+T	NA
+cut	79
+Partition 0	35
+Partition 1	4,6
+Partition 2	16,17,20,18
+Partition 3	24,21,23,22
+Partition 4	1,43,11,14
+Partition 5	7,9,10,44
+Partition 6	12
+Partition 7	39
+Partition 8	47,34,42
+Partition 9	31,48,32,33,46,45
+Partition 10	2,50,30,52,54
+Partition 11	29,8
+Partition 12	36,38
+Partition 13	15,51,49
+Partition 14	59,26,28,57
+Partition 15	37
+Partition 19	56,53,55
+Partition 23	25
+Partition 25	13
+Partition 28	19
+Partition 29	5
+Partition 30	0
+Partition 31	27
+Partition 32	58
+Partition 33	3
+Partition 35	40,41
+path	3
+T	NA
+cut	77
+Partition 0	13,38
+Partition 1	19,5
+Partition 2	4,16,17,18
+Partition 3	24,21,23,22
+Partition 4	1,43,11,14
+Partition 5	7,9,10,44
+Partition 6	12
+Partition 7	39,8,41
+Partition 8	31,35,32,20,47,34,42
+Partition 9	33,46
+Partition 10	30,54
+Partition 11	27
+Partition 12	53,55
+Partition 13	25,51,49
+Partition 14	59,26,28,57
+Partition 15	0,2,37
+Partition 16	15,45
+Partition 18	58,56
+Partition 20	50,36,6
+Partition 21	29
+Partition 22	52
+Partition 23	48
+Partition 25	3,40

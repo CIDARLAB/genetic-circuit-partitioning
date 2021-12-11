@@ -1,0 +1,90 @@
+path	1
+T	NA
+cut	83
+Partition 0	82,80,81,78,79
+Partition 1	72,75,73,74
+Partition 2	85,84
+Partition 3	88,90,27,94,91,92,93
+Partition 4	22,24,26,25,23
+Partition 5	20,19,21,36,35,38,39,37,40
+Partition 6	2,34
+Partition 7	0,1,99,97,98,95,96
+Partition 8	9,10,11,12,13
+Partition 9	3,5,4,7,6,8
+Partition 10	44,45,43,41,42
+Partition 11	14,15,16,89,17,69,68
+Partition 12	33,49,47,48,46
+Partition 13	32,28,30,31,29
+Partition 14	64,62,66,65,67,63
+Partition 15	55,50,51,53,52,54
+Partition 16	56,57,60,58,59,61
+Partition 19	70
+Partition 22	83
+Partition 26	71
+Partition 30	86
+Partition 32	77
+Partition 33	18
+Partition 34	76
+Partition 36	87
+path	2
+T	NA
+cut	94
+Partition 0	80,79
+Partition 1	72,75,76,73,74
+Partition 2	81,86,85,87,83,84
+Partition 3	88,90,91,92
+Partition 4	22,24,26,25,71,23
+Partition 5	45,20,19,21,38,39,37,40
+Partition 6	1,2,82,34,36,35
+Partition 7	0,99,97,98,95,96
+Partition 8	11,12,13
+Partition 9	3,4,7,6,8
+Partition 10	44,43,41,42,70
+Partition 11	14,15,16,17,18
+Partition 12	33,49,47,48,46
+Partition 13	28,30,94,31,29
+Partition 14	64,62,66,65,63
+Partition 15	27,32,55,50,51,53,52,54
+Partition 16	56,57,60,58,59,61
+Partition 20	93
+Partition 21	10
+Partition 23	9
+Partition 25	5
+Partition 28	77
+Partition 30	68
+Partition 31	78
+Partition 34	69
+Partition 36	67
+Partition 37	89
+path	3
+T	NA
+cut	95
+Partition 0	36,77
+Partition 1	72,75,73,74
+Partition 3	94,92,93
+Partition 4	22,24,26,25,23
+Partition 5	21,38,39,37,40
+Partition 6	34,35,33
+Partition 7	0,99,97,98,95,96
+Partition 8	9,10,11,12,14,88,13,90
+Partition 9	2,3,5,4,7,6,8
+Partition 10	44,45,18,20,43,41,42
+Partition 11	15,16,17
+Partition 12	49,48,46
+Partition 13	32,28,30,31,29
+Partition 14	64,62,66,65,67,63
+Partition 15	55,50,51,53,52
+Partition 16	56,57,60,58,59,61
+Partition 17	69,70
+Partition 19	47
+Partition 21	27
+Partition 23	54
+Partition 24	19
+Partition 25	1,82
+Partition 26	80,81,85,83,84,78,79
+Partition 27	71
+Partition 29	76
+Partition 32	68
+Partition 34	89,91
+Partition 35	86
+Partition 36	87

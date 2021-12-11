@@ -1,44 +1,42 @@
 path	1
-T	4
-cut	17
-Partition 0	61,54,60,53
-Partition 1	9,58,27,28
-Partition 2	16,57,48,56,31,32
+T	NA
+cut	15
+Partition 0	61,54,60,50,53
+Partition 1	28
+Partition 2	9,58,16,57,48,56,31,32
 Partition 3	4,5,6,19,30,36
-Partition 4	13,12,22,29,21
-Partition 5	67,20,34,33,35
+Partition 4	13,22,21
+Partition 5	12,29,67,20,34,33,35
 Partition 6	39,2,47,24,23,66
-Partition 7	3,18,37,59,51
-Partition 8	62,68,25,26,49,46
+Partition 7	3,18,59
+Partition 8	37,62,51,68,25,26,49,46
 Partition 9	38,43,55,44
-Partition 10	1,63,42,41,65,64
-Partition 11	8,69,17,15,14,45
-Partition 12	7,11,52,40,10
-Partition 13	50
-Partition 15	0
+Partition 10	0,1,63,42,41,65
+Partition 11	69,15,14,45
+Partition 12	8,7,11,52,40,17,10
+Partition 14	64
+Partition 16	27
 path	2
-T	4
-cut	20
-Partition 0	61,54,60,50
-Partition 1	9,58,57,27,28
-Partition 2	56,32
+T	NA
+cut	15
+Partition 0	54,53
+Partition 1	31
+Partition 2	16,57,48,56,32
 Partition 3	4,5,6,19,30,36
-Partition 4	13,12,22,29,21
-Partition 5	67,20,34,33,35
+Partition 4	58,13,22,21,27,28
+Partition 5	12,29,67,20,34,33,35
 Partition 6	39,2,47,24,23,66
-Partition 7	3,18,37,59,51
-Partition 8	62,68,26,49,46
+Partition 7	3,18,37,59,61,60,51,26,49,50
+Partition 8	62,68,46
 Partition 9	38,43,55,44
-Partition 10	1,63,42,41,65,64
-Partition 11	8,69,17,15,14,45
-Partition 12	7,11,52,40,10
-Partition 16	0,25
-Partition 17	53
-Partition 18	31
-Partition 19	16,48
+Partition 10	0,1,63,42,41,65,64
+Partition 11	69,15,14,45
+Partition 12	8,7,11,52,40,17,10
+Partition 15	25
+Partition 16	9
 path	3
-T	5
-cut	16
+T	NA
+cut	17
 Partition 0	61,54,60,50,53
 Partition 1	9,58,27,28
 Partition 2	16,57,48,56,31,32
@@ -46,9 +44,12 @@ Partition 3	4,5,6,19,30,36
 Partition 4	13,12,22,29,21
 Partition 5	67,20,34,33,35
 Partition 6	39,2,47,24,23,66
-Partition 7	3,18,37,59,51
-Partition 8	0,62,68,25,26,49,46
+Partition 7	3,18,59
+Partition 8	37,62,51,68,26,49,46
 Partition 9	38,43,55,44
-Partition 10	1,63,42,41,65,64
-Partition 11	8,69,17,15,14,45
-Partition 12	7,11,52,40,10
+Partition 10	1,8,63,17,42,41,65,64
+Partition 11	69,15,14,45
+Partition 12	7,11,52,40
+Partition 15	0
+Partition 16	10
+Partition 17	25

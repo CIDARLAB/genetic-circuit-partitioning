@@ -1,0 +1,4 @@
+cut	3
+Partition 0	1,0,6,19,9,10,11
+Partition 1	2,3,4,8,18,7
+Partition 2	17,14,13,15,5,12,16

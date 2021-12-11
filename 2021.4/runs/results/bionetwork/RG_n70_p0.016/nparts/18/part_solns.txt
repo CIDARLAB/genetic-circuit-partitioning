@@ -1,0 +1,19 @@
+cut	55
+Partition 0	28,9,20
+Partition 1	12,38,15,69
+Partition 2	2,19,63
+Partition 3	8,13,11,33
+Partition 4	17,22,31,68
+Partition 5	36,5,56,61
+Partition 6	6,45,52,60
+Partition 7	46,25,26,59
+Partition 8	65,21,37,30,42
+Partition 9	0,50,51
+Partition 10	53,34,66,57
+Partition 11	27,54,35,1
+Partition 12	7,64,58,40
+Partition 13	18,32,41,55
+Partition 14	16,47,44,43
+Partition 15	62,14,49,10
+Partition 16	23,3,67,24
+Partition 17	4,48,39,29
