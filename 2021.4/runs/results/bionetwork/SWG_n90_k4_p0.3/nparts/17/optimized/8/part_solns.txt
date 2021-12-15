@@ -1,0 +1,96 @@
+path	1
+T	NA
+cut	108
+Partition 0	58,56,57,59
+Partition 1	12,13,14,15,16
+Partition 2	45,47,49
+Partition 3	52,54,55,53,50,51
+Partition 4	72,71,21,44,69,70
+Partition 5	76,75,73,77
+Partition 6	11,9,10,78
+Partition 7	39,40,41,43
+Partition 8	18,38,68,24,23,25
+Partition 9	29,30,27,28
+Partition 10	32,31,33,35
+Partition 11	62,61
+Partition 12	20,22,60
+Partition 13	36,34,87
+Partition 14	1,81,82,79,80
+Partition 15	86,84,85
+Partition 16	89,0,88,5,7,26
+Partition 17	83
+Partition 22	37
+Partition 24	8
+Partition 26	42
+Partition 28	63
+Partition 30	74
+Partition 33	6
+Partition 34	46
+Partition 36	3,4
+Partition 37	65
+Partition 41	2
+Partition 43	17,19
+Partition 46	64,66
+Partition 47	48
+Partition 50	67
+path	2
+T	NA
+cut	102
+Partition 0	58,56,57,59,54,53
+Partition 1	12,13,74,14,15,16
+Partition 2	46,45,47,71,48,49
+Partition 3	52,55,50,51
+Partition 4	72,44,70
+Partition 5	75,73,77
+Partition 6	0,11,9,10,8,78
+Partition 7	69,80,67
+Partition 8	68,24,23
+Partition 9	26,25,27,28
+Partition 10	33,38,35,76,37
+Partition 11	65,63,64,66
+Partition 12	20,40,41,22,60,42
+Partition 13	18,17,36,34
+Partition 14	2,3,4,1,79
+Partition 15	86,82,21,84,87,83,85
+Partition 16	6,5,7
+Partition 20	19
+Partition 23	62
+Partition 25	31
+Partition 26	88,32
+Partition 29	29,30
+Partition 32	61
+Partition 34	43
+Partition 37	81
+Partition 38	89
+Partition 39	39
+path	3
+T	NA
+cut	103
+Partition 0	58,57,59
+Partition 1	13,15,16
+Partition 2	45,47,48,49
+Partition 3	52,55,53,50,51
+Partition 4	72,44,70
+Partition 5	11,76,74,75,73,77
+Partition 6	9,10,78,80
+Partition 7	8,39,40,41
+Partition 8	24,23,25
+Partition 9	88,32,31,1,29,33,30,27,28
+Partition 11	65,64,66,68,62,61
+Partition 12	20,22,60
+Partition 13	18,17,36,38,34,19
+Partition 14	2,3,4,81,79
+Partition 15	86,82,21,84,87,83,85
+Partition 16	89,6,5,7
+Partition 18	12,14
+Partition 19	56,54
+Partition 21	26
+Partition 23	37,71
+Partition 25	35
+Partition 26	0
+Partition 27	69
+Partition 30	46
+Partition 32	63
+Partition 35	67
+Partition 36	43
+Partition 37	42

@@ -110,7 +110,10 @@ def load_opt_part_sol (inputfile):
 	for i, idx in enumerate(iteration_idx):
 		iteration = int (lines[idx].split('\t')[1] )
 		solDict[iteration] = {}
-		solDict[iteration]['T'] = int( lines[idx+1].split('\t')[1] )
+		try:
+			solDict[iteration]['T'] = int( lines[idx+1].split('\t')[1] )
+		except ValueError: 
+			solDict[iteration]['T'] = lines[idx+1].split('\t')[1]
 		solDict[iteration]['cut'] = int( lines[idx+2].split('\t')[1] )
 		solDict[iteration]['part'] = {}
 
@@ -642,7 +645,7 @@ def visualize_assignment_graphviz (G, partition, nonprimitives, primitive_only, 
 	if primitive_only == 'TRUE':
 		G_primitive = get_G_primitive (G, nonprimitives)
 	else: 
-		G_primitive = copy_graph (G)
+		G_primitive = copy.deepcopy(G)
 
 	fig = plt.figure(figsize=(16,8))
 

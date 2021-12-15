@@ -6,4 +6,4 @@
 
 BIN_PATH='/home/ubuntu/genetic-circuit-partitioning/2021.4/bin'
 
-python3 $BIN_PATH/3_partition_optimize_bionetworks.py -settings ./settings_bionetwork.txt -samples RG_n90_p0.01
+python3 $BIN_PATH/3_partition_optimize_bionetworks.py -settings ./settings_bionetwork.txt -samples RG_n90_p0.01,RG_n90_p0.012,RG_n90_p0.013,RG_n90_p0.015,RG_n90_p0.0125

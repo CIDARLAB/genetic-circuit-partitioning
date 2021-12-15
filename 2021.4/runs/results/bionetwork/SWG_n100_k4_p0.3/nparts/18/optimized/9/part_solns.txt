@@ -1,0 +1,90 @@
+path	1
+T	NA
+cut	115
+Partition 0	74,24,26
+Partition 1	84,72,73,69,70,71
+Partition 2	18,16,17,19
+Partition 3	15,13,67,68,12,66
+Partition 4	1,99,98,76
+Partition 5	96,97,94,95
+Partition 6	6,61
+Partition 7	3,2,78,79,80
+Partition 8	46,42,43,45,44
+Partition 9	22,21,23
+Partition 10	11,29,27,28,30,40,31,33,32
+Partition 11	49,82,47
+Partition 12	35,34,36,38
+Partition 13	8,85,87,88,86
+Partition 14	92,90,89
+Partition 15	50,9,93,52,53,55
+Partition 16	56,58,59,60
+Partition 17	64,25,63,62
+Partition 21	41
+Partition 22	77,75
+Partition 24	48
+Partition 25	81
+Partition 28	10
+Partition 30	37
+Partition 32	91
+Partition 33	39
+Partition 36	20
+Partition 37	14
+Partition 38	0,83
+Partition 40	54
+Partition 42	65
+Partition 45	51
+Partition 46	5,7
+Partition 48	57
+Partition 49	4
+path	2
+T	NA
+cut	91
+Partition 0	48,46
+Partition 1	84,72,73,69,70,71
+Partition 2	18,16,17,14,74,24,19,26
+Partition 3	75,15,67,68,65,66
+Partition 4	0,1,99,98,76
+Partition 5	96,97,94
+Partition 6	3,2,4,5,77,6,7
+Partition 7	78,81,79,80
+Partition 8	41,42,43,44
+Partition 9	22,20,21,23,32
+Partition 10	29,27,28,30,31,33
+Partition 11	83,49,82,64,47
+Partition 12	39,35,34,36,37,38
+Partition 13	13,8,10,85,87,11,12,88,86
+Partition 14	91,92,90,89
+Partition 15	50,93,52,53,51
+Partition 16	58,61,57,59,60
+Partition 17	25,63,62,55
+Partition 21	56,54
+Partition 23	9
+Partition 24	40
+Partition 28	95
+Partition 29	45
+path	3
+T	NA
+cut	96
+Partition 0	61,24,26
+Partition 1	84,72,73,69,70,71
+Partition 2	18,16,17,19
+Partition 3	15,13,67,68,12,66
+Partition 4	0,1,83,99,14,76
+Partition 5	77,96,97,48,94,95
+Partition 6	5,6,7
+Partition 7	3,2,78,79,80
+Partition 8	46,42,43,45,44
+Partition 9	20,21,23
+Partition 10	29,27,28,30,31,33
+Partition 11	49,40,47
+Partition 12	41,39,35,32,34,36,37,38
+Partition 13	8,85,87,57,88,86
+Partition 14	9,10,11,91,92,90,89
+Partition 15	50,93,52,53,51
+Partition 16	56,58,59,60
+Partition 17	64,65,25,63,62,55,54
+Partition 20	98
+Partition 22	22
+Partition 26	81,82
+Partition 27	75,74
+Partition 28	4
