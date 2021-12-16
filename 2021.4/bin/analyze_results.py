@@ -13,6 +13,7 @@ from networkx.drawing.nx_agraph import graphviz_layout
 import matplotlib.image as mpimg
 import seaborn as sns
 from collections import Counter
+from scipy import stats
 
 def get_node_number (edgelist):
 	G = nx.read_edgelist (edgelist, nodetype = str, create_using=nx.DiGraph())
@@ -22,11 +23,7 @@ def load_graph (edgelist):
 	G = nx.read_edgelist (edgelist, nodetype = str, create_using=nx.DiGraph())
 	return G
 
-def load_samples (filename):
-	""" load list of samples """
-	lines = [open(filename, 'r').read().strip("\n")][0].split('\n')
-	samples = lines[0].split(',')
-	return samples 
+
 
 def load_data (filename):
 	"""Load data file"""
@@ -64,17 +61,85 @@ def load_sol (filename):
 
 def plot_network (G, outfig):
 
+	# pos = nx.kamada_kawai_layout(G)
+	# # pos = nx.random_layout(G)
+	# plt.figure(num=None, figsize=(3,3), dpi=80)
+	# nx.draw(
+	#     G,
+	#     pos=pos,
+	#     horizontalalignment='left',
+	#     verticalalignment='bottom',
+	#     node_color='powderblue'
+	# )
+	# # plt.savefig(outfig, dpi=200)
+	# plt.show()
+
+	### graphviz layout
 	pos = nx.kamada_kawai_layout(G)
-	plt.figure(num=None, figsize=(8,8), dpi=80)
-	nx.draw(
-	    G,
-	    pos=pos,
-	    horizontalalignment='left',
-	    verticalalignment='bottom',
-	    node_color='powderblue'
-	)
+	print(len(G.nodes()))
+	# pos =  nx.random_layout(G)
+	# pos = graphviz_layout(G, prog='dot')
+	plt.figure(num=None, figsize=(3,3), dpi=80)
+	nx.draw (G, pos, node_color='powderblue', width=0.25, node_size=30, arrowsize=6, with_labels=False)
+	plt.savefig (outfig, dpi=200)
+	plt.show()
+
+	### plot flipped positions
+	# print(len(G.nodes()))
+	# plt.figure(num=None, figsize=(4,3), dpi=80)
+	# flip_xy_pos = {}
+	# flipped_pos = {node: (-y, x) for (node, (x, y)) in pos.items()}
+	# nx.draw (G, pos=flipped_pos, node_color='powderblue', width=0.25, node_size=30, arrowsize=6,horizontalalignment='left',verticalalignment='bottom')
+	# plt.savefig (outfig, dpi=200)
+	# plt.show()
+
+	### plot circular layout
+	# plt.figure(figsize=(4,4))
+	# pos = nx.circular_layout(G) 
+	# nx.draw(G, pos=pos, node_size=30, node_color='powderblue', width=0.25, arrowsize=6, connectionstyle='arc3, rad=0.1')
+	# # nx.draw_networkx_nodes(G, pos, node_size=20, node_color='powderblue')
+	# # nx.draw_networkx_edges(G, pos, width=0.25, arrowsize=6, connectionstyle='arc3, rad=0.1')
+	# plt.savefig(outfig, dpi=200)
+	# plt.show()
+
+def plot_centrality (G, outfig):
+	""" compute and plot closeness centrality of nodes, betweenness centrality of nodes, and degree of nodes """
+	closenessDict = nx.algorithms.centrality.closeness_centrality (G)
+	sorted_closeness = sorted(closenessDict.items(), key=lambda x: x[1])[::-1]
+
+	betweennessDict = nx.algorithms.centrality.betweenness_centrality (G)
+	sorted_betweenness = sorted(betweennessDict.items(), key=lambda x: x[1])[::-1]
+	
+	degreeDict = nx.algorithms.centrality.degree_centrality (G) 
+	sorted_degree = sorted(degreeDict.items(), key=lambda x: x[1])[::-1]
+
+	fig = plt.figure(figsize=(5,3))
+	nodes = list(G.nodes())
+	y1 = [closenessDict[x] for x in nodes]
+	y1_norm = [(y-min(y1))/(max(y1)-min(y1)) for y in y1]
+	zscore1 = stats.zscore(y1)
+	y2 = [betweennessDict[x] for x in nodes]
+	y2_norm = [(y-min(y2))/(max(y2)-min(y2)) for y in y2]
+	zscore2 = stats.zscore(y2)
+	y3 = [degreeDict[x] for x in nodes]
+	y3_norm = [(y-min(y3))/(max(y3)-min(y3)) for y in y3]
+	zscore3 = stats.zscore(y3)
+	x = range(1, len(nodes)+1)
+	ax1 = fig.add_subplot(311)
+	ax1.plot(x, zscore1, 'o-', markersize=4, c='k')
+	ax2 = fig.add_subplot(312)
+	ax2.plot(x, zscore2, 'o-', markersize=4, c='k')
+	ax3 = fig.add_subplot(313)
+	ax3.plot(x, zscore3, 'o-', markersize=4, c='k')
+	# ax1.set_ylim([0, 0.4])
+	ax1.set_xticks([])
+	# ax2.set_ylim([0, 0.4])
+	ax2.set_xticks([])
+	# ax3.set_ylim([0, 0.4])
 	plt.savefig(outfig, dpi=200)
 	plt.show()
+
+
 
 
 def count_nodes (indir1, indir2):
@@ -499,55 +564,58 @@ def plot_deltaD ():
 
 def visualize_subnetworks_unmet_constraint (path, constraint):
 	""" for each optimization attempt, visualize the nsubnetworks that unmet constraints """
-	bm_path = path + 'runs/benchmark/electronic-circuits/alu'
-	sol_path = path + 'runs/results/electronic-circuits/alu/nparts/45/'
-	npart = 45
-
+	bm_path = path + 'runs/benchmark/bionetwork/random_graph/n20_p0.03/'
+	sol_path = path + 'runs/results/bionetwork/RG_n20_p0.03/nparts/'
+	npart = 5
 	# for npart in os.listdir(sol_path):
 	# 	if npart.startswith('.') == False and npart != 'best_solns.txt':
 	# 		print ('npart', npart)
 	# load graph and metis partition
-	edgelist = bm_path + '/DAG.edgelist'
+	edgelist = bm_path + 'DAG.edgelist'
 	G = load_graph (edgelist)
 	in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
-	G_primitive = gp.get_G_primitive (G, nonprimitives)
-	# G_primitive = G
+	# G_primitive = gp.get_G_primitive (G, nonprimitives)
+	G_primitive = G
 
 	# visualize original partition
-	cut, partDict = gp.load_metis_part_sol (sol_path+'part_solns.txt')
+	cut, partDict = gp.load_metis_part_sol (sol_path+str(npart)+'/part_solns.txt')
 	part_opt = [gp.get_part(partDict, n) for n in G_primitive.nodes()]
 	matrix, partG = gp.partition_matrix (G_primitive, part_opt)
-	qs_matrix = gp.calc_qs (G_primitive, part_opt)
-	cell_unmet_const, cell_met_const = gp.get_cells_unmet_qs_constraint (matrix, partG, qs_matrix, [4], 'TRUE')
-	# gp.visualize_assignment_graphviz (G, part_opt, nonprimitives, 'TRUE', sol_path, 0, cell_unmet_const)
+	# qs_matrix = gp.calc_qs (G_primitive, part_opt)
+	cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, [1], 'FALSE')
+	# cell_unmet_const, cell_met_const = gp.get_cells_unmet_qs_constraint (matrix, partG, qs_matrix, [4], 'TRUE')
+	gp.visualize_assignment_graphviz (G, part_opt, nonprimitives, 'FALSE', sol_path, 0, [])
 
-	# part_sol = sol_path + npart + '/part_solns.txt'
-	part_sol = sol_path + 'part_solns.txt'
-	cut, partDict = gp.load_metis_part_sol (part_sol)
+	for conn in os.listdir(sol_path+str(npart)+'/optimized'):
+		print(conn)
+		if conn == '3':
+			part_sol = sol_path+str(npart)+'/part_solns.txt'
+			# part_sol = sol_path + 'part_solns.txt'
+			cut, partDict = gp.load_metis_part_sol (part_sol)
 
-	f_out = open (sol_path + 'optimized_lc/iteration-2.txt', 'w')
-	opt_file = sol_path + 'optimized_lc/part_solns.txt'
-	if os.path.exists (opt_file):
-		timeList = load_timestep (opt_file)
-		if timeList != []:
+			# f_out = open (sol_path + 'optimized_lc/iteration-2.txt', 'w')
+			opt_file = sol_path+str(npart)+'/optimized/'+conn+'/part_solns.txt'
+
 			solDict = gp.load_opt_part_sol (opt_file)
-			for iteration in [2]:
+			for iteration in solDict.keys():
+				print('iteration', iteration)
 				part = solDict[iteration]['part']
 				if part != partDict:
 					part_opt = [gp.get_part(part, n) for n in G_primitive.nodes()]
 					matrix, partG = gp.partition_matrix (G_primitive, part_opt)
-					qs_matrix = gp.calc_qs (G_primitive, part_opt)
-					median_qs_best = np.mean(np.sum(qs_matrix, axis=1))
-					cell_unmet_const, cell_met_const = gp.get_cells_unmet_qs_constraint (matrix, partG, qs_matrix, [4], 'TRUE')
-				
-					for idx, p in enumerate(part):
-						# print('Partition '+str(part_num)+' '+','.join(part[p]))
-						qs = list(qs_matrix[idx])
-						sumqs = sum(qs)
-						f_out.write('Partition '+str(idx+1)+'\t'+str(sumqs)+'\t'+str(len(part[p]))+'\t'+', '.join([str(int(v)) for v in qs])+'\t'+', '.join(part[p])+'\t'+'\t'+', '.join([v for v in part[p]])+'\n')
-						print('Partition '+str(idx+1)+'\t'+str(sumqs)+'\t'+str(len(part[p]))+'\t'+', '.join([str(int(v)) for v in qs])+'\t'+', '.join(part[p])+'\t'+'\t'+', '.join([v for v in part[p]])+'\n')
-					print(iteration, median_qs_best, solDict[iteration]['T'], len(cell_unmet_const))
-					# gp.visualize_assignment_graphviz (G, part_opt, nonprimitives, 'TRUE', sol_path+'/optimized_'+constraint, iteration, cell_unmet_const)
+					# qs_matrix = gp.calc_qs (G_primitive, part_opt)
+					# median_qs_best = np.mean(np.sum(qs_matrix, axis=1))
+					# cell_unmet_const, cell_met_const = gp.get_cells_unmet_qs_constraint (matrix, partG, qs_matrix, [4], 'TRUE')
+					cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, [int(conn)], 'FALSE')
+					if len(cell_unmet_const) == 0: print ('solution')
+					# for idx, p in enumerate(part):
+					# 	# print('Partition '+str(part_num)+' '+','.join(part[p]))
+					# 	qs = list(qs_matrix[idx])
+					# 	sumqs = sum(qs)
+					# 	f_out.write('Partition '+str(idx+1)+'\t'+str(sumqs)+'\t'+str(len(part[p]))+'\t'+', '.join([str(int(v)) for v in qs])+'\t'+', '.join(part[p])+'\t'+'\t'+', '.join([v for v in part[p]])+'\n')
+					# 	print('Partition '+str(idx+1)+'\t'+str(sumqs)+'\t'+str(len(part[p]))+'\t'+', '.join([str(int(v)) for v in qs])+'\t'+', '.join(part[p])+'\t'+'\t'+', '.join([v for v in part[p]])+'\n')
+					# print(iteration, median_qs_best, solDict[iteration]['T'], len(cell_unmet_const))
+					gp.visualize_assignment_graphviz (G, part_opt, nonprimitives, 'FALSE', sol_path+str(npart)+'/optimized/'+conn, iteration, cell_unmet_const)
 
 
 
@@ -1007,70 +1075,70 @@ def convert_name (inputfile):
 
 def parameter_scan_bionetworks (PATH):
 	""" plot solutions scanned by initial n and connectivity constraint """
-	bm = PATH + 'runs/benchmark/bionetwork/random_graph/n100_p0.01/DAG.edgelist'
-	sol_path = PATH + 'runs/results/bionetwork/RG_n100_p0.01/nparts/'
+	bm = PATH + 'runs/benchmark/bionetwork/random_graph/n30_p0.05/DAG.edgelist'
+	sol_path = PATH + 'runs/results/bionetwork/RG_n30_p0.05/nparts/'
 
 	G = load_graph (bm)
-	# in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
-	# G_primitive = gp.get_G_primitive (G, nonprimitives)
+	in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (G)
+	G_primitive = gp.get_G_primitive (G, nonprimitives)
+	print(nonprimitives)
 
 	sols = []
-	for targetn in os.listdir(sol_path):
+	# for targetn in os.listdir(sol_path):
+	for targetn in ['8']:
 		if targetn.startswith('.') == False and targetn.isdigit():
 			print('target n', targetn)
 			part_sol = sol_path + targetn + '/part_solns.txt'
 			cut, partDict = gp.load_metis_part_sol (part_sol)
 			opt_path = sol_path + targetn + '/optimized/'
 			if os.path.exists(opt_path):
-				for conn in os.listdir(opt_path):
+				# for conn in os.listdir(opt_path):
+				for conn in ['7']:
 					if conn.startswith('.')  == False and conn.isnumeric(): 
 						print('connectivity', conn)
 						opt_part_sol = opt_path + conn + '/part_solns.txt'
 						if os.path.exists(opt_part_sol):
 							solDict = gp.load_opt_part_sol (opt_part_sol)
-							# print(solDict)
 							for ite in solDict.keys():
-								print('iteration', ite)
-								# print(solDict[ite])
+								print(solDict[ite])
 								part = solDict[ite]['part']
 								part_opt = (cut, [gp.get_part(part, n) for n in G.nodes()])
-								# print(part_opt)
+								for n in list(G.nodes()):
+									print(n, gp.get_part(part, n))
 								endN = len(set(part_opt[1]))
 								matrix, partG = gp.partition_matrix (G, part_opt[1])
 								motif_allowed = gp.check_motif_allowed(matrix, conn)
-								cell_unmet_const, cell_met_const = gp.get_cells_unmet_constraint (matrix, partG, conn, 'FALSE')
-								print(cell_unmet_const)
-								if cell_unmet_const == []: 
+								if motif_allowed: 
+									print('iteration', ite)
 									sols.append((endN, int(conn)))
-									print('found a solution', (endN, int(conn)))
-									# gp.visualize_assignment_graphviz (G, part_opt[1], nonprimitives, 'FALSE', opt_path + str(conn) + '/', 'N_'+str(endN)+'_conn_'+str(conn), [])
-	print('solutions', sols)
+									gp.visualize_assignment_graphviz (G, part_opt[1], nonprimitives, 'FALSE', opt_path + str(conn) + '/', 'iter_'+str(ite)+'_N_'+str(endN)+'_conn_'+str(conn), [])
+	
 	# plot solutions
-	fig = plt.figure(figsize=(5,5))
-	ax = fig.add_subplot(111)
-	sol_count = []
-	counted = []
-	for sol in sols: 
-		if sol not in counted: 
-			count = sols.count(sol)
-			sol_count.append ((sol, count))
-			counted.append(sol)
-	print(sol_count)
-	x, y, z = [], [], []
-	for sol in sol_count: 
-		x.append (sol[0][0])
-		y.append (sol[0][1])
-		z.append (sol[1])
-	print(x)
-	print(y)
-	print(z)
-	ax.scatter(np.array(x), np.array(y), s=np.array(z)*20, alpha=0.4, c='blue', edgecolors='grey', linewidth=1)
-	# ax.set_xlim([10, 20])
-	# ax.set_ylim([0, 10])
-	ax.set_xlabel('Number of Submodules in Valid Solutions')
-	ax.set_ylabel('Maximum Connuections between submodules')
-	plt.savefig(sol_path+'Solution_space.png', dpi=100)
-	plt.show()
+	# fig = plt.figure(figsize=(5,5))
+	# ax = fig.add_subplot(111)
+	# sol_count = []
+	# counted = []
+	# for sol in sols: 
+	# 	if sol not in counted: 
+	# 		count = sols.count(sol)
+	# 		sol_count.append ((sol, count))
+	# 		counted.append(sol)
+	# print(sol_count)
+	# x, y, z = [], [], []
+	# for sol in sol_count: 
+	# 	x.append (sol[0][0])
+	# 	y.append (sol[0][1])
+	# 	z.append (sol[1])
+	# print(x)
+	# print(y)
+	# print(z)
+	# ax.scatter(np.array(x), np.array(y), s=np.array(z)*20, alpha=0.4, c='blue', edgecolors='grey', linewidth=1)
+	# # ax.set_xlim([0, 10])
+	# # ax.set_ylim([0, 7])
+	# ax.set_xlabel('Number of Submodules in Valid Solutions')
+	# ax.set_ylabel('Maximum Connuections between submodules')
+	# plt.savefig(sol_path+'Solution_space.png', dpi=100)
+	# plt.show()
 
 def plot_histogram() : 
 	""" plot histogram of number of nodes in each cell"""
@@ -1106,7 +1174,8 @@ def plot_histogram() :
 
 if __name__ == '__main__':
 	PATH = '/home/ubuntu/genetic-circuit-partitioning/2021.4/'
-	# sample_list = load_samples (PATH + 'runs/samples.txt')
+	# PATH = '/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/'
+	
 
 	# count_nodes (PATH + 'runs/results/4-input-boolean-circuits', PATH + 'runs/results/5-input-boolean-circuits')
 	# partition_stats ()
@@ -1115,8 +1184,9 @@ if __name__ == '__main__':
 	# count_motif()
 	# plot_motif_occurence (PATH + 'runs/results/analysis/motif freq.txt')
 	# plot_deltaD ()
-	# G = load_graph (PATH + 'runs/benchmark/electronic-circuits/hexDisplay/DAG.edgelist')
-	# plot_network (G, PATH + 'runs/benchmark/electronic-circuits/hexDisplay/DAG.pdf')
+	# G = load_graph (PATH + 'runs/benchmark/6-input-boolean-circuits/30/DAG.edgelist')
+	# plot_network (G, PATH + 'runs/benchmark/bionetwork/random_graph/n50_p0.02/DAG.pdf')
+	# plot_centrality (G, PATH + 'runs/benchmark/6-input-boolean-circuits/centrality.pdf')
 
 	# best_soln = PATH + 'runs/results/5-input-boolean-circuits/best_solns.txt'
 	# data = load_sol	(best_soln)
@@ -1124,7 +1194,7 @@ if __name__ == '__main__':
 	# print(avgNode)
 	# partition = generate_edgelist_of_cells (PATH)
 	# converted_names = convert_name (PATH + 'runs/results/electronic-circuits/md5Core/Jai_solution/gate_name_conversion.txt')
-	# visualize_subnetworks_unmet_constraint (PATH, 'lc')
+	visualize_subnetworks_unmet_constraint (PATH, 'lc')
 	# compare_runs (PATH, 'lc')
 	# compare_gatenum_distribution (PATH, 'lc')
 	# compare_qs_distribution (PATH, 'lc')
@@ -1133,17 +1203,7 @@ if __name__ == '__main__':
 	# g = nx.read_edgelist(PATH+'runs/benchmark/electronic-circuits/md5Core/DAG.edgelist', create_using=nx.DiGraph())
 	# in_nodes, out_nodes, nonprimitives  = gp.get_nonprimitive_nodes (g)
 
-	parameter_scan_bionetworks (PATH)
+	# parameter_scan_bionetworks (PATH)
 
 	# plot_histogram ()
 	
-	# s_no_sols = ''
-	# for s in ['6input_54']: 
-	# 	inp = s[0]
-	# 	name = s.split('_')[1]
-	# 	# print(inp, name)
-	# 	data = load_sol (PATH + 'runs/results/' + inp + '-input-boolean-circuits/' + name + '/nparts/best_solns.txt')
-	# 	print(data)
-	# 	if data == {}:
-	# 		s_no_sols += ','+s
-	# print(s_no_sols)

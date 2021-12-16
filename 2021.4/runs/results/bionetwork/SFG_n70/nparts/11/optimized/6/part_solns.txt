@@ -1,5 +1,5 @@
 path	1
-T	2
+T	NA
 cut	24
 Partition 0	9,2,22,25,56
 Partition 1	11,16,21,39,43,23
@@ -13,7 +13,7 @@ Partition 8	6,13,34,65,27,28
 Partition 9	1,5,3,47,30,54,61
 Partition 10	59,20,48,42,64,62,69
 path	2
-T	2
+T	NA
 cut	24
 Partition 0	9,2,22,25,56
 Partition 1	11,16,21,39,43,23
@@ -27,7 +27,7 @@ Partition 8	6,13,34,65,27,28
 Partition 9	1,5,3,47,30,54,61
 Partition 10	59,20,48,42,64,62,69
 path	3
-T	2
+T	NA
 cut	24
 Partition 0	9,2,22,25,56
 Partition 1	11,16,21,39,43,23
