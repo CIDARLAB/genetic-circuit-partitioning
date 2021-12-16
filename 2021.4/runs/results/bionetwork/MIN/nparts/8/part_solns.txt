@@ -1,0 +1,9 @@
+cut	27
+Partition 0	4,7,8,12,15,40
+Partition 1	18,20,6,14,19,43,35
+Partition 2	9,21,37,38,41
+Partition 3	11,30,48,27,24,33
+Partition 4	22,28,29,32,46,34
+Partition 5	45,31,47,36,39,49,44
+Partition 6	1,17,23,25,42,26
+Partition 7	2,16,3,10,5,13

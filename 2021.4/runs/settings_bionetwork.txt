@@ -109,3 +109,4 @@ SFG_n70	./benchmark/bionetwork/scale-free_graph/SFG_n70	./lib	FALSE	"1,10"		5	C	
 SFG_n80	./benchmark/bionetwork/scale-free_graph/SFG_n80	./lib	FALSE	"1,10"		5	C	3	./results/bionetwork/SFG_n80
 SFG_n90	./benchmark/bionetwork/scale-free_graph/SFG_n90	./lib	FALSE	"1,10"		5	C	3	./results/bionetwork/SFG_n90
 SFG_n100	./benchmark/bionetwork/scale-free_graph/SFG_n100	./lib	FALSE	"1,10"		5	C	3	./results/bionetwork/SFG_n100
+MIN	./benchmark/bionetwork/MIN	./lib	FALSE	"1,10"		5	C	3	./results/bionetwork/MIN
