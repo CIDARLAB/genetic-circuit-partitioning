@@ -1,9 +1,0 @@
-cut	9
-Partition 0	382
-Partition 1	389,385
-Partition 2	384
-Partition 3	379,383
-Partition 4	378
-Partition 5	380,386
-Partition 6	381
-Partition 7	388,387

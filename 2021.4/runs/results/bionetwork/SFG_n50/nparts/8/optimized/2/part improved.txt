@@ -1,4 +1,0 @@
-iteration	t
-1	721
-2	
-3	

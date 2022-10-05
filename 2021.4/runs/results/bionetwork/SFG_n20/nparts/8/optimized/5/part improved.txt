@@ -1,4 +1,0 @@
-iteration	t
-1	5
-2	3
-3	6

@@ -1,8 +1,0 @@
-sol	1
-T	4
-cut	10
-Partition 0	378,392,382
-Partition 1	391,393,389
-Partition 2	379,385,384
-Partition 3	380,383,386,381
-Partition 4	388,387,390

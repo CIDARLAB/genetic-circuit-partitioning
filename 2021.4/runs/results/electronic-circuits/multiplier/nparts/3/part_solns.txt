@@ -1,4 +1,0 @@
-cut	6
-Partition 0	67,63,65,62,66
-Partition 1	74,72,68,69,73
-Partition 2	64,60,70,61,71

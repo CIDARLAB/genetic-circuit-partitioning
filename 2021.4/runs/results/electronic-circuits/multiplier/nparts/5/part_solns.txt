@@ -1,6 +1,0 @@
-cut	9
-Partition 0	74,72,69
-Partition 1	60,68,73
-Partition 2	64,67,61
-Partition 3	65,62,66
-Partition 4	63,70,71

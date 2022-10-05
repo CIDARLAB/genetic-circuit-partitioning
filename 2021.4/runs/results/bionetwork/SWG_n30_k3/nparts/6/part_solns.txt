@@ -1,7 +1,0 @@
-cut	7
-Partition 0	8,7,9,23,22
-Partition 1	14,13,18,27,17
-Partition 2	16,15,25,24,26
-Partition 3	3,4,19,10,12
-Partition 4	1,0,2,6,5
-Partition 5	29,28,11,21,20

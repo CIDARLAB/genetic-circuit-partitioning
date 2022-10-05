@@ -1,8 +1,0 @@
-cut	13
-Partition 0	3,4
-Partition 1	2,14,7
-Partition 2	13,18,11
-Partition 3	0,8,17
-Partition 4	12,9,19
-Partition 5	1,15,6
-Partition 6	10,16,5

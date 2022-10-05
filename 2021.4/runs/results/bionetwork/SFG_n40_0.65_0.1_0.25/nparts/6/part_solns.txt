@@ -1,7 +1,0 @@
-cut	11
-Partition 0	16,2,19,29,34,37
-Partition 1	1,7,9,14,36,39
-Partition 2	0,24,27,3,30,33
-Partition 3	11,12,15,18,23,26,35
-Partition 4	5,4,8,10,20,21,28,31
-Partition 5	6,13,17,22,25,32,38
