@@ -647,7 +647,7 @@ def visualize_assignment_graphviz (G, partition, nonprimitives, primitive_only, 
 	else: 
 		G_primitive = copy.deepcopy (G)
 
-	fig = plt.figure(figsize=(16,8))
+	fig = plt.figure(figsize=(14,7))
 
 	# plot the partition assignment 
 	ax = fig.add_subplot(1,2,1)
@@ -657,13 +657,16 @@ def visualize_assignment_graphviz (G, partition, nonprimitives, primitive_only, 
 	color = list(matplotlib.colors.cnames.values())
 
 	# nx.nx_agraph.write_dot(G, outdir+'/'+str(iteration)+'_DAG_part.dot')
-	pos = graphviz_layout(G, prog='dot')
+	# pos = graphviz_layout(G, prog='dot')
+	# pos = nx.kamada_kawai_layout(G)
 	# pos = nx.spring_layout(G)
+	pos = nx.spiral_layout (G,equidistant=True)
+
 	for i in range(max(partition)+1):
 		nodeIdx = [a for a, b in enumerate(partition) if b == i]
 		nodes = [list(G_primitive.nodes())[n] for n in nodeIdx]
 		# if len(list(G.nodes())) < 30: 
-		nx.draw (G, pos, nodelist=nodes, node_size=30, font_size=20, arrowsize=5, width=0.5, with_labels=True, node_color=color[i])
+		nx.draw (G, pos, nodelist=nodes, node_size=80, font_size=5, arrowsize=5, width=0.5, with_labels=True, node_color=color[i])
 		# else:
 			# nx.draw (G, pos, nodelist=nodes, node_size=5, font_size=0.5, arrowsize=1, width=0.5, with_labels=True, node_color=color[i])
 
@@ -678,7 +681,7 @@ def visualize_assignment_graphviz (G, partition, nonprimitives, primitive_only, 
 		else: nloops.append(e)
 
 	# pos = graphviz_layout(partG, prog='dot')
-	pos = nx.spring_layout(partG)
+	pos = nx.kamada_kawai_layout(partG)
 	nx.draw_networkx_nodes(partG, pos, node_size=300, node_color='#b18ea6')
 	if highlight !=[] :
 		nx.draw_networkx_nodes(partG, pos, nodelist=highlight, node_size=300, node_color='red')
@@ -690,7 +693,7 @@ def visualize_assignment_graphviz (G, partition, nonprimitives, primitive_only, 
 	nx.draw_networkx_edges(partG, pos, nloops)
 	ax2.axis('off')
 
-	plt.savefig(outdir+'/'+str(iteration)+'_DAG_part.png', dpi=200)
+	plt.savefig(outdir+'/'+str(iteration)+'_DAG_part.pdf', dpi=200)
 	# plt.show()
 
 ###########################################
@@ -730,17 +733,23 @@ def ujson_copy (oriList):
 def distance_constraint (G, cells, partList):
 	""" nodes have at neighbors within the same partitioned cell """
 	distance = True
+	# print('checking distance boolean')
 	for node in G.nodes(): 
 		node_idx = list(G.nodes()).index(node)
 		node_part = partList[node_idx]
+		# print('node', node, 'part', node_part)
 		if node_part in cells: 
 			node_neighbors = list(nx.all_neighbors(G, node))
+			# print('node neighbors', node_neighbors)
 			neighbors_idx = [list(G.nodes()).index(neighbor) for neighbor in node_neighbors]
 			neighbors_part = [partList[idx] for idx in neighbors_idx]
+			# print('neighbors part', neighbors_part)
 			# if none of the neighbors is in the same partitioned cell, and this node is not the only node within this cell
 			if  node_part not in neighbors_part: 
+				# print ('node does not have neighbors in the same partitioned cell')
 				if partList.count(node_part) != 1: 
 					distance = False
+					# print('this cell contain more than one node, distance boolean false')
 	return distance
 
 def optimize_signal_subnetwork_tmp (G, primitive_only, S_bounds, cut, partDict, maxNodes, populate_cell, populate_cell_rate, dist_boolean, motif_constraint, loop_free, priority, timestep, trajectories, outdir):
@@ -893,6 +902,7 @@ def optimize_signal_subnetwork_tmp (G, primitive_only, S_bounds, cut, partDict, 
 							else:
 								part_constraint = ( min_part_size >= Smin ) and ( max_part_size <= Smax )
 							# print('max and min part size', max_part_size, min_part_size)
+							# print('dist boolean', distance_boolean)
 							# size_constraint = all(s <= Smax for s in part_sizes) and all(s >= Smin for s in part_sizes)
 							# print('size constraint', part_constraint)
 
@@ -1119,11 +1129,11 @@ def optimize_signal_subnetwork (G, primitive_only, S_bounds, cut, partDict, maxN
 							# swap the selected nodes to other cells in this partition 
 							# print(nodes_to_move)
 							# given certain probability, new cells can be added
-							if len(subG_nodes)/len(subG_cells) >= populate_cell: 
-								new_cell = np.random.poisson(populate_cell_rate)
-								# print('new cells', new_cell)
-								subG_cells.extend ([max(partList_tmp)+c for c in range(1, new_cell+1)])
-								# print('add new cells', subG_cells)
+							# if len(subG_nodes)/len(subG_cells) >= populate_cell: 
+							# 	new_cell = np.random.poisson(populate_cell_rate)
+							# 	# print('new cells', new_cell)
+							# 	subG_cells.extend ([max(partList_tmp)+c for c in range(1, new_cell+1)])
+							# 	# print('add new cells', subG_cells)
 							for node in nodes_to_move:
 								# print('move node', node)
 								node_idx = list(G_nodes).index(node)
@@ -1416,95 +1426,89 @@ def split_cells (G, primitive_only, S_bounds, cut, partDict, iteration, maxNodes
 		solDict = load_opt_part_sol (outdir + 'part_solns.txt')
 	
 	part_opt      = [get_part(solDict[iteration]['part'], n) for n in G_primitive.nodes()]
-	# T = calc_signal_path (G, in_nodes, out_nodes, partDict)
-	# minT = max(T)
-	minT = 'NA'
+	T = calc_signal_path (G, in_nodes, out_nodes, partDict)
+
+	minT         = max(T)
 
 	matrix, partG = partition_matrix(G_primitive, part_opt)
 	cell_unmet_const_o, cell_met_const_o = get_cells_unmet_constraint (matrix, partG, motif_constraint, loop_free)
 	print('cells unmet constraint at initial partition', cell_unmet_const_o)
 	cell_unmet_const = ujson_copy (cell_unmet_const_o)
 	
-	# if non of the cells unmet have just one node
-	if min([part_opt.count(c) for c in cell_unmet_const_o]) > 1: 
-
-		for t in range(5000):
-			size_constraint = False
-			while size_constraint == False:
-				partList_tmp = ujson_copy (part_opt)
+	for t in range(5000):
+		size_constraint = False
+		while size_constraint == False:
+			partList_tmp = ujson_copy (part_opt)
+			npart = max(partList_tmp) + 1
+			for cell in cell_unmet_const_o:
+				# print('cell', cell)
+				nodesIdx = [idx for idx, element in enumerate(partList_tmp) if element == cell]
+				# print('idx of nodes in cell', nodesIdx)
+				S = partList_tmp.count(cell)
+				Nmax = int(S/int(S_bounds[0]))    # max number of sublists to split this list into 
+				ncell = 1  # partition this list into ncell lists
+				while ncell not in np.arange(3, Nmax):
+					ncell = np.random.poisson(2)
+				# print('split into ', ncell)
+				# for node in solDict[iteration]['part'][cell]:
+				for node in nodesIdx:
+					new_part = random.choice(np.arange(ncell))
+					# print('new cell', new_part)
+					if new_part != 0: 
+						partList_tmp[node] = npart + new_part - 1
+						# partList_tmp[list(G_primitive.nodes()).index(node)] = npart + new_part - 1
+						# print('changing partition of cell at index', node , 'to new part', npart + new_part - 1)
 				npart = max(partList_tmp) + 1
-				for cell in cell_unmet_const_o:
-					# print('cell', cell)
-					nodesIdx = [idx for idx, element in enumerate(partList_tmp) if element == cell]
-					# print('idx of nodes in cell', nodesIdx)
-					S = partList_tmp.count(cell)
-					Nmax = int(S/int(S_bounds[0]))    # max number of sublists to split this list into 
-					# print('Nmax', Nmax)
-					ncell = 0  # partition this list into ncell lists
-					while ncell not in np.arange(1, Nmax):
-						ncell = np.random.poisson(3)
-						# print('ncell', ncell)
-					# print('split into ', ncell)
-					# for node in solDict[iteration]['part'][cell]:
-					for node in nodesIdx:
-						new_part = random.choice(np.arange(ncell))
-						# print('new cell', new_part)
-						if new_part != 0: 
-							partList_tmp[node] = npart + new_part - 1
-							# partList_tmp[list(G_primitive.nodes()).index(node)] = npart + new_part - 1
-							# print('changing partition of cell at index', node , 'to new part', npart + new_part - 1)
-					npart = max(partList_tmp) + 1
-					# print('tot cells', npart)
-				# check if all cells are within size constraint
-				max_part_size = max(collections.Counter(partList_tmp).values())
-				min_part_size = min(collections.Counter(partList_tmp).values())
-				size_constraint = ( min_part_size >= int(S_bounds[0]) ) and ( max_part_size <= int(S_bounds[1]) )
-				# print('size constraint', size_constraint)
-			# check if size is valid after splitting
-			matrix_new, partG_new = partition_matrix (G_primitive, partList_tmp)
-			loop_free_new, motif_allowed_new = check_constraint (matrix_new, partG_new, motif_constraint)
-			cell_unmet_const_tmp, cell_met_const_tmp = get_cells_unmet_constraint (matrix_new, partG_new, motif_constraint, loop_free)
+				# print('tot cells', npart)
+			# check if all cells are within size constraint
+			max_part_size = max(collections.Counter(partList_tmp).values())
+			min_part_size = min(collections.Counter(partList_tmp).values())
+			size_constraint = ( min_part_size >= int(S_bounds[0]) ) and ( max_part_size <= int(S_bounds[1]) )
+		# check if size is valid after splitting
+		matrix_new, partG_new = partition_matrix (G_primitive, partList_tmp)
+		loop_free_new, motif_allowed_new = check_constraint (matrix_new, partG_new, motif_constraint)
+		cell_unmet_const_tmp, cell_met_const_tmp = get_cells_unmet_constraint (matrix_new, partG_new, motif_constraint, loop_free)
 
-			if len(cell_unmet_const_tmp) == 0 and loop_free_new: 
-				# if found a solution with all cells satisfying the constraint, record the solution 
-				print('partList_tmp', partList_tmp)
-				bestpartDict = dict(zip(list(G_primitive.nodes()), partList_tmp))
-				bestpartDict = {part:[node for node in bestpartDict.keys() if bestpartDict[node] == part] for part in set(bestpartDict.values())}
-				cut = cal_cut (G_primitive, bestpartDict)
-				minT = max(calc_signal_path2 (partG_new))
-				print('recording solution')
-				f_out = open(outdir + 'part_solns.txt', 'a')
-				f_out.write('path\t'+str(max(list(solDict.keys()))+1)+'\n')
-				f_out.write('T\t'+str(minT)+'\n')
-				f_out.write('cut\t'+str(cut)+'\n')
-				for part in bestpartDict:
-					f_out.write('Partition '+str(part)+'\t'+','.join(bestpartDict[part])+'\n')
-				# print('visualize partition assignment')
-				# visualize_assignment_graphviz (G, partList_tmp, nonprimitives, primitive_only, outdir, int(trajectories)+1, [])
-				soln_found = True
-				break  
+		if len(cell_unmet_const_tmp) == 0 : 
+			# if found a solution with all cells satisfying the constraint, record the solution 
+			print('partList_tmp', partList_tmp)
+			bestpartDict = dict(zip(list(G_primitive.nodes()), partList_tmp))
+			bestpartDict = {part:[node for node in bestpartDict.keys() if bestpartDict[node] == part] for part in set(bestpartDict.values())}
+			cut = cal_cut (G_primitive, bestpartDict)
+			minT = max(calc_signal_path2 (partG_new))
+			print('recording solution')
+			f_out = open(outdir + 'part_solns.txt', 'a')
+			f_out.write('path\t'+str(max(list(solDict.keys()))+1)+'\n')
+			f_out.write('T\t'+str(minT)+'\n')
+			f_out.write('cut\t'+str(cut)+'\n')
+			for part in bestpartDict:
+				f_out.write('Partition '+str(part)+'\t'+','.join(bestpartDict[part])+'\n')
+			print('visualize partition assignment')
+			# visualize_assignment_graphviz (G, partList_tmp, nonprimitives, primitive_only, outdir, int(trajectories)+1, [])
+			soln_found = True
+			break  
 
-			# if len(cell_unmet_const_tmp) <= len(cell_unmet_const):
-			# 	print(cell_unmet_const_tmp)
-			# 	bestpartList = ujson_copy (partList_tmp)
-			# 	cell_unmet_const = ujson_copy (cell_unmet_const_tmp)
+		# if len(cell_unmet_const_tmp) <= len(cell_unmet_const):
+		# 	print(cell_unmet_const_tmp)
+		# 	bestpartList = ujson_copy (partList_tmp)
+		# 	cell_unmet_const = ujson_copy (cell_unmet_const_tmp)
 
-		# # record the best solution with maximum cells satisfying the constraint
-		# # bestpartDict = dict(zip(list(G_primitive.nodes()), bestpartList))
-		# # bestpartDict = {part:[node for node in bestpartDict.keys() if bestpartDict[node] == part] for part in set(bestpartDict.values())}
-		# # cut = cal_cut (G_primitive, bestpartDict)
-		# # minT = max(calc_signal_path2 (partG_new))
-		# # print('recording solution')
-		# # f_out = open(outdir + 'part_solns.txt', 'a')
-		# # f_out.write('path\t'+str(int(trajectories)+1)+'\n')
-		# # f_out.write('T\t'+str(minT)+'\n')
-		# # f_out.write('cut\t'+str(cut)+'\n')
-		# # for part in bestpartDict:
-		# # 	f_out.write('Partition '+str(part)+'\t'+','.join(bestpartDict[part])+'\n')
-		# # f_out.write('\n')
-		# # print('visualize partition assignment')
-		# # visualize_assignment_graphviz (G, partList_tmp, nonprimitives, primitive_only, outdir, len(solDict.keys())+1, cell_unmet_const)
-
+	# # record the best solution with maximum cells satisfying the constraint
+	# # bestpartDict = dict(zip(list(G_primitive.nodes()), bestpartList))
+	# # bestpartDict = {part:[node for node in bestpartDict.keys() if bestpartDict[node] == part] for part in set(bestpartDict.values())}
+	# # cut = cal_cut (G_primitive, bestpartDict)
+	# # minT = max(calc_signal_path2 (partG_new))
+	# # print('recording solution')
+	# # f_out = open(outdir + 'part_solns.txt', 'a')
+	# # f_out.write('path\t'+str(int(trajectories)+1)+'\n')
+	# # f_out.write('T\t'+str(minT)+'\n')
+	# # f_out.write('cut\t'+str(cut)+'\n')
+	# # for part in bestpartDict:
+	# # 	f_out.write('Partition '+str(part)+'\t'+','.join(bestpartDict[part])+'\n')
+	# # f_out.write('\n')
+	# # print('visualize partition assignment')
+	# # visualize_assignment_graphviz (G, partList_tmp, nonprimitives, primitive_only, outdir, len(solDict.keys())+1, cell_unmet_const)
+	
 	if soln_found: recorded_path = 1
 	else: recorded_path = 0
 	return soln_found, recorded_path
@@ -1530,7 +1534,7 @@ def determine_best_solution (G, primitive_only, high_constraint, low_constraint,
 	nparts = os.listdir(outdir)
 
 	for constraint in ['lc', 'hc']:
-		# print(constraint)
+		print(constraint)
 		if constraint == 'lc': motif_constraint = low_constraint
 		else: motif_constraint = high_constraint
 		for npart in nparts:
@@ -1548,14 +1552,14 @@ def determine_best_solution (G, primitive_only, high_constraint, low_constraint,
 					minT      = T_o
 					# load optimized solution
 					solDict = load_opt_part_sol (outdir+npart+'/optimized_'+constraint+'/part_solns.txt')
-					# print(solDict)
+
 					# check if motif_constraint is satisfied
 					for iteration in solDict.keys():
 						# print('iteration', iteration)
 						# T = int(solDict[iteration]['T'])
 						cut = int(solDict[iteration]['cut'])
 						part = solDict[iteration]['part']
-						T = max(calc_signal_path(G, in_nodes, out_nodes, part))
+						T = max(calc_signal_path (G, in_nodes, out_nodes, part))
 						part_opt = (cut, [get_part(part, n) for n in G_primitive.nodes()])
 						matrix, partG = partition_matrix (G_primitive, part_opt[1])
 						loop_free, motif_allowed = check_constraint (matrix, partG, motif_constraint)	
@@ -1563,41 +1567,41 @@ def determine_best_solution (G, primitive_only, high_constraint, low_constraint,
 						# print('loop free & motif_allowed', loop_free, motif_allowed)
 						# print(cell_unmet_const)
 						# record solution if meeting constraints
-						if motif_allowed and loop_free: 
-							f_out.write('\t'.join([str(npart), str(iteration), str(len(part.keys())), str(len(list(G.nodes()))), constraint, str(motif_allowed_o), str(motif_allowed), str(loop_free_o), str(loop_free), str(T_o), str(T), str(cut_o), str(cut)])+'\n')
+						# if motif_allowed and loop_free: 
+						# 	f_out.write('\t'.join([str(npart), str(iteration), str(len(part.keys())), str(len(list(G.nodes()))), constraint, str(motif_allowed_o), str(motif_allowed), str(loop_free_o), str(loop_free), str(T_o), str(T), str(cut_o), str(cut)])+'\n')
 						
-					# 	# print('loop free', loop_free)
-					# 	# print('motif_allowed', motif_allowed)
-					# 	# best soln so far
-					# 	matrix_bs, partG_bs = partition_matrix (G_primitive, best_soln[0][1][1])
-					# 	loop_free_bs = check_cycles(partG_bs)
-					# 	motif_allowed_bs = check_motif_allowed(matrix_bs, motif_constraint)
-					# 	# print('best_soln so far', best_soln[0][1][1])
+						# print('loop free', loop_free)
+						# print('motif_allowed', motif_allowed)
+						# best soln so far
+						matrix_bs, partG_bs = partition_matrix (G_primitive, best_soln[0][1][1])
+						loop_free_bs = check_cycles(partG_bs)
+						motif_allowed_bs = check_motif_allowed(matrix_bs, motif_constraint)
+						# print('best_soln so far', best_soln[0][1][1])
 
-					# 	if not (motif_allowed_bs and loop_free_bs):  # if best solution doesn't satisfy constraint
-					# 		if motif_allowed and loop_free:          # if new part does
-					# 			best_soln = [(iteration, part_opt)]
-					# 			minT      = T
-					# 	else:                                        # if best solution satisfies cnstraint
-					# 		if motif_allowed and loop_free:          # if new part does
-					# 			if T < minT:
-					# 				best_soln = [(iteration, part_opt)]
-					# 				minT      = T
-					# 			elif T == minT:
-					# 				if cut < best_soln[0][1][0]: 
-					# 					best_soln = [(iteration, part_opt)]
-					# 				elif cut == best_soln[0][1][0]:
-					# 					best_soln.append((iteration, part_opt)) 
-					# 					# print(best_soln)
+						if not (motif_allowed_bs and loop_free_bs):  # if best solution doesn't satisfy constraint
+							if motif_allowed and loop_free:          # if new part does
+								best_soln = [(iteration, part_opt)]
+								minT      = T
+						else:                                        # if best solution satisfies cnstraint
+							if motif_allowed and loop_free:          # if new part does
+								if T < minT:
+									best_soln = [(iteration, part_opt)]
+									minT      = T
+								elif T == minT:
+									if cut < best_soln[0][1][0]: 
+										best_soln = [(iteration, part_opt)]
+									elif cut == best_soln[0][1][0]:
+										best_soln.append((iteration, part_opt)) 
+										# print(best_soln)
 
-					# for soln in best_soln:
-					# 	# compile results
-					# 	matrix_bs, partG_bs = partition_matrix (G_primitive, soln[1][1])
-					# 	loop_free_bs = check_cycles(partG_bs)
-					# 	motif_allowed_bs = check_motif_allowed(matrix_bs, motif_constraint)
-					# 	if loop_free_bs and motif_allowed_bs:
-					# 		f_out.write('\t'.join([str(npart), str(soln[0]), str(len(part.keys())), str(len(list(G.nodes()))), constraint, str(motif_allowed_o), str(motif_allowed_bs), str(loop_free_o), str(loop_free_bs), str(T_o), str(minT), str(cut_o), str(soln[1][0])])+'\n')
-					# 		# visualize best solutions
-					# 		# visualize_assignment_graphviz (G, soln[1][1], nonprimitives, primitive_only, outdir+npart+'/optimized_'+constraint, soln[0], [])
+					for soln in best_soln:
+						# compile results
+						matrix_bs, partG_bs = partition_matrix (G_primitive, soln[1][1])
+						loop_free_bs = check_cycles(partG_bs)
+						motif_allowed_bs = check_motif_allowed(matrix_bs, motif_constraint)
+						if loop_free_bs and motif_allowed_bs:
+							f_out.write('\t'.join([str(npart), str(soln[0]), str(len(part.keys())), str(len(list(G.nodes()))), constraint, str(motif_allowed_o), str(motif_allowed_bs), str(loop_free_o), str(loop_free_bs), str(T_o), str(minT), str(cut_o), str(soln[1][0])])+'\n')
+							# visualize best solutions
+							# visualize_assignment_graphviz (G, soln[1][1], nonprimitives, primitive_only, outdir+npart+'/optimized_'+constraint, soln[0], [])
 
 

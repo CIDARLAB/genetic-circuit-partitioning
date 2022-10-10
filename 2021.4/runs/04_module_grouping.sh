@@ -4,7 +4,7 @@
 # 	All rights reserved.
 #	OSI Non-Profit Open Software License ("Non-Profit OSL") 3.0 license.
 
-BIN_PATH='/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/bin'
+BIN_PATH='../bin'
 
 python3 $BIN_PATH/4_grouping.py -settings ./settings.txt -samples md50
 

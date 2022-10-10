@@ -4,6 +4,6 @@
 # 	All rights reserved.
 #	OSI Non-Profit Open Software License ("Non-Profit OSL") 3.0 license.
 
-BIN_PATH='/home/ubuntu/genetic-circuit-partitioning/2021.4/bin'
+BIN_PATH='../bin'
 
-python3 $BIN_PATH/3_partition_optimize.py -settings ./settings.txt -samples 7input_45_c6
+python3 $BIN_PATH/3_partition_optimize_test.py -settings ./settings.txt -samples 4input_3310

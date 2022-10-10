@@ -40,6 +40,8 @@ cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1598884132938/work
 clyent==1.2.2
 cobra==0.22.1
 colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
+colorcet==3.0.0
+cometspy==0.4.15
 commonmark==0.9.1
 conda==4.10.3
 conda-build==3.21.4
@@ -76,6 +78,7 @@ gevent @ file:///opt/concourse/worker/volumes/live/123efac8-0706-463e-4084-07838
 glob2 @ file:///home/linux1/recipes/ci/glob2_1610991677669/work
 gmpy2==2.0.8
 greenlet @ file:///opt/concourse/worker/volumes/live/de3154a2-fbbd-4797-71f5-5fe8ea617adf/volume/greenlet_1611958369459/work
+gurobipy==9.5.1
 h11==0.12.0
 h5py==2.10.0
 HeapDict==1.0.1
@@ -153,6 +156,7 @@ optlang==1.5.2
 packaging @ file:///tmp/build/80754af9/packaging_1611952188834/work
 pandas==1.2.4
 pandocfilters @ file:///opt/concourse/worker/volumes/live/c330e404-216d-466b-5327-8ce8fe854d3a/volume/pandocfilters_1605120442288/work
+param==1.12.1
 parso==0.7.0
 partd @ file:///tmp/build/80754af9/partd_1618000087440/work
 path @ file:///opt/concourse/worker/volumes/live/6493576b-552d-426b-432c-5e0fafcd8a43/volume/path_1614022213143/work
@@ -175,6 +179,7 @@ pycallgraph==1.0.1
 pycodestyle @ file:///home/ktietz/src/ci_mi/pycodestyle_1612807597675/work
 pycosat==0.6.3
 pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pyct==0.4.8
 pycurl==7.43.0.6
 pydantic==1.8.2
 pydocstyle @ file:///tmp/build/80754af9/pydocstyle_1616182067796/work
@@ -222,6 +227,7 @@ Shapely==1.5.9
 simplegeneric==0.8.1
 singledispatch @ file:///tmp/build/80754af9/singledispatch_1614366001199/work
 six @ file:///opt/concourse/worker/volumes/live/5b31cb27-1e37-4ca5-6e9f-86246eb206d2/volume/six_1605205320872/work
+sklearn==0.0
 sniffio @ file:///opt/concourse/worker/volumes/live/1faeb672-6d3f-4f1f-7861-294fcf282962/volume/sniffio_1614030462215/work
 snowballstemmer @ file:///tmp/build/80754af9/snowballstemmer_1611258885636/work
 sortedcollections @ file:///tmp/build/80754af9/sortedcollections_1611172717284/work

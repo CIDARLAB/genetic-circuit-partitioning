@@ -23,7 +23,7 @@ def main():
 	# Run the command
 	samples = args.samples.split(',')
 	settings = gp.load_settings(args.settings)
-	
+
 	for s in samples:
 		print ('Processing sample', s)
 		print(settings[s])

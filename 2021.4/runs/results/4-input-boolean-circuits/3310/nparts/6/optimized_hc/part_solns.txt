@@ -1,0 +1,40 @@
+path	1
+T	NA
+cut	6
+Partition 0	379,383
+Partition 1	389
+Partition 3	385,381,382,388
+Partition 4	384,387
+Partition 5	380,386,378
+path	2
+T	NA
+cut	6
+Partition 0	379,383
+Partition 1	384,385,382,389
+Partition 3	381,388
+Partition 4	387
+Partition 5	380,386,378
+path	3
+T	NA
+cut	6
+Partition 0	379,383
+Partition 2	389
+Partition 3	385,381,382,388
+Partition 4	384,387,380,386
+Partition 5	378
+path	4
+T	NA
+cut	6
+Partition 0	379,383
+Partition 1	389
+Partition 2	381,382
+Partition 3	388
+Partition 4	384,385,387,380,386,378
+path	5
+T	NA
+cut	6
+Partition 0	379,383
+Partition 1	384,385,382,389
+Partition 3	381,388
+Partition 4	387
+Partition 5	380,386,378
