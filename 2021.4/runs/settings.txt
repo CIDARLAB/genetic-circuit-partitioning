@@ -1,4 +1,5 @@
 sample	graph_path	lib_path	primitive_only	S_bounds	target_n	max_nodes_to_shift	high_constraint	low_constraint	loop_free	priority	trajectories	output_path
+grey4 ./benchmark/electronic-circuits/Graycode/gray4	./lib	TRUE	"1,7"		4	"2,2"	4	TRUE	C	1	./results/electronic-circuits/Graycode/gray4
 1125	./benchmark/4-input-boolean-circuits/1125	./lib	TRUE	"1,7"		4	"2,2"	4	TRUE	C	1	./results/4-input-boolean-circuits/1125
 hexDisplay	./benchmark/electronic-circuits/hexDisplay	./lib	TRUE	"1,7"		5	"2,2"	4	TRUE	C	5	./results/electronic-circuits/hexDisplay
 md5Core	/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/runs/benchmark/electronic-circuits/md5Core	./lib	TRUE	"3,7"		3	"1,1"	4	TRUE	C	3	/Users/jgzhang/Work/Densmore_lab/Partition/code_version/v2/genetic-circuit-partitioning/2021.4/runs/results/electronic-circuits/md5Core
